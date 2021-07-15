@@ -1,0 +1,177 @@
+<template>
+    <div class="base">
+        <div v-bind:key=index v-for="(item, index) in itemList" class="container">
+            <div class="row">
+                <select v-model="item.gubun">
+                    <option value=0>고등학교</option>
+                    <option value=1>대학(2,3년)</option>
+                    <option value=2>대학교(4년)</option>
+                    <option value=3>대학원</option>
+                </select>
+                <input type="text" v-model="item.schoolName">
+                <input type="text" v-show="item.gubun == 3" v-model="item.degree">
+                <input type="text" v-show="item.gubun != 0" v-model="item.startDate">
+                <input type="text" v-model="item.endDate">
+                <select v-model="item.graduateState">
+                    <option value=0>졸업</option>
+                    <option value=1>졸업예정</option>
+                    <option value=2>재학중</option>
+                    <option value=3>중퇴</option>
+                    <option value=4>수료</option>
+                    <option value=5>휴학</option>
+                </select>
+            </div>
+            <div class="row">
+                <input type="text" v-show="item.gubun > 0" v-model="item.major">
+            </div>
+                <button @click="delItem(index)">삭제</button>
+        </div>
+        
+        <button style="width: 1040px; height:60px;" @click="addItem">@추가하기@</button>
+    </div>
+
+</template>
+
+<script>
+export default {
+    data(){
+        return {
+            
+            // 학교구분 : gubun         char(1)
+            // 학교명 : schoolName      text
+            // 전공 : major             text
+            // 입학일 : startDate       date
+            // 졸업일 : endDate         date
+            // 졸업상태 : graduateState char(1)
+            // 학위 : degree
+
+            itemList : []
+        }
+    },
+    mounted(){
+       
+    },
+    methods:{
+        addItem(){
+            var dummy = {
+                gubun : 0,
+                schoolName : "한경고등학교",
+                major : "프로그래밍",
+                startDate : "입학년월",
+                endDate : "졸업년월",
+                graduateState : "졸업",
+                degree : "박사",
+            };
+            this.itemList.push(dummy);
+        },
+        delItem(index){
+            this.itemList.splice(index,1);
+        }
+    }
+}
+</script>
+
+<style scoped>
+    .base{
+        overflow: hidden;
+        position: relative;
+        margin-bottom: 33px;
+    }
+    .container{
+        border:2px solid;
+        
+        height: 120px;
+        padding: 10px;
+
+        overflow: hidden;
+        position: relative;
+        width: 1040px;
+        /* padding: 0 0 20px 40px; */
+        margin-bottom: 10px;
+        background-color: #fff;
+        box-sizing: border-box;
+
+        margin: 0 auto;
+        z-index: 800;
+        zoom: 1;
+
+        text-align: left;
+    }
+    .info-container{
+        height:150px;
+        padding-bottom:30px;
+    }
+    .info-general{
+        padding-top: 15px;
+        margin-bottom: 13px;
+        font-size: 0;
+    }
+    .info-detail{
+        width: 750px;
+    }
+    .photo, .profile{
+        z-index: 10;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 140px;
+        height: 182px;
+        margin: 0px;
+        border: 2px solid;
+    }
+    .item{
+        display: inline-block;
+        font-size: 14px;
+        color:RGB(160,160,160);
+        margin-left:7px;
+        vertical-align: top;
+    }
+    .item-head{
+        position: relative;
+        display: inline-block;
+        width: 350px;
+        padding-right: 83px;
+        margin-bottom: 11px;
+        vertical-align: bottom;
+        box-sizing: border-box;
+    }
+    .item-full{
+        display: block;
+        width: 100%;
+    }
+    .label{
+        /* position: absolute; */
+        left: 0;
+        top: 0;
+        width: 68px;
+        font-size: 16px;
+        color: #888;
+        border-right: 1px solid RGBA(190,190,190,100);
+        margin-right:10px;
+        float: left;
+
+    }
+    .value{
+        padding-top: 0.5px;
+        float: left;
+        font-size: 16px;
+        color: #000;
+        letter-spacing: 0;
+    }
+    .name{
+        margin-left: 0;
+        font-size: 20px;
+        color: RGB(10,0,0);
+    }
+    .gender, .age, .year{
+        
+        transform: translateY(8px);
+    }
+
+    .bg-main{
+        padding: 50px;
+        width:1000px;
+        height:2000px;
+        background-color: RGB(134,122,233);
+    }
+</style>
