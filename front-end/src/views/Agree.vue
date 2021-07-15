@@ -64,7 +64,7 @@ NAVER 내의 개별 서비스 이용, 이벤트 응모 및 경품 신청 과정�
         </div>
         <br>
         <div>
-            <button class="btn">취소</button>&nbsp&nbsp
+            <button class="btn">취소</button>&nbsp;&nbsp;
             <button class="btn" style="background:rgb(223, 165, 248);">확인</button>
         </div>
         
