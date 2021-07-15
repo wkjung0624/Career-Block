@@ -20,14 +20,14 @@
                     <option value=4>수료</option>
                     <option value=5>휴학</option>
                 </select>
+                <button class="btn-delete" @click="delItem(index)">X</button>
             </div>
-            <div class="row">
-                <input type="text" v-show="item.gubun > 0" v-model="item.major">
+            <div class="row" v-show="item.gubun > 0" >
+                <input type="text" v-model="item.major">
             </div>
-                <button @click="delItem(index)">삭제</button>
         </div>
         
-        <button style="width: 1040px; height:60px;" @click="addItem">@추가하기@</button>
+        <button style="width: 1000px; height:60px;" @click="addItem">@추가하기@</button>
     </div>
 
 </template>
@@ -81,11 +81,11 @@ export default {
         border:2px solid;
         
         height: 120px;
-        padding: 10px;
+        padding: 5px;
 
         overflow: hidden;
         position: relative;
-        width: 1040px;
+        width: 1000px;
         /* padding: 0 0 20px 40px; */
         margin-bottom: 10px;
         background-color: #fff;
@@ -173,5 +173,22 @@ export default {
         width:1000px;
         height:2000px;
         background-color: RGB(134,122,233);
+    }
+    .row{
+        margin: 10px;
+        border:2px dashed;
+    }
+
+    .btn-delete {
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        width: 35px;
+        height: 35px;
+        background-color: RGB(187,187,187);
+        border: 0px;
+        float:right;
+        font-size: 25px;
+        color: white;
     }
 </style>
