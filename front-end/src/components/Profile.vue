@@ -1,31 +1,29 @@
 <template>
-    <div class="bg-main">
-        <div class="base">
-            <div class="container">
-                <div class="photo">
-                    <img v-if="imgSrc!=''" src={{imgSrc}} />
-                    <button v-else @click="setProfileImage"> 이미지 추가 </button>
+    <div class="base">
+        <div class="container">
+            <div class="photo">
+                <img v-if="imgSrc!=''" src=imgSrc />
+                <button v-else @click="setProfileImage"> 이미지 추가 </button>
+            </div>
+            <div class="info-container">
+                <div class="info-general">
+                    <div class="item name"> {{name}} </div>
+                    <div class="item gender"> {{gender}} </div>
+                    <div class="item year"> {{birth}}년, </div>
+                    <div class="item age"> {{getAge()}}세 </div>
                 </div>
-                <div class="info-container">
-                    <div class="info-general">
-                        <div class="item name"> {{name}} </div>
-                        <div class="item gender"> {{gender}} </div>
-                        <div class="item year"> {{birth}}년, </div>
-                        <div class="item age"> {{getAge()}}세 </div>
+                <div class="info-detail">
+                    <div class="item-head"> 
+                        <div class="label">휴대폰</div>
+                        <div class="value">{{phone}}</div>
                     </div>
-                    <div class="info-detail">
-                        <div class="item-head"> 
-                            <div class="label">휴대폰</div>
-                            <div class="value">{{phone}}</div>
-                        </div>
-                        <div class="item-head">
-                            <div class="label">Email</div>
-                            <div class="value">{{email}}</div>
-                        </div>
-                        <div class="item-head item-full"> 
-                            <div class="label">주소</div>
-                            <div class="value">{{address}}</div>
-                        </div>
+                    <div class="item-head">
+                        <div class="label">Email</div>
+                        <div class="value">{{email}}</div>
+                    </div>
+                    <div class="item-head item-full"> 
+                        <div class="label">주소</div>
+                        <div class="value">{{address}}</div>
                     </div>
                 </div>
             </div>
@@ -156,10 +154,5 @@ export default {
         transform: translateY(8px);
     }
 
-    .bg-main{
-        padding: 50px;
-        width:1000px;
-        height:2000px;
-        background-color: RGB(134,122,233);
-    }
+  
 </style>
