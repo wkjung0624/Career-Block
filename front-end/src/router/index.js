@@ -8,21 +8,34 @@ import {
 import Agree from "../views/Agree.vue";
 import Learn from "../views/Learn.vue";
 
+import Education from "../components/Education.vue";
+import Career from "../components/Career.vue";
 
+// const routes = [{
+//     path: "/",
+//     name: "Home",
+//     component: Home,
+//   },
 const routes = [{
-    path: "/",
-    name: "Home",
-    component: Home,
-  },
-  {
-    path: "agree",
+    path: "/agree",
     name: "Agree",
     component: Agree,
   },
   {
-    path: "learn",
+    path: "/learn",
     name: "Learn",
     component: Learn,
+  },
+
+  {
+    path: "/education",
+    name: "Education",
+    component: Education,
+  },
+  {
+    path: "/career",
+    name: "Career",
+    component: Career,
   },
 
   // {
