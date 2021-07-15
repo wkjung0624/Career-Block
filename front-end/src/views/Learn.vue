@@ -3,14 +3,14 @@
         <p style="text-align:left; font-size: 25px;">교육</p>
         <table>
 <tr style="height:80px;">
-    <td style="width:34%;"><input type="text" class="txt" style="width:280px;" v-model="Title"></td>
-    <td style="width:34%;"><input type="text" class="txt" style="width:280px;" v-model="Host"></td>
-    <td style="width:13.5%;"><input type="text" class="txt" style="width:94px;" v-model="Start"></td>
-    <td style="width:13.5%;"><input type="text" class="txt" style="width:94px;" v-model="End"></td>  
+    <td style="width:34%;"><input type="text" class="txt" style="width:280px;" v-model="Title" placeholder="교육명"></td>
+    <td style="width:34%;"><input type="text" class="txt" style="width:280px;" v-model="Host" placeholder="교육기관"></td>
+    <td style="width:13.5%;"><input type="text" class="txt" style="width:94px;" v-model="Start" placeholder="시작년월"></td>
+    <td style="width:13.5%;"><input type="text" class="txt" style="width:94px;" v-model="End" placeholder="종료년월"></td>  
     <td style="width:5%;"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjSyXDvri02sDUIP1BGfKY1pso1zn7AlCyXA&usqp=CAU" alt="" class="dltbtn"></td>
 </tr>
 <tr>
-    <td colspan="5"><textarea name="" id="" class="txta" v-model="Message"></textarea></td>
+    <td colspan="5"><textarea name="" id="" class="txta" v-model="Message" placeholder="이수하신 교육 과정에 대해 적어주세요."></textarea></td>
 </tr>
 <tr style="border-top:solid 1px gainsboro; height:60px;">
     <td colspan="5"><button class="add"><img src="https://image.flaticon.com/icons/png/512/117/117885.png" alt="" class="addbtn">&nbsp;교육 추가</button></td>
@@ -24,11 +24,11 @@ export default {
     components: {},
     data() {
         return {
-           Title: '교육명',
-           Host: '교육기관',
-           Start: '시작년월',
-           End: '종료년월',
-           Message: '이수하신 교육 과정에 대해 적어주세요.'       
+           Title: '',
+           Host: '',
+           Start: '',
+           End: '',
+           Message: ''       
             };
     },
     setup() {},
@@ -37,7 +37,7 @@ export default {
     unmounted() {},
     methods: {
        
-    }
+}
 }
 </script>
 
