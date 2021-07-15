@@ -5,7 +5,7 @@ import {
 
 // import Login from "../components/Login.vue";
 import Home from "../views/Home.vue";
-import Agree from "../views/Agree.vue";
+import Agree from "../components/Agree.vue";
 
 import Learn from "../views/Learn.vue";
 
