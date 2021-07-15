@@ -154,7 +154,7 @@
             </button>
           </th>
           <th>
-            <input type="checkbox_line" name="" id="" />
+            <input type="checkbox" name="" id="" />
             <label for="">인재정보에 회사명 비공개</label>
             <button>?</button>
           </th>
