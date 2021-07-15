@@ -2,7 +2,7 @@
  <div class="bg-main">
     <Profile />
     <Education />
-
+    <Learn />
   </div>
 </template>
 
@@ -10,11 +10,12 @@
 // @ is an alias to /src
 import Profile from "@/components/Profile.vue";
 import Education from "@/components/Education.vue";
+import Learn from "@/components/Learn.vue";
 
 export default {
   name: "components",
   components: {
-    Profile, Education
+    Profile, Education, Learn
   },
 };
 </script>
