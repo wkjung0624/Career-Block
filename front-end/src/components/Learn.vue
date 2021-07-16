@@ -1,43 +1,50 @@
 <template>
-    <div class="box-container">
+    <div class="box-container" v-for="item in itemList">
         <p style="text-align:left; font-size: 25px;">교육</p>
         <table>
-<tr style="height:80px;">
-    <td style="width:34%;"><input type="text" class="txt" style="width:280px;" v-model="Title" placeholder="교육명"></td>
-    <td style="width:34%;"><input type="text" class="txt" style="width:280px;" v-model="Host" placeholder="교육기관"></td>
-    <td style="width:13.5%;"><input type="text" class="txt" style="width:94px;" v-model="Start" placeholder="시작년월"></td>
-    <td style="width:13.5%;"><input type="text" class="txt" style="width:94px;" v-model="End" placeholder="종료년월"></td>  
-    <td style="width:5%;"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjSyXDvri02sDUIP1BGfKY1pso1zn7AlCyXA&usqp=CAU" alt="" class="dltbtn"></td>
-</tr>
-<tr>
-    <td colspan="5"><textarea name="" id="" class="txta" v-model="Message" placeholder="이수하신 교육 과정에 대해 적어주세요."></textarea></td>
-</tr>
-<tr style="border-top:solid 1px gainsboro; height:60px;">
-    <td colspan="5"><button class="add"><img src="https://image.flaticon.com/icons/png/512/117/117885.png" alt="" class="addbtn">&nbsp;교육 추가</button></td>
-</tr>
+            <tr style="height:80px;">
+                <td style="width:34%;"><input type="text" class="txt" style="width:280px;" v-model="item.title" placeholder="교육명"></td>
+                <td style="width:34%;"><input type="text" class="txt" style="width:280px;" v-model="item.host" placeholder="교육기관"></td>
+                <td style="width:13.5%;"><input type="text" class="txt" style="width:94px;" v-model="item.start" placeholder="시작년월"></td>
+                <td style="width:13.5%;"><input type="text" class="txt" style="width:94px;" v-model="item.end" placeholder="종료년월"></td>  
+                <td style="width:5%;"><button class="btn-delete" @click="delItem(index)">X</button></td>
+            </tr>
+            <tr>
+                <td colspan="5"><textarea name="" id="" class="txta" v-model="item.message" placeholder="이수하신 교육 과정에 대해 적어주세요."></textarea></td>
+            </tr>
         </table>
     </div>
+    <button style="width: 1000px; height:60px;" @click="addItem">교육 추가</button>
 </template>
+
 <script>
 export default {
     name: "",
     components: {},
     data() {
         return {
-           Title: '',
-           Host: '',
-           Start: '',
-           End: '',
-           Message: ''       
-            };
+            itemList : []       
+        };
     },
     setup() {},
     created() {},
     mounted() {},
     unmounted() {},
-    methods: {
-       
-}
+    methods:{
+        addItem(){
+            var dummy = {
+                title: '',
+                host: '',
+                start: '',
+                end: '',
+                message: ''
+            };
+            this.itemList.push(dummy);
+        },
+        delItem(index){
+            this.itemList.splice(index,1);
+        }
+    }
 }
 </script>
 
@@ -58,8 +65,6 @@ export default {
 tr,
 td {
       border-collapse: collapse;
-      
-
 }
 
 table {
@@ -83,13 +88,18 @@ table {
     font-size: 20px;
 }
 
-.dltbtn {
-    width:30px;
-    height: 30px;
-    position: relative; bottom:18px; left:3px;
-    
-    
-}
+    .btn-delete {
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        width: 35px;
+        height: 35px;
+        background-color: RGB(187,187,187);
+        border: 0px;
+        float:right;
+        font-size: 25px;
+        color: white;
+    }
 
 
 
