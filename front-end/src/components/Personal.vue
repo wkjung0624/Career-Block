@@ -44,31 +44,39 @@
     </div>
     <br />
     <br />
+    <div>
+      <button class="btn">저장</button>
+      <button class="btn">취소</button>
+    </div>
     <br />
   </div>
 </template>
 <script>
 export default {
-  name: '',
-  components: {},
+  // name: "",
+  // components: {},
   data() {
     return {
-      sampleData: ''
-    }
+      // name: "",
+      // gender: "",
+      // birth: "",
+      // phone: "",
+      // address: "",
+    };
   },
   setup() {},
   created() {},
   mounted() {},
   unmounted() {},
-  methods: {}
-}
+  methods: {},
+};
 </script>
 
 <style scoped>
 @import url(//fonts.googleapis.com/earlyaccess/hanna.css);
 * {
   box-sizing: border-box;
-  font-family: 'Hanna', sans-serif;
+  font-family: "Hanna", sans-serif;
 }
 .box-container {
   background: #867ae9;
@@ -87,6 +95,12 @@ export default {
 table,
 tr,
 td {
+  color: #867ae9;
+}
+.btn {
+  width: 100px;
+  height: 40px;
+  border-color: gainsboro;
   color: #867ae9;
 }
 </style>
