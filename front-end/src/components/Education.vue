@@ -27,7 +27,7 @@
             </div>
         </div>
         
-        <button style="width: 1000px; height:60px;" @click="addItem">@추가하기@</button>
+        <button style="width: 1000px; height:60px;" @click="addItem">학력 추가</button>
     </div>
 
 </template>
