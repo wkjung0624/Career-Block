@@ -3,13 +3,14 @@ import {
   createWebHistory
 } from "vue-router";
 
-import Login from "../components/Login.vue";
 import Home from "../views/Home.vue";
+import Login from "../components/Login.vue";
 import Agree from "../components/Agree.vue";
-import Education from "../components/Education.vue";
+import Learn from "../components/Learn.vue";
 import Career from "../components/Career.vue";
 import Personal from "../components/Personal.vue"
-import Learn from "../components/Learn.vue";
+import Education from "../components/Education.vue";
+import Certification from "../components/Certification.vue";
 
 
 const routes = [{
@@ -46,12 +47,6 @@ const routes = [{
     name: "Career",
     component: Career,
   },
-
-  // {
-  //   path: "/",
-  //   name: "Login",
-  //   component: Login,
-  // },
   {
     path: "/about",
     name: "About",
@@ -75,6 +70,12 @@ const routes = [{
     name: "Education",
     component: () =>
       import( /* webpackChunkName: "about" */ "../components/Education.vue"),
+  },
+  {
+    path: "/certification",
+    name: "Certification",
+    component: () =>
+      import( /* webpackChunkName: "about" */ "../components/Certification.vue"),
   },
   {
     path: "/learn",
