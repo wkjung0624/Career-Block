@@ -1,15 +1,45 @@
-import { createRouter, createWebHistory } from "vue-router";
+import {
+  createRouter,
+  createWebHistory
+} from "vue-router";
 
 // import Login from "../components/Login.vue";
 import Home from "../views/Home.vue";
+import Agree from "../components/Agree.vue";
+import Education from "../components/Education.vue";
+import Career from "../components/Career.vue";
 
 
-const routes = [
-  {
+const routes = [{
     path: "/",
     name: "Home",
     component: Home,
   },
+  {
+
+    path: "/agree",
+    name: "Agree",
+    component: Agree,
+  },
+
+  {
+    path: "/learn",
+    name: "Learn",
+    component: Learn,
+  },
+
+
+  {
+    path: "/education",
+    name: "Education",
+    component: Education,
+  },
+  {
+    path: "/career",
+    name: "Career",
+    component: Career,
+  },
+
   // {
   //   path: "/",
   //   name: "Login",
@@ -19,7 +49,7 @@ const routes = [
     path: "/about",
     name: "About",
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue"),
+      import( /* webpackChunkName: "about" */ "../views/About.vue"),
   },
   {
     path: "/profile",
