@@ -8,6 +8,7 @@ import Home from "../views/Home.vue";
 import Agree from "../components/Agree.vue";
 import Education from "../components/Education.vue";
 import Career from "../components/Career.vue";
+import Personal from "../components/Personal.vue";
 
 
 const routes = [{
