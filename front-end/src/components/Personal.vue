@@ -80,7 +80,7 @@ export default {
 }
 .box-container {
   background: #867ae9;
-  margin-bottom: 100px;
+  padding-bottom: 50px;
 }
 .container {
   border: 1px solid #867ae9;
