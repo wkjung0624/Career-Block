@@ -1,5 +1,40 @@
 <template>
-  <div class="box-container"></div>
+  <div class="box-container">
+    <br />
+    <div style="font-size: 30pt; color: white">자격증</div>
+    <br /><br />
+    <div class="container">
+      <table>
+        <tr>
+          <td class="td">
+            자격증명<br /><input
+              type="text"
+              style="width: 300px; height: 50px"
+            />
+          </td>
+          <td class="td">
+            자격증명<br /><input
+              type="text"
+              style="width: 300px; height: 50px"
+            />
+          </td>
+          <td class="td">
+            취득년월<br /><input
+              type="text"
+              style="width: 300px; height: 50px"
+            />
+          </td>
+          <td>
+            <button>X</button><br />
+            <button>저장</button>
+          </td>
+        </tr>
+        <!-- <div>자격증명<br /><input type="text" /></div>
+        <div>자격증명<br /><input type="text" /></div>
+        <div>취득년월<br /><input type="text" /></div> -->
+      </table>
+    </div>
+  </div>
 </template>
 <script>
 export default {
@@ -26,16 +61,24 @@ export default {
 }
 .box-container {
   background: #867ae9;
-  margin-bottom: 100px;
+  padding-bottom: 50px;
+  text-align: left;
+  padding: 20px;
 }
 .container {
   border: 1px solid #867ae9;
   background-color: aliceblue;
   padding: 20px;
   margin: auto;
-  width: 30%;
+  width: 90%;
 }
 .tb {
+  margin: auto;
+  float: left;
+}
+.td {
+  padding: 10px;
+  font-size: 15pt;
   margin: auto;
 }
 table,
@@ -43,4 +86,23 @@ tr,
 td {
   color: #867ae9;
 }
+
+/* #add {
+  width: 100px;
+  height: 40px;
+  border-color: gainsboro;
+  color: #867ae9;
+}
+#save {
+  width: 100px;
+  height: 40px;
+  border-color: gainsboro;
+  color: #867ae9;
+}
+#delete {
+  width: 100px;
+  height: 40px;
+  border-color: gainsboro;
+  color: #867ae9;
+} */
 </style>
