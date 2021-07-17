@@ -20,25 +20,26 @@
       <table class="tb">
         <tr>
           <td>이름</td>
-          <td><input type="text" /></td>
+          <td><input type="text" v-model="name" /></td>
         </tr>
         <tr>
           <td>성별</td>
           <td style="padding-right: 100px">
-            <input type="radio" />남 <input type="radio" />여
+            <input type="radio" :value="gender" />남
+            <input type="radio" :value="gender" />여
           </td>
         </tr>
         <tr>
           <td>나이</td>
-          <td><input type="text" /></td>
+          <td><input type="text" v-model="age" /></td>
         </tr>
         <tr>
           <td>전화번호</td>
-          <td><input type="tel" /></td>
+          <td><input type="tel" v-model="phone" /></td>
         </tr>
         <tr>
           <td>주소</td>
-          <td><input type="text" /></td>
+          <td><input type="text" v-model="address" /></td>
         </tr>
       </table>
     </div>
@@ -57,11 +58,11 @@ export default {
   // components: {},
   data() {
     return {
-      // name: "",
-      // gender: "",
-      // birth: "",
-      // phone: "",
-      // address: "",
+      name: "",
+      gender: "",
+      age: "",
+      phone: "",
+      address: "",
     };
   },
   setup() {},

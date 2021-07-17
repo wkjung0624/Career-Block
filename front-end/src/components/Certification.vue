@@ -25,8 +25,8 @@
             />
           </td>
           <td>
-            <button>X</button><br />
-            <button>저장</button>
+            <button class="btn">삭제</button><br />
+            <button class="btn">저장</button>
           </td>
         </tr>
         <!-- <div>자격증명<br /><input type="text" /></div>
@@ -34,6 +34,9 @@
         <div>취득년월<br /><input type="text" /></div> -->
       </table>
     </div>
+    <label style="padding-left: 500px"
+      ><button class="btn2">추가</button></label
+    >
   </div>
 </template>
 <script>
@@ -85,6 +88,20 @@ table,
 tr,
 td {
   color: #867ae9;
+}
+.btn {
+  width: 30px;
+  height: 30px;
+  border-color: gainsboro;
+  color: #867ae9;
+  margin: 3px;
+}
+.btn2 {
+  width: 100px;
+  height: 50px;
+  border-color: gainsboro;
+  color: #867ae9;
+  margin: 3px;
 }
 
 /* #add {
