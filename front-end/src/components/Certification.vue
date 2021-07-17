@@ -3,43 +3,45 @@
     <br />
     <div style="font-size: 30pt; color: white">자격증</div>
     <br /><br />
-    <div v-bind:key="index" v-for="(item, index) in CerTable" class="container">
-      <table>
-        <tr>
-          <td class="td">
-            자격증명<br /><input
-              type="text"
-              style="width: 300px; height: 50px"
-              v-model="item.CerName"
-            />
-          </td>
-          <td class="td">
-            발급기관<br /><input
-              type="text"
-              style="width: 300px; height: 50px"
-              v-model="item.CerIns"
-            />
-          </td>
-          <td class="td">
-            취득년월<br /><input
-              type="text"
-              style="width: 300px; height: 50px"
-              v-model="item.CerDate"
-            />
-          </td>
-          <td>
-            <!-- 열삭제 -->
-            <button class="btn" @click="delTable">삭제</button><br />
-            <!-- 데이터 리셋 미완성-->
-            <button class="btn" @click="resetTable">리셋</button>
-          </td>
-        </tr>
-      </table>
+    <div v-bind:key="index" v-for="(item, index) in CerList" class="container">
+      <div class="d1">
+        취득년월<br />
+        <input
+          type="text"
+          style="width: 200px; height: 50px"
+          v-model="item.CerDate"
+        />
+      </div>
+      <div>
+        <div class="d2">
+          자격증명<br />
+          <input
+            type="text"
+            style="width: 200px; height: 50px"
+            v-model="item.CerName"
+          />
+        </div>
+        <div class="d2">
+          발급기관<br />
+          <input
+            type="text"
+            style="width: 200px; height: 50px"
+            v-model="item.CerIns"
+          />
+        </div>
+
+        <div>
+          <!-- 열삭제 -->
+          <button class="btn" @click="delCer">삭제</button><br />
+          <!-- 데이터 리셋 미완성-->
+          <!-- <button class="btn" @click="resetCer">리셋</button> -->
+        </div>
+      </div>
     </div>
 
     <label style="padding-left: 500px">
       <!-- 열추가 -->
-      <button class="btn2" @click="addTable">추가</button>
+      <button class="btn2" @click="addCer">추가</button>
     </label>
   </div>
 </template>
@@ -49,7 +51,7 @@ export default {
   components: {},
   data() {
     return {
-      CerTable: [
+      CerList: [
         {
           CerName: "",
           CerIns: "",
@@ -63,21 +65,21 @@ export default {
   mounted() {},
   unmounted() {},
   methods: {
-    addTable() {
-      this.CerTable.push({
+    addCer() {
+      this.CerList.push({
         CerName: "",
         CerIns: "",
         CerDate: "",
       });
       // console.log(index);
     },
-    delTable(index) {
-      this.CerTable.splice(index, 1);
+    delCer(index) {
+      this.CerList.splice(index, 1);
     },
     // 미완성
-    resetTable(index) {
-      this.CerTable.push(Certable[index]);
-    },
+    // resetCer(index) {
+    //   this.CerList.push(Certable[index]);
+    // },
   },
 };
 </script>
@@ -92,24 +94,29 @@ export default {
   background: #867ae9;
   padding-bottom: 50px;
   text-align: left;
-  padding: 20px;
+  padding: 10px;
   position: relative;
 }
 .container {
   border: 1px solid #867ae9;
   background-color: aliceblue;
-  padding: 20px;
+  padding: 10px;
   margin: auto;
-  width: 90%;
+  width: 95%;
+  display: inline-block;
 }
-.tb {
-  margin: auto;
-  float: left;
-}
-.td {
+.d1 {
   padding: 10px;
   font-size: 15pt;
   margin: auto;
+  display: inline-block;
+  /* float: left; */
+}
+.d2 {
+  padding: 10px;
+  font-size: 15pt;
+  margin: auto;
+  float: left;
 }
 table,
 tr,
