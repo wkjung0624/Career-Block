@@ -3,7 +3,7 @@
     <br />
     <div style="font-size: 30pt; color: white">자격증</div>
     <br /><br />
-    <div class="container">
+    <div v-bind:key="index" v-for="(item, index) in CerTable" class="container">
       <table>
         <tr>
           <td class="td">
@@ -34,12 +34,7 @@
         </tr>
       </table>
     </div>
-    <div
-      v-bind:key="index"
-      v-for="(item, index) in CerTable"
-      class="container"
-    ></div>
-    <div v-show="addTable > 0"></div>
+
     <label style="padding-left: 500px"
       ><button class="btn2" @click="addTable">추가</button></label
     >
@@ -64,9 +59,11 @@ export default {
   unmounted() {},
   methods: {
     addTable() {
-      var line = 0;
-      line += 1;
-      return line;
+      this.CerTable.push({
+        CerName: "",
+        CerIns: "",
+        CerDate: "",
+      });
     },
   },
 };
@@ -120,23 +117,4 @@ td {
   color: #867ae9;
   margin: 3px;
 }
-
-/* #add {
-  width: 100px;
-  height: 40px;
-  border-color: gainsboro;
-  color: #867ae9;
-}
-#save {
-  width: 100px;
-  height: 40px;
-  border-color: gainsboro;
-  color: #867ae9;
-}
-#delete {
-  width: 100px;
-  height: 40px;
-  border-color: gainsboro;
-  color: #867ae9;
-} */
 </style>
