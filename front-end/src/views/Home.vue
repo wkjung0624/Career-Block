@@ -3,6 +3,8 @@
     <Profile />
     <Education />
     <Learn />
+    <Certification />
+    <Career />
   </div>
 </template>
 
@@ -11,11 +13,13 @@
 import Profile from "@/components/Profile.vue";
 import Education from "@/components/Education.vue";
 import Learn from "@/components/Learn.vue";
+import Certification from "@/components/Certification.vue";
+import Career from "@/components/Career.vue";
 
 export default {
   name: "components",
   components: {
-    Profile, Education, Learn
+    Profile, Education, Learn, Certification, Career
   },
 };
 </script>
