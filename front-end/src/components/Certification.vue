@@ -32,13 +32,16 @@
             <button class="btn">저장</button>
           </td>
         </tr>
-        <!-- <div>자격증명<br /><input type="text" /></div>
-        <div>자격증명<br /><input type="text" /></div>
-        <div>취득년월<br /><input type="text" /></div> -->
       </table>
     </div>
+    <div
+      v-bind:key="index"
+      v-for="(item, index) in CerTable"
+      class="container"
+    ></div>
+    <div v-show="addTable > 0"></div>
     <label style="padding-left: 500px"
-      ><button class="btn2">추가</button></label
+      ><button class="btn2" @click="addTable">추가</button></label
     >
   </div>
 </template>
@@ -51,13 +54,21 @@ export default {
       CerName: "",
       CerIns: "",
       CerDate: "",
+
+      CerTable: [],
     };
   },
   setup() {},
   created() {},
   mounted() {},
   unmounted() {},
-  methods: {},
+  methods: {
+    addTable() {
+      var line = 0;
+      line += 1;
+      return line;
+    },
+  },
 };
 </script>
 
@@ -72,6 +83,7 @@ export default {
   padding-bottom: 50px;
   text-align: left;
   padding: 20px;
+  position: relative;
 }
 .container {
   border: 1px solid #867ae9;
