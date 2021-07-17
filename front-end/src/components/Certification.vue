@@ -10,34 +10,37 @@
             자격증명<br /><input
               type="text"
               style="width: 300px; height: 50px"
-              v-model="CerName"
+              v-model="item.CerName"
             />
           </td>
           <td class="td">
             발급기관<br /><input
               type="text"
               style="width: 300px; height: 50px"
-              v-model="CerIns"
+              v-model="item.CerIns"
             />
           </td>
           <td class="td">
             취득년월<br /><input
               type="text"
               style="width: 300px; height: 50px"
-              v-model="CerDate"
+              v-model="item.CerDate"
             />
           </td>
           <td>
-            <button class="btn">삭제</button><br />
-            <button class="btn">저장</button>
+            <!-- 열삭제 -->
+            <button class="btn" @click="delTable">삭제</button><br />
+            <!-- 데이터 리셋 미완성-->
+            <button class="btn" @click="resetTable">리셋</button>
           </td>
         </tr>
       </table>
     </div>
 
-    <label style="padding-left: 500px"
-      ><button class="btn2" @click="addTable">추가</button></label
-    >
+    <label style="padding-left: 500px">
+      <!-- 열추가 -->
+      <button class="btn2" @click="addTable">추가</button>
+    </label>
   </div>
 </template>
 <script>
@@ -46,11 +49,13 @@ export default {
   components: {},
   data() {
     return {
-      CerName: "",
-      CerIns: "",
-      CerDate: "",
-
-      CerTable: [],
+      CerTable: [
+        {
+          CerName: "",
+          CerIns: "",
+          CerDate: "",
+        },
+      ],
     };
   },
   setup() {},
@@ -64,6 +69,14 @@ export default {
         CerIns: "",
         CerDate: "",
       });
+      // console.log(index);
+    },
+    delTable(index) {
+      this.CerTable.splice(index, 1);
+    },
+    // 미완성
+    resetTable(index) {
+      this.CerTable.push(Certable[index]);
     },
   },
 };
