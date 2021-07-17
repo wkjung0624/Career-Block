@@ -1,5 +1,5 @@
 <template>
-  <div class="box-container">
+  <div class="base">
     <br />
     <div style="font-size: 30pt; color: white">자격증</div>
     <br /><br />
@@ -8,12 +8,12 @@
         취득년월<br />
         <input type="text" v-model="item.CerDate" class="tbox" />
       </div>
-      <div>
-        <div class="d2">
+      <div class="d2">
+        <div>
           자격증명<br />
           <input type="text" v-model="item.CerName" class="tbox" />
         </div>
-        <div class="d2">
+        <div>
           발급기관<br />
           <input type="text" v-model="item.CerIns" class="tbox" />
         </div>
@@ -22,7 +22,7 @@
           <!-- 열삭제 -->
           <button class="btn" @click="delCer">삭제</button><br />
           <!-- 데이터 리셋 미완성-->
-          <!-- <button class="btn" @click="resetCer">리셋</button> -->
+          <button class="btn" @click="resetCer">리셋</button>
         </div>
       </div>
     </div>
@@ -78,33 +78,35 @@ export default {
   box-sizing: border-box;
   font-family: "Hanna", sans-serif;
 }
-.box-container {
-  background: #867ae9;
-  padding-bottom: 50px;
-  text-align: left;
-  padding: 10px;
+
+.base {
+  overflow: hidden;
   position: relative;
+  padding-bottom: 50px;
+  background: #867ae9;
+  padding: 10px;
+  text-align: left;
 }
+
 .container {
   border: 1px solid #867ae9;
   background-color: aliceblue;
   padding: 10px;
   margin: auto;
   width: 95%;
-  display: inline-block;
 }
 .d1 {
   padding: 10px;
   font-size: 15pt;
   margin: auto;
-  display: inline-block;
-  /* float: left; */
+  float: left;
 }
 .d2 {
   padding: 10px;
   font-size: 15pt;
   margin: auto;
-  float: left;
+  position: relative;
+  /* float: left; */
 }
 .tbox {
   width: 200px;
