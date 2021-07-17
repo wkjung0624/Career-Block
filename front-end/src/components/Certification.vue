@@ -6,28 +6,16 @@
     <div v-bind:key="index" v-for="(item, index) in CerList" class="container">
       <div class="d1">
         취득년월<br />
-        <input
-          type="text"
-          style="width: 200px; height: 50px"
-          v-model="item.CerDate"
-        />
+        <input type="text" v-model="item.CerDate" class="tbox" />
       </div>
       <div>
         <div class="d2">
           자격증명<br />
-          <input
-            type="text"
-            style="width: 200px; height: 50px"
-            v-model="item.CerName"
-          />
+          <input type="text" v-model="item.CerName" class="tbox" />
         </div>
         <div class="d2">
           발급기관<br />
-          <input
-            type="text"
-            style="width: 200px; height: 50px"
-            v-model="item.CerIns"
-          />
+          <input type="text" v-model="item.CerIns" class="tbox" />
         </div>
 
         <div>
@@ -118,10 +106,9 @@ export default {
   margin: auto;
   float: left;
 }
-table,
-tr,
-td {
-  color: #867ae9;
+.tbox {
+  width: 200px;
+  height: 50px;
 }
 .btn {
   width: 30px;
