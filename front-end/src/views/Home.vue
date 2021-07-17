@@ -2,9 +2,9 @@
  <div class="bg-main">
     <Profile />
     <Education />
-    <Learn />
-    <Certification />
     <Career />
+    <Certification />
+    <Learn />
   </div>
 </template>
 

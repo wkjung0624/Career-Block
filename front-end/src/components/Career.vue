@@ -139,7 +139,7 @@
             <th colspan="5">
               <div class="box_line" v-show="item.isDuty != true">
                 <p style="text-align: left">담당업무</p>
-                <textarea v-model="job_description" cols="160" rows="4">
+                <textarea v-model="item.job_description" cols="160" rows="4">
 담당하신 업무와 성과에 대해 간단명료하게 적어주세요.</textarea
                 >
               </div>
@@ -222,16 +222,6 @@ export default {
       //    직무   : duty              char(2)
       //    업무내용 : job_description (longtext)
       itemList: [
-        {
-          startDate: "",
-          endDate: "",
-          companyName: "",
-          departmentName: "",
-          position: "",
-          job_title: "",
-          duty: "",
-          job_description: "",
-        },
       ],
 
       // checkbox-checked/ v-show
