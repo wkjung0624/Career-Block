@@ -10,18 +10,21 @@
             자격증명<br /><input
               type="text"
               style="width: 300px; height: 50px"
+              v-model="CerName"
             />
           </td>
           <td class="td">
-            자격증명<br /><input
+            발급기관<br /><input
               type="text"
               style="width: 300px; height: 50px"
+              v-model="CerIns"
             />
           </td>
           <td class="td">
             취득년월<br /><input
               type="text"
               style="width: 300px; height: 50px"
+              v-model="CerDate"
             />
           </td>
           <td>
@@ -45,7 +48,9 @@ export default {
   components: {},
   data() {
     return {
-      sampleData: "",
+      CerName: "",
+      CerIns: "",
+      CerDate: "",
     };
   },
   setup() {},
