@@ -1,17 +1,24 @@
 <template>
     <div class="base">
+        <button @click="changeEditable()">수정가능상태 변경</button>
+        <button @click="showDataInfo()">현재 입력값들 콘솔에 출력</button>
         <div v-bind:key=index v-for="(item, index) in itemList" class="container">
-            <div class="row">
+            <!-- 7번 라인 ~ 33번 라인 : 수정이 가능한 경우(본인 로그인) 화면 구성 -->
+            <div class="row" v-if="isEditable">
                 <select v-model="item.gubun">
                     <option value=0>고등학교</option>
                     <option value=1>대학(2,3년)</option>
                     <option value=2>대학교(4년)</option>
                     <option value=3>대학원</option>
                 </select>
+
                 <input type="text" v-model="item.schoolName">
+
                 <input type="text" v-show="item.gubun == 3" v-model="item.degree">
+
                 <input type="text" v-show="item.gubun != 0" v-model="item.startDate">
                 <input type="text" v-model="item.endDate">
+
                 <select v-model="item.graduateState">
                     <option value=0>졸업</option>
                     <option value=1>졸업예정</option>
@@ -20,10 +27,35 @@
                     <option value=4>수료</option>
                     <option value=5>휴학</option>
                 </select>
+
+                <input type="text" v-model="item.major" v-show="item.gubun > 0">
                 <button class="btn-delete" @click="delItem(index)">X</button>
             </div>
-            <div class="row" v-show="item.gubun > 0" >
-                <input type="text" v-model="item.major">
+            
+            <!-- 36번 라인 ~ 57번 라인 : 수정이 가능한 경우(본인 로그인) 화면 구성 -->
+            <div class="row" v-else>
+                <div class="label">
+                    <span v-if="item.gubun==0">고등학교 </span>
+                    <span v-if="item.gubun==1">대학(2,3년) </span>
+                    <span v-if="item.gubun==2">대학교(4년) </span>
+                    <span v-if="item.gubun==3">대학원 </span>
+                </div>
+
+                <div class="label">{{item.schoolName}} </div>
+
+                <div class="label" v-if="item.gubun == 3">{{item.degree}} </div>
+
+                <div class="label" v-if="item.gubun != 0">{{item.startDate}} </div>
+                <div class="label">{{item.endDate}}</div>
+                
+                <div class="label" v-if="item.graduateState==0">졸업</div>
+                <div class="label" v-if="item.graduateState==1">졸업예정</div>
+                <div class="label" v-if="item.graduateState==2">재학중</div>
+                <div class="label" v-if="item.graduateState==3">중퇴</div>
+                <div class="label" v-if="item.graduateState==4">수료</div>
+                <div class="label" v-if="item.graduateState==5">휴학</div>
+
+                <div>{{item.major}}</div>
             </div>
         </div>
         
@@ -45,7 +77,8 @@ export default {
             // 졸업상태 : graduateState char(1)
             // 학위 : degree
 
-            itemList : []
+            itemList : [],
+            isEditable : true
         }
     },
     mounted(){
@@ -57,8 +90,8 @@ export default {
                 gubun : 0,
                 schoolName : "한경고등학교",
                 major : "프로그래밍",
-                startDate : "입학년월",
-                endDate : "졸업년월",
+                startDate : "(입학일) 2016.03",
+                endDate : "(졸업일) 2021.02",
                 graduateState : "졸업",
                 degree : "박사",
             };
@@ -66,6 +99,15 @@ export default {
         },
         delItem(index){
             this.itemList.splice(index,1);
+        },
+        changeEditable(){
+            this.isEditable = !this.isEditable;  
+        },
+        showDataInfo(){
+            for(var item of this.itemList){
+                console.log(item)
+            }
+            
         }
     }
 }
@@ -143,11 +185,11 @@ export default {
         /* position: absolute; */
         left: 0;
         top: 0;
-        width: 68px;
+        width: 100px;
         font-size: 16px;
-        color: #888;
+        color: rgb(43, 43, 43);
         border-right: 1px solid RGBA(190,190,190,100);
-        margin-right:10px;
+        margin-right:30px;
         float: left;
 
     }
@@ -191,4 +233,5 @@ export default {
         font-size: 25px;
         color: white;
     }
+
 </style>
