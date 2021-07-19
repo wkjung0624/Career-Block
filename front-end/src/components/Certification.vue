@@ -9,40 +9,44 @@
     <div v-bind:key="index" v-for="(item, index) in CerList" class="container">
       <div v-if="isEditable">
         <div class="d1">
-          <div class="d2">
-            취득년월<br />
-            <input type="text" v-model="item.CerDate" class="tbox" />
-          </div>
-          <div class="d2">
-            자격증명<br />
-            <input type="text" v-model="item.CerName" class="tbox" />
-          </div>
-          <div class="d2">
-            발급기관<br />
-            <input type="text" v-model="item.CerIns" class="tbox" />
-          </div>
+          <center>
+            <div class="d2">
+              취득년월<br />
+              <input type="text" v-model="item.CerDate" class="tbox" />
+            </div>
+            <div class="d2">
+              자격증명<br />
+              <input type="text" v-model="item.CerName" class="tbox" />
+            </div>
+            <div class="d2">
+              발급기관<br />
+              <input type="text" v-model="item.CerIns" class="tbox" />
+            </div>
 
-          <!-- 열삭제 -->
-          <div class="d3">
-            <button class="btn" @click="delCer(index)">삭제</button><br />
-          </div>
+            <!-- 열삭제 -->
+            <div class="d3">
+              <button class="btn" @click="delCer(index)">삭제</button><br />
+            </div>
+          </center>
         </div>
       </div>
 
       <div v-else>
         <div class="d1">
-          <div class="d2">
-            취득년월<br />
-            {{ item.CerDate }}
-          </div>
-          <div class="d2">
-            자격증명<br />
-            {{ item.CerName }}
-          </div>
-          <div class="d2">
-            발급기관<br />
-            {{ item.CerIns }}
-          </div>
+          <center>
+            <div class="d2">
+              취득년월<br />
+              {{ item.CerDate }}
+            </div>
+            <div class="d2">
+              자격증명<br />
+              {{ item.CerName }}
+            </div>
+            <div class="d2">
+              발급기관<br />
+              {{ item.CerIns }}
+            </div>
+          </center>
         </div>
       </div>
     </div>
@@ -155,7 +159,7 @@ export default {
   position: relative;
 }
 .tbox {
-  width: 200px;
+  width: 400px;
   height: 50px;
 }
 .btn {
