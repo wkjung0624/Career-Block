@@ -53,7 +53,7 @@
 
     <label class="d4">
       <!-- 열추가 -->
-      <center><button class="btn2" @click="addCer">추가</button></center>
+      <button class="btn2" @click="addCer">자격증 추가</button>
     </label>
   </div>
 </template>
@@ -173,10 +173,9 @@ export default {
   margin: 3px;
 }
 .btn2 {
-  width: 100px;
-  height: 50px;
-  border-color: gainsboro;
-  color: #867ae9;
-  margin: 3px;
+  width: 940px;
+  height: 60px;
+  
+  
 }
 </style>
