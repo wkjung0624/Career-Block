@@ -1,15 +1,22 @@
 <template>
 <div class="box">
-    <router-link to="/" class="nav-title">CareerBlock</router-link>
-  <div id="nav">
-    <router-link to="/login"> login </router-link>
-    <router-link to="/" class="nav-item user"> {{user.email}} 님 어서오세요 </router-link>
-    <router-link to="/" class="nav-item">이력서 링크생성</router-link>
-    <router-link to="/search" class="nav-item">이력서 조회</router-link>
-  </div>
   
-  <button @click="logbtn(true)">로그인</button>
-  <button @click="logbtn(false)">로그오프</button>
+  <router-link to="/" class="nav-title">CareerBlock</router-link>
+  
+  <div id="nav">
+    <router-link to="/resumelink" class="nav-item item-style01">이력서 링크생성</router-link>
+    <router-link to="/search" class="nav-item item-style01">이력서 조회</router-link>
+    <router-link to="/" class="nav-item item-style01"> 내 이력서 </router-link>
+ 
+    <div>
+      테스트 버튼 : 
+      <button @click="logbtn(true)">로그인</button>
+      <button @click="logbtn(false)">로그오프</button>
+      <button @click="regsw(true)">추가정보 O</button>
+      <button @click="regsw(false)">추가정보 X</button>
+    </div>
+  </div>
+
   <Login ref="child_login" v-show="false"/>
   <router-view />
 </div>
@@ -33,7 +40,16 @@ export default {
     this.logComponent = this.$refs.child_login;
   },
   methods:{
-     logbtn(param){  
+      regsw(param) {
+        var test = this.$store.state.user.email == "";
+        console.log(test, this.$store.state.user.email);
+
+        this.$store.state.user.isRegister = param;
+
+        console.log("isReg:", this.$store.state.user.isRegister);
+        console.log(this.$store.state.user);
+      },
+      logbtn(param){  
         param ? this.logComponent.kakaoLogin() :
                 this.logComponent.kakaoLogout();
       }
@@ -81,9 +97,6 @@ export default {
   float:left;
   text-decoration: none;
 }
-.nav-title a.router-link-exact-active{
-  color:RGB(255,255,255);
-}
 
 .nav-item{
   font-size:25px;
@@ -96,5 +109,17 @@ export default {
   font-size:15px;
   color:beige;
   text-align: center;
+}
+.item-style01{
+  border-left: 1px groove;
+  border-right: 1px groove;
+  
+  padding: 0px 12px 0px 12px;
+  margin: 0 auto;
+
+  font-size:20px;
+  color:beige;
+  text-align: center;
+  text-decoration: none;
 }
 </style>
