@@ -31,7 +31,7 @@
           </div>
   <div>
             <button class="btn">취소</button>&nbsp;&nbsp;
-            <button class="btn" style="background:rgb(223, 165, 248);">확인</button>
+            <button class="btn" style="background:rgb(223, 165, 248);" @click="submitToParent">확인</button>
         </div>
 
 
@@ -87,7 +87,11 @@ export default {
     },
   },
 
-    methods: {}
+   methods: {
+        submitToParent(){
+            this.$emit('send-message', 1);
+        }
+    }
 }
 </script>
 
