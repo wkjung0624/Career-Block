@@ -114,6 +114,9 @@ export default {
 </script>
 
 <style scoped>
+* {
+     font: 12px "맑은 고딕", Malgun Gothic, "돋움", Dotum, sans-serif;
+}
     .base{
         overflow: hidden;
         position: relative;

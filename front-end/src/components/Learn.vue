@@ -75,7 +75,7 @@ export default {
 @import url(//fonts.googleapis.com/earlyaccess/hanna.css);
     * {
         box-sizing: border-box;
-      font-family: 'Hanna', sans-serif;
+      font: 12px "맑은 고딕", Malgun Gothic, "돋움", Dotum, sans-serif;
       
     }
 
