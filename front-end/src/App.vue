@@ -1,4 +1,5 @@
 <template>
+<div class="box">
     <router-link to="/" class="nav-title">CareerBlock</router-link>
   <div id="nav">
     <router-link to="/login"> login </router-link>
@@ -11,7 +12,7 @@
   <button @click="logbtn(false)">로그오프</button>
   <Login ref="child_login" v-show="false"/>
   <router-view />
-
+</div>
 </template>
 
 <script>
@@ -46,6 +47,10 @@ export default {
 </script>
 
 <style>
+.box {
+  margin: auto;
+  width: 1200px;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

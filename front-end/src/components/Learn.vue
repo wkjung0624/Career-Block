@@ -30,9 +30,9 @@
             </tr>
         </table>
     </div>
-    <button style="width: 900px; height:60px; position: relative; left:50px;" @click="addItem">교육 추가</button>
+    <button style="width: 900px; height:60px; position: relative; left:50px; font-size: 15px;" @click="addItem">교육 추가</button>
     <br>
-    <button style="width: 900px; height:60px; position: relative; left:50px; top:5px;" @click="changeEditable()">조회/수정</button>
+    <button style="width: 900px; height:60px; position: relative; left:50px; top:5px; font-size: 15px;" @click="changeEditable()">조회/수정</button>
     </div>
 </template>
 
