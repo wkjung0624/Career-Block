@@ -1,6 +1,7 @@
 <template>
-    <div class="box-container" v-for="item in itemList">
-        <p style="text-align:left; font-size: 25px;">교육</p>
+<div>
+<div class="box-container" v-for="item in itemList" v-if="isEditable">
+ <p style="text-align:left; font-size: 25px;">교육</p>
         <table>
             <tr style="height:80px;">
                 <td style="width:34%;"><input type="text" class="txt" style="width:280px;" v-model="item.title" placeholder="교육명"></td>
@@ -13,8 +14,27 @@
                 <td colspan="5"><textarea name="" id="" class="txta" v-model="item.message" placeholder="이수하신 교육 과정에 대해 적어주세요."></textarea></td>
             </tr>
         </table>
+</div>
+
+    <div class="box-container" v-for="item in itemList" v-else>
+        <p style="text-align:left; font-size: 25px;">교육</p>
+        <table>
+            <tr style="height:80px;">
+                <td style="width:34%;"><input type="text" class="txt-read" style="width:280px;" v-model="item.title" placeholder="교육명" readonly></td>
+                <td style="width:34%;"><input type="text" class="txt-read" style="width:280px;" v-model="item.host" placeholder="교육기관" readonly></td>
+                <td style="width:13.5%;"><input type="text" class="txt-read" style="width:94px;" v-model="item.start" placeholder="시작년월" readonly></td>
+                <td style="width:13.5%;"><input type="text" class="txt-read" style="width:94px;" v-model="item.end" placeholder="종료년월" readonly></td>  
+                <td style="width:5%;"><button class="btn-delete" @click="delItem(index)">X</button></td>
+            </tr>
+            <tr>
+                <td colspan="5"><textarea name="" id="" class="txta" v-model="item.message" placeholder="이수하신 교육 과정에 대해 적어주세요." readonly></textarea></td>
+            </tr>
+        </table>
     </div>
-    <button style="width: 1000px; height:60px;" @click="addItem">교육 추가</button>
+    <button style="width: 900px; height:60px; position: relative; left:50px;" @click="addItem">교육 추가</button>
+    <br>
+    <button style="width: 900px; height:60px; position: relative; left:50px; top:5px;" @click="changeEditable()">조회/수정</button>
+    </div>
 </template>
 
 <script>
@@ -23,7 +43,8 @@ export default {
     components: {},
     data() {
         return {
-            itemList : []       
+            itemList : [],
+            isEditable : true  
         };
     },
     setup() {},
@@ -43,6 +64,9 @@ export default {
         },
         delItem(index){
             this.itemList.splice(index,1);
+        },
+        changeEditable(){
+            this.isEditable = !this.isEditable;  
         }
     }
 }
@@ -106,6 +130,14 @@ table {
 .txt {
     height: 50px;
     border-color: gainsboro;
+    color:rgba(90, 81, 81, 0.432);
+    font-size: 18px;
+    padding-left: 10px;
+}
+
+.txt-read {
+    height: 50px;
+    border: none;
     color:rgba(90, 81, 81, 0.432);
     font-size: 18px;
     padding-left: 10px;
