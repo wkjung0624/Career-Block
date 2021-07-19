@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <br>[Search.vue]<br>
     <br />
     <!-- 엔터쳐도 자동으로 실행되게 -->
     <span class="d1">조회할 이력서 코드 : </span>
@@ -9,8 +10,8 @@
       v-model="query"
       class="tbox"
     />
-    <button @click="onSearch" class="btn">검색</button>
-    <button @click="showParam" class="btn">검색2</button>
+    <button @click="onSearch" class="btn">검색(미완)</button>
+    <button @click="showParam" class="btn">param 보기</button>
   </div>
 </template>
 
@@ -26,7 +27,7 @@ export default {
   methods: {
     async onSearch() {
       // res = await axios.get('https://httpbin.org/get')
-      await axios.get("http://localhost:8081/search?r=" + this.query);
+      var test = await axios.get("http://localhost:8081/search?r=" + this.query);
       alert(this.query);
     },
     showParam() {
