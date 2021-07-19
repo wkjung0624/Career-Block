@@ -24,7 +24,7 @@
 
           <!-- 열삭제 -->
           <div class="d3">
-            <button class="btn" @click="delCer">삭제</button><br />
+            <button class="btn" @click="delCer(index)">삭제</button><br />
           </div>
         </div>
       </div>
