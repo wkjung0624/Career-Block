@@ -26,8 +26,6 @@
           <div>
             <!-- 열삭제 -->
             <button class="btn" @click="delCer">삭제</button><br />
-            <!-- 데이터 리셋 미완성-->
-            <!-- <button class="btn" @click="resetCer">리셋</button> -->
           </div>
         </div>
       </div>
@@ -89,10 +87,6 @@ export default {
     delCer(index) {
       this.CerList.splice(index, 1);
     },
-    // 미완성
-    // resetCer(index) {
-    //   this.CerList.push(Certable[index]);
-    // },
 
     changeEditable() {
       this.isEditable = !this.isEditable;
@@ -132,7 +126,7 @@ export default {
 
 .row {
   margin: 10px;
-  border: 2px dashed;
+  /* border: 2px dashed; */
 }
 
 .d1 {
