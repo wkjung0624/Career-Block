@@ -104,38 +104,38 @@ export default {
 }
 
 .base {
-  overflow: hidden;
-  position: relative;
-  padding-bottom: 50px;
+  /* overflow: hidden; */
+  /* position: relative; */
+  /* padding-bottom: 50px; */
   background: #867ae9;
-  padding: 10px;
-  text-align: left;
+  /* padding: 10px; */
+  /* text-align: left; */
 }
 
 .container {
   border: 1px solid #867ae9;
   background-color: aliceblue;
-  padding: 10px;
-  margin: auto;
-  width: 95%;
+  /* padding: 10px; */
+  /* margin: auto; */
+  /* width: 95%; */
 }
 
 .row {
-  margin: 10px;
+  /* margin: 10px; */
   /* border: 2px dashed; */
 }
 
 .d1 {
-  padding: 10px;
+  /* padding: 10px; */
   font-size: 15pt;
-  margin: auto;
-  float: left;
-  position: relative;
+  /* margin: auto; */
+  /* float: left; */
+  /* position: relative; */
 }
 .d2 {
-  padding: 10px;
+  /* padding: 10px;
   font-size: 15pt;
-  margin: auto;
+  margin: auto; */
 
   /* float: left; */
 }
