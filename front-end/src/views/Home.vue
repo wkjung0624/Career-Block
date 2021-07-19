@@ -93,7 +93,8 @@ export default {
 }
 .container {
   /* padding: 50px; */
-  width: 100%;
+  margin: auto;
+  width: 1200px;
   height: 2000px;
   background-color: aliceblue;
 }
