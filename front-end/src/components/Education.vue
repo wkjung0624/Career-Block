@@ -225,7 +225,7 @@ export default {
     }
     .row{
         margin: 10px;
-        border:2px dashed;
+        /* border:2px dashed; */
     }
 
     .btn-delete {
