@@ -1,7 +1,7 @@
 <template>
 <div>
 <div class="box-container" v-for="item in itemList" v-if="isEditable">
- <p style="text-align:left; font-size: 25px;">교육</p>
+ <p style="text-align:left; font-size: 22px;">교육</p>
         <table>
             <tr style="height:80px;">
                 <td style="width:34%;"><input type="text" class="txt" style="width:280px;" v-model="item.title" placeholder="교육명"></td>
@@ -93,7 +93,7 @@ td {
 table {
     border: solid 1px gainsboro;
     width: 940px;
-    height: 300px;
+    height: 200px;
     position: relative; bottom:10px;
 }
 
@@ -146,8 +146,9 @@ table {
     border-color:gainsboro; 
     color:rgba(90, 81, 81, 0.432);
     font-size: 18px;
-    width: 870px;
-    height: 140px;
+    width: 900px;
+    height: 100px;
+    
 }
 
 .add:hover {

@@ -6,21 +6,21 @@
         <div v-bind:key=index v-for="(item, index) in itemList" class="container">
             <!-- 7번 라인 ~ 33번 라인 : 수정이 가능한 경우(본인 로그인) 화면 구성 -->
             <div class="row" v-if="isEditable">
-                <select v-model="item.gubun">
-                    <option value=0>고등학교</option>
+                <select v-model="item.gubun" class="sel">
+                    <option value=0 class="val">고등학교</option>
                     <option value=1>대학(2,3년)</option>
                     <option value=2>대학교(4년)</option>
                     <option value=3>대학원</option>
                 </select>
 
-                <input type="text" v-model="item.schoolName">
+                <input type="text" v-model="item.schoolName" style="height: 44px; border: 1px solid gainsboro;">
 
-                <input type="text" v-show="item.gubun == 3" v-model="item.degree">
+                <input type="text" v-show="item.gubun == 3" v-model="item.degree" style="height: 44px; border: 1px solid gainsboro;" >
 
-                <input type="text" v-show="item.gubun != 0" v-model="item.startDate">
-                <input type="text" v-model="item.endDate">
+                <input type="text" v-show="item.gubun != 0" v-model="item.startDate" style="height: 44px; border: 1px solid gainsboro;">
+                <input type="text" v-model="item.endDate" style="height: 44px; border: 1px solid gainsboro;">
 
-                <select v-model="item.graduateState">
+                <select v-model="item.graduateState" class="sel">
                     <option value=0>졸업</option>
                     <option value=1>졸업예정</option>
                     <option value=2>재학중</option>
@@ -29,7 +29,7 @@
                     <option value=5>휴학</option>
                 </select>
 
-                <input type="text" v-model="item.major" v-show="item.gubun > 0">
+                <input type="text" v-model="item.major" v-show="item.gubun > 0" style="height: 44px; border: 1px solid gainsboro;">
                 <button class="btn-delete" @click="delItem(index)">X</button>
             </div>
             
@@ -129,7 +129,7 @@ export default {
     .container{
         border:1px solid gainsboro;
         
-        height: 120px;
+        height: 90px;
         padding: 5px;
 
         overflow: hidden;
@@ -240,5 +240,11 @@ export default {
         font-size: 25px;
         color: white;
     }
+.sel{
+    width: 100px;
+    height: 50px;
+    border: 1px solid gainsboro;
+}
+
 
 </style>
