@@ -11,6 +11,7 @@ import Career from "../components/Career.vue";
 import Personal from "../components/Personal.vue"
 import Education from "../components/Education.vue";
 import Certification from "../components/Certification.vue";
+import ResumeLink from "../views/Resume-Link.vue";
 
 
 const routes = [
@@ -18,6 +19,11 @@ const routes = [
     path: "/",
     name: "Home",
     component: Home,
+  },
+  {
+    path: "/resumelink",
+    name: "ResumeLink",
+    component: ResumeLink
   },
   {
     path: "/registration",
