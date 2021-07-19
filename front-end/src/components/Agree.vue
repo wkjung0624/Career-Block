@@ -54,8 +54,7 @@ export default {
         {
           id: "2",
           agreeTitle: "개인정보 수집 및 이용 동의(필수)",
-          Item: "필수", agreeText: "2조 의무 \n
-          어쩌고 저쩌고"
+          Item: "필수", agreeText: "2조 의무 어쩌고 저쩌고"
         },
 
       ],
