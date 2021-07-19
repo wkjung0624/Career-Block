@@ -221,8 +221,7 @@ export default {
       //    직책   : job_title         char(2)
       //    직무   : duty              char(2)
       //    업무내용 : job_description (longtext)
-      itemList: [
-      ],
+      itemList: [],
 
       // checkbox-checked/ v-show
       isWorking: false,
