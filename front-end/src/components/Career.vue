@@ -1,6 +1,6 @@
 <template>
   <div id="base">
-    <table>
+    <table id="delete_box">
       <!-- 제목 -->
       <thead>
         <th colspan="5" style="font-size: 25px; text-align: left">■ 경력</th>
@@ -12,7 +12,7 @@
             <!-- 1-1 회사명 -->
             <th>
               <div class="box_line">
-                <button @click="delItem(idx)">X</button>
+                <button @click="delItem(idx)" id="delete_click">X</button>
                 <label>회사명</label>
                 <input type="text" v-model="item.companyName" />
               </div>
@@ -139,7 +139,7 @@
             <th colspan="5">
               <div class="box_line" v-show="item.isDuty != true">
                 <p style="text-align: left">담당업무</p>
-                <textarea v-model="item.job_description" cols="160" rows="4">
+                <textarea v-model="item.job_description" cols="150" rows="4">
 담당하신 업무와 성과에 대해 간단명료하게 적어주세요.</textarea
                 >
               </div>
@@ -188,7 +188,11 @@
               <div>
                 <div class="box_line" v-show="item.isDescription == true">
                   <p style="text-align: left">경력기술서</p>
-                  <textarea cols="160" rows="4"></textarea>
+                  <textarea
+                    cols="150"
+                    rows="4"
+                    v-model="career_description"
+                  ></textarea>
                   <input type="checkbox" v-model="item.isDescription" />
                   <label for="" style="color: blue">경력기술서 삭제</label>
                 </div>
@@ -250,6 +254,7 @@ export default {
         job_title: "",
         duty: "",
         job_description: "",
+        career_description: "",
       });
     },
     delItem(idx) {
@@ -265,14 +270,14 @@ export default {
 };
 </script>
 <style scoped>
-#base {
+#delete_box {
   position: relative;
 }
 
-#delete {
+#delete_click {
   position: absolute;
   top: 0px;
-  right: 9%;
+  right: 0px;
 }
 
 table {
