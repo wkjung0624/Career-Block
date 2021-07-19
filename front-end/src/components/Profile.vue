@@ -103,7 +103,7 @@ export default {
         width: 140px;
         height: 182px;
         margin: 0px;
-        border: 2px solid;
+        border: 1px solid gainsboro;
     }
     .item{
         display: inline-block;
