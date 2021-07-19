@@ -14,29 +14,41 @@
             <th>
               <div class="box_line">
                 <button @click="delItem(idx)" id="delete_click">X</button>
-                <label>회사명</label>
-                <input type="text" v-model="item.companyName" />
+                <input
+                  type="text"
+                  v-model="item.companyName"
+                  class="none_border"
+                  placeholder="회사명"
+                />
               </div>
             </th>
             <!-- 1-2 부서명 -->
             <th>
               <div class="box_line">
-                <label>부서명</label>
-                <input type="text" v-model="item.departmentName" />
+                <input
+                  type="text"
+                  v-model="item.departmentName"
+                  class="none_border"
+                  placeholder="부서명"
+                />
               </div>
             </th>
             <th>
               <!-- 1-3 시작일 -->
               <div class="box_line">
-                <label>시작일</label>
-                <input type="date" v-model="item.startDate" />
+                <label for="startDate">시작일</label>
+                <input
+                  type="date"
+                  v-model="item.startDate"
+                  class="non_border"
+                />
               </div>
             </th>
             <!-- 1-4 종료일 -->
             <th>
               <div class="box_line" v-show="item.isWorking != true">
                 <label>종료일</label>
-                <input type="date" v-model="item.endDate" />
+                <input type="date" v-model="item.endDate" class="non_border" />
               </div>
             </th>
             <!-- 1-5 재직중(check 박스) -->
@@ -58,49 +70,59 @@
             <!-- !! 프리랜서 radio -->
             <th>
               <div class="box_line">
-                <label for="position">직급/직책</label>
-                <select name="position" v-model="item.position">
-                  <option value="0">주임/계장</option>
-                  <option value="1">대리</option>
-                  <option value="2">과장</option>
-                  <option value="3">차장</option>
-                  <option value="4">부장</option>
-                  <option value="5">임원</option>
-                  <option value="6">연구원</option>
-                  <option value="7">주임연구원</option>
-                  <option value="8">선임연구원</option>
-                  <option value="9">책임연구원</option>
-                  <option value="10">수석연구원</option>
-                  <option value="11">연구소장</option>
-                </select>
+                <p>직급/직책</p>
+                <div>
+                  <select
+                    name="position"
+                    v-model="item.position"
+                    class="none_border"
+                  >
+                    <option value="0">주임/계장</option>
+                    <option value="1">대리</option>
+                    <option value="2">과장</option>
+                    <option value="3">차장</option>
+                    <option value="4">부장</option>
+                    <option value="5">임원</option>
+                    <option value="6">연구원</option>
+                    <option value="7">주임연구원</option>
+                    <option value="8">선임연구원</option>
+                    <option value="9">책임연구원</option>
+                    <option value="10">수석연구원</option>
+                    <option value="11">연구소장</option>
+                  </select>
 
-                <!-- 2-1 직책명 -->
+                  <!-- 2-1 직책명 -->
 
-                <!-- <label for="job_title">직책</label> -->
-                <select name="job_title" v-model="item.job_title">
-                  <option value="0">팀원</option>
-                  <option value="1">팀장</option>
-                  <option value="2">매니저</option>
-                  <option value="3">파트장</option>
-                  <option value="4">실장</option>
-                  <option value="5">지점장</option>
-                  <option value="6">지사장</option>
-                  <option value="7">원장</option>
-                  <option value="8">국장</option>
-                  <option value="9">본부장</option>
-                  <option value="10">공장장</option>
-                  <option value="11">그룹장</option>
-                </select>
+                  <!-- <label for="job_title">직책</label> -->
+                  <select
+                    name="job_title"
+                    v-model="item.job_title"
+                    class="none_border"
+                  >
+                    <option value="0">팀원</option>
+                    <option value="1">팀장</option>
+                    <option value="2">매니저</option>
+                    <option value="3">파트장</option>
+                    <option value="4">실장</option>
+                    <option value="5">지점장</option>
+                    <option value="6">지사장</option>
+                    <option value="7">원장</option>
+                    <option value="8">국장</option>
+                    <option value="9">본부장</option>
+                    <option value="10">공장장</option>
+                    <option value="11">그룹장</option>
+                  </select>
 
-                <input type="checkbox" />
+                  <!-- <input type="checkbox" placeholder="프리랜서" /> -->
+                </div>
               </div>
             </th>
 
             <!-- 2-2 직무명 -->
             <th>
               <div class="box_line">
-                <label for="duty">직무</label>
-                <select name="duty" v-model="item.duty">
+                <p>직무</p>
+                <select name="duty" v-model="item.duty" class="none_border">
                   <option value="0">경영/사무</option>
                   <option value="1">마케팅/광고/홍보</option>
                   <option value="2">IT/인터넷</option>
@@ -121,8 +143,8 @@
             <!-- 2-3 연봉-->
             <th>
               <div class="box_line" v-show="item.isIncome != true">
-                <label for="annual_income">연봉</label>
-                <input type="number" />
+                <p>연봉</p>
+                <input type="number" class="none_border" />
               </div>
             </th>
             <!-- 2-4 -->
@@ -153,7 +175,11 @@
             <th colspan="3" style="text-align: left">
               <div class="box_line" style="width: 80px">
                 연봉 X
-                <input type="checkbox" v-model="item.isIncome" />
+                <input
+                  type="checkbox"
+                  v-model="item.isIncome"
+                  class="none_border"
+                />
               </div>
               <!-- 담당업무(button) -->
               <div class="box_line" style="width: 110px">
@@ -161,11 +187,11 @@
                 <input type="checkbox" v-model="item.isDuty" />
               </div>
             </th>
-            <th>
+            <!-- <th>
               <input type="checkbox" name="" id="" />
               <label for="">인재정보에 회사명 비공개</label>
               <button>?</button>
-            </th>
+            </th> -->
           </tr>
 
           <!-- 5줄 -->
@@ -231,6 +257,7 @@ export default {
       itemList: [],
 
       // checkbox-checked/ v-show
+      isView: true,
       isWorking: false,
       isIncome: false,
       isDuty: false,
@@ -301,5 +328,12 @@ table {
   border: 2px solid lightgray;
   padding: 10px;
   background-color: white;
+}
+
+.none_border {
+  border: 0;
+  outline: 0;
+  border-style: none;
+  text-align: center;
 }
 </style>
