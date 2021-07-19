@@ -1,12 +1,12 @@
 <template>
   <div class="container">
     <br /><br />
-    <div style="font-size: 50pt; color: #867ae9">CareerBlock</div>
+    <!-- <div style="font-size: 50pt; color: #867ae9">CareerBlock</div>
     <br />
     <div>
       <span style="font-size: 15pt; color: navy">커리어블록</span>
       에 오신것을 환영합니다.
-    </div>
+    </div> -->
     <!-- <br />
     <div>
       회원님의 <b>아이디</b>와 <b>비밀번호</b>를 입력하여 로그인해주세요
