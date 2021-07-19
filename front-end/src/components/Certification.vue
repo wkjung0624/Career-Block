@@ -3,26 +3,44 @@
     <br />
     <div style="font-size: 30pt; color: white">자격증</div>
     <br /><br />
+    <button @click="changeEditable()">수정가능상태 변경</button>
+    <button @click="showDataInfo()">입력값 콘솔 출력</button>
+    <br /><br />
     <div v-bind:key="index" v-for="(item, index) in CerList" class="container">
-      <div class="d1">
-        취득년월<br />
-        <input type="text" v-model="item.CerDate" class="tbox" />
-      </div>
-      <div class="d2">
-        <div>
-          자격증명<br />
-          <input type="text" v-model="item.CerName" class="tbox" />
-        </div>
-        <div>
-          발급기관<br />
-          <input type="text" v-model="item.CerIns" class="tbox" />
-        </div>
+      <div class="row" v-if="isEditable">
+        <div class="d1">
+          <div>
+            취득년월<br />
+            <input type="text" v-model="item.CerDate" class="tbox" />
+          </div>
+          <div>
+            자격증명<br />
+            <input type="text" v-model="item.CerName" class="tbox" />
+          </div>
+          <div>
+            발급기관<br />
+            <input type="text" v-model="item.CerIns" class="tbox" />
+          </div>
 
-        <div>
           <!-- 열삭제 -->
-          <button class="btn" @click="delCer">삭제</button><br />
-          <!-- 데이터 리셋 미완성-->
-          <button class="btn" @click="resetCer">리셋</button>
+          <div><button class="btn" @click="delCer">삭제</button><br /></div>
+        </div>
+      </div>
+
+      <div class="row" v-else>
+        <div class="d1">
+          <div>
+            취득년월<br />
+            {{ item.CerDate }}
+          </div>
+          <div>
+            자격증명<br />
+            {{ item.CerName }}
+          </div>
+          <div>
+            발급기관<br />
+            {{ item.CerIns }}
+          </div>
         </div>
       </div>
     </div>
@@ -46,6 +64,7 @@ export default {
           CerDate: "",
         },
       ],
+      isEditable: true,
     };
   },
   setup() {},
@@ -64,10 +83,15 @@ export default {
     delCer(index) {
       this.CerList.splice(index, 1);
     },
-    // 미완성
-    // resetCer(index) {
-    //   this.CerList.push(Certable[index]);
-    // },
+
+    changeEditable() {
+      this.isEditable = !this.isEditable;
+    },
+    showDataInfo() {
+      for (var item of this.CerList) {
+        console.log(item);
+      }
+    },
   },
 };
 </script>
@@ -95,17 +119,24 @@ export default {
   margin: auto;
   width: 95%;
 }
+
+.row {
+  margin: 10px;
+  /* border: 2px dashed; */
+}
+
 .d1 {
   padding: 10px;
   font-size: 15pt;
   margin: auto;
   float: left;
+  position: relative;
 }
 .d2 {
   padding: 10px;
   font-size: 15pt;
   margin: auto;
-  position: relative;
+
   /* float: left; */
 }
 .tbox {
