@@ -47,14 +47,15 @@ export default {
         return {
             check: [
         { id: "1", agreeTitle: "서비스 이용약관 동의(필수)", Item: "필수", 
-        agreeText: "dssd",
+        agreeText: "1조 사항 어쩌고 저쩌고",
         
         },
 
         {
           id: "2",
           agreeTitle: "개인정보 수집 및 이용 동의(필수)",
-          Item: "필수", agreeText: "sdfsdf"
+          Item: "필수", agreeText: "2조 의무 \n
+          어쩌고 저쩌고"
         },
 
       ],
