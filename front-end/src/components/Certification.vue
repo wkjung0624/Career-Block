@@ -1,6 +1,6 @@
 <template>
   <div class="base">
-    <!-- <br /> -->
+    <br />
     <div style="font-size: 30pt; color: white">자격증</div>
     <br /><br />
     <button @click="changeEditable()">수정가능상태 변경</button>
@@ -9,11 +9,10 @@
     <div v-bind:key="index" v-for="(item, index) in CerList" class="container">
       <div class="row" v-if="isEditable">
         <div class="d1">
-          취득년월<br />
-          <input type="text" v-model="item.CerDate" class="tbox" />
-        </div>
-
-        <div class="d2">
+          <div>
+            취득년월<br />
+            <input type="text" v-model="item.CerDate" class="tbox" />
+          </div>
           <div>
             자격증명<br />
             <input type="text" v-model="item.CerName" class="tbox" />
@@ -23,22 +22,17 @@
             <input type="text" v-model="item.CerIns" class="tbox" />
           </div>
 
-          <div>
-            <!-- 열삭제 -->
-            <button class="btn" @click="delCer">삭제</button><br />
-            <!-- 데이터 리셋 미완성-->
-            <!-- <button class="btn" @click="resetCer">리셋</button> -->
-          </div>
+          <!-- 열삭제 -->
+          <div><button class="btn" @click="delCer">삭제</button><br /></div>
         </div>
       </div>
 
       <div class="row" v-else>
         <div class="d1">
-          취득년월<br />
-          {{ item.CerDate }}
-        </div>
-
-        <div class="d2">
+          <div>
+            취득년월<br />
+            {{ item.CerDate }}
+          </div>
           <div>
             자격증명<br />
             {{ item.CerName }}
@@ -89,10 +83,6 @@ export default {
     delCer(index) {
       this.CerList.splice(index, 1);
     },
-    // 미완성
-    // resetCer(index) {
-    //   this.CerList.push(Certable[index]);
-    // },
 
     changeEditable() {
       this.isEditable = !this.isEditable;
@@ -132,7 +122,7 @@ export default {
 
 .row {
   margin: 10px;
-  border: 2px dashed;
+  /* border: 2px dashed; */
 }
 
 .d1 {
@@ -140,12 +130,13 @@ export default {
   font-size: 15pt;
   margin: auto;
   float: left;
+  position: relative;
 }
 .d2 {
   padding: 10px;
   font-size: 15pt;
   margin: auto;
-  position: relative;
+
   /* float: left; */
 }
 .tbox {
