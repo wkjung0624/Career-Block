@@ -59,7 +59,7 @@
             </div>
         </div>
         
-        <button style="width: 1000px; height:60px;" @click="addItem">학력 추가</button>
+        <button style="width: 940px; height:60px;" @click="addItem">학력 추가</button>
     </div>
 
 </template>
@@ -118,6 +118,7 @@ export default {
         overflow: hidden;
         position: relative;
         margin-bottom: 33px;
+        
     }
     .container{
         border:2px solid;
@@ -127,7 +128,7 @@ export default {
 
         overflow: hidden;
         position: relative;
-        width: 1000px;
+        width: 940px;
         /* padding: 0 0 20px 40px; */
         margin-bottom: 10px;
         background-color: #fff;

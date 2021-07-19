@@ -115,8 +115,10 @@ export default {
   /* position: relative; */
   /* padding-bottom: 50px; */
   background: #867ae9;
-  padding: 20px;
+  
   text-align: left;
+  width: 940px;
+  margin: auto;
 }
 
 .container {
