@@ -30,9 +30,9 @@
             </tr>
         </table>
     </div>
-    <button style="width: 900px; height:60px; position: relative; left:50px;" @click="addItem">교육 추가</button>
+    <button style="width: 940px; height:60px; font-size: 15px;" @click="addItem">교육 추가</button>
     <br>
-    <button style="width: 900px; height:60px; position: relative; left:50px; top:5px;" @click="changeEditable()">조회/수정</button>
+    <button style="width: 940px; height:60px; top:5px; font-size: 15px;" @click="changeEditable()">조회/수정</button>
     </div>
 </template>
 
@@ -75,12 +75,12 @@ export default {
 @import url(//fonts.googleapis.com/earlyaccess/hanna.css);
     * {
         box-sizing: border-box;
-      font-family: 'Hanna', sans-serif;
+      font: 12px "맑은 고딕", Malgun Gothic, "돋움", Dotum, sans-serif;
       
     }
 
     .box-container {
-    width: 800px;
+    width: 940px;
     margin: auto;
     }
 
@@ -92,7 +92,7 @@ td {
 
 table {
     border: solid 1px gainsboro;
-    width: 900px;
+    width: 940px;
     height: 300px;
     position: relative; bottom:10px;
 }

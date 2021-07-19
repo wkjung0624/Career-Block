@@ -1,5 +1,6 @@
 <template>
     <div class="base">
+        <p style="text-align:left; font-size: 22px;">학력</p>
         <button @click="changeEditable()">수정가능상태 변경</button>
         <button @click="showDataInfo()">현재 입력값들 콘솔에 출력</button>
         <div v-bind:key=index v-for="(item, index) in itemList" class="container">
@@ -59,7 +60,7 @@
             </div>
         </div>
         
-        <button style="width: 1000px; height:60px;" @click="addItem">학력 추가</button>
+        <button style="width: 940px; height:60px;" @click="addItem">학력 추가</button>
     </div>
 
 </template>
@@ -114,20 +115,26 @@ export default {
 </script>
 
 <style scoped>
+* {
+     font: 12px "맑은 고딕", Malgun Gothic, "돋움", Dotum, sans-serif;
+}
     .base{
         overflow: hidden;
         position: relative;
         margin-bottom: 33px;
+        width: 940px;
+        margin: auto;
+        
     }
     .container{
-        border:2px solid;
+        border:1px solid gainsboro;
         
         height: 120px;
         padding: 5px;
 
         overflow: hidden;
         position: relative;
-        width: 1000px;
+        width: 940px;
         /* padding: 0 0 20px 40px; */
         margin-bottom: 10px;
         background-color: #fff;

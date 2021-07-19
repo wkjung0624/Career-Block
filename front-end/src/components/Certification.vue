@@ -1,7 +1,7 @@
 <template>
   <div class="base">
     <br />
-    <div style="font-size: 30pt; color: white">자격증</div>
+    <div style="font-size: 25px;">자격증</div>
     <br /><br />
     <button @click="changeEditable()" class="d3">수정가능상태 변경</button>
     <button @click="showDataInfo()" class="d3">입력값 콘솔 출력</button>
@@ -53,7 +53,7 @@
 
     <label class="d4">
       <!-- 열추가 -->
-      <center><button class="btn2" @click="addCer">추가</button></center>
+      <button class="btn2" @click="addCer">자격증 추가</button>
     </label>
   </div>
 </template>
@@ -114,13 +114,15 @@ export default {
   /* overflow: hidden; */
   /* position: relative; */
   /* padding-bottom: 50px; */
-  background: #867ae9;
-  padding: 20px;
+ 
+  
   text-align: left;
+  width: 940px;
+  margin: auto;
 }
 
 .container {
-  border: 1px solid #867ae9;
+  border: 1px solid gainsboro;
   background-color: aliceblue;
   padding: 10px;
   /* float: left; */
@@ -171,10 +173,9 @@ export default {
   margin: 3px;
 }
 .btn2 {
-  width: 100px;
-  height: 50px;
-  border-color: gainsboro;
-  color: #867ae9;
-  margin: 3px;
+  width: 940px;
+  height: 60px;
+  
+  
 }
 </style>
