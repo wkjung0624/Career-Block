@@ -1,5 +1,5 @@
 <template>
-  <div id="base">
+  <div class="item">
     <table id="delete_box">
       <!-- 제목 -->
       <thead>
@@ -204,7 +204,9 @@
       <tr>
         <th colspan="5">
           <div class="box_line">
-            <button @click="addItem">+ 추가</button>
+            <button style="width: 940px; height: 60px" @click="addItem">
+              경력 추가
+            </button>
           </div>
         </th>
       </tr>
@@ -270,6 +272,10 @@ export default {
 };
 </script>
 <style scoped>
+.item {
+  width: 940px;
+}
+
 #delete_box {
   position: relative;
 }
