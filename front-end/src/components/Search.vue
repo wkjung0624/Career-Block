@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <br />
     <!-- 엔터쳐도 자동으로 실행되게 -->
     <span class="d1">조회할 이력서 코드 : </span>
@@ -54,12 +54,10 @@ export default {
 }
 
 .container {
-  border: 1px solid #867ae9;
+  /* padding: 50px; */
+  width: 100%;
+  height: 2000px;
   background-color: aliceblue;
-  padding: 10px;
-  /* float: left; */
-  /* margin: auto; */
-  /* width: 95%; */
 }
 .d1 {
   /* padding: 10px; */
