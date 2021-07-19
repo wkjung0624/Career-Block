@@ -1,7 +1,7 @@
 <template>
   <div class="base">
     <br />
-    <div style="font-size: 22px">자격증</div>
+    <div style="font-size: 22px; text-align: left">자격증</div>
     <br /><br />
     <button @click="changeEditable()" class="d3">수정가능상태 변경</button>
     <button @click="showDataInfo()" class="d3">입력값 콘솔 출력</button>
@@ -9,44 +9,40 @@
     <div v-bind:key="index" v-for="(item, index) in CerList" class="container">
       <div v-if="isEditable">
         <div class="d1">
-          <center>
-            <div class="d2">
-              취득년월<br />
-              <input type="text" v-model="item.CerDate" class="tbox" />
-            </div>
-            <div class="d2">
-              자격증명<br />
-              <input type="text" v-model="item.CerName" class="tbox" />
-            </div>
-            <div class="d2">
-              발급기관<br />
-              <input type="text" v-model="item.CerIns" class="tbox" />
-            </div>
+          <div class="d2">
+            취득년월<br />
+            <input type="text" v-model="item.CerDate" class="tbox" />
+          </div>
+          <div class="d2">
+            자격증명<br />
+            <input type="text" v-model="item.CerName" class="tbox" />
+          </div>
+          <div class="d2">
+            발급기관<br />
+            <input type="text" v-model="item.CerIns" class="tbox" />
+          </div>
 
-            <!-- 열삭제 -->
-            <div class="d3">
-              <button class="btn" @click="delCer(index)">삭제</button><br />
-            </div>
-          </center>
+          <!-- 열삭제 -->
+          <div class="d3">
+            <button class="btn" @click="delCer(index)">X</button>
+          </div>
         </div>
       </div>
 
       <div v-else>
         <div class="d1">
-          <center>
-            <div class="d2">
-              취득년월<br />
-              {{ item.CerDate }}
-            </div>
-            <div class="d2">
-              자격증명<br />
-              {{ item.CerName }}
-            </div>
-            <div class="d2">
-              발급기관<br />
-              {{ item.CerIns }}
-            </div>
-          </center>
+          <div class="d5">
+            취득년월<br />
+            {{ item.CerDate }}
+          </div>
+          <div class="d5">
+            자격증명<br />
+            {{ item.CerName }}
+          </div>
+          <div class="d5">
+            발급기관<br />
+            {{ item.CerIns }}
+          </div>
         </div>
       </div>
     </div>
@@ -111,37 +107,46 @@ export default {
 }
 
 .base {
-  /* overflow: hidden; */
-  /* position: relative; */
-  /* padding-bottom: 50px; */
-
-  text-align: left;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 33px;
   width: 940px;
   margin: auto;
 }
 
 .container {
   border: 1px solid gainsboro;
-  background-color: aliceblue;
-  padding: 10px;
-  /* float: left; */
-  /* margin: auto; */
-  /* width: 95%; */
+
+  height: 90px;
+  padding: 5px;
+
+  overflow: hidden;
+  position: relative;
+  width: 940px;
+  /* padding: 0 0 20px 40px; */
+  margin-bottom: 10px;
+  background-color: #fff;
+  box-sizing: border-box;
+
+  margin: 0 auto;
+  z-index: 800;
+  zoom: 1;
+
+  text-align: left;
 }
 
 .d1 {
-  /* padding: 10px; */
-  font-size: 15pt;
-  margin: auto;
-  /* display: inline; */
-  /* float: left; */
-  /* position: relative; */
+  margin: 10px;
 }
 .d2 {
-  padding: 10px;
+  /* padding: 10px; */
   /* font-size: 15pt; */
   margin: auto;
   display: inline-block;
+  height: 70px;
+  border: 1px solid gainsboro;
+  font-size: 15px;
+  /* padding-left: 10px; */
 
   /* float: left; */
 }
@@ -160,16 +165,31 @@ export default {
   display: block;
   position: relative;
 }
+.d5 {
+  left: 0;
+  top: 0;
+  width: 100px;
+  font-size: 16px;
+  color: rgb(43, 43, 43);
+  border-right: 1px solid RGBA(190, 190, 190, 100);
+  margin-right: 30px;
+  float: left;
+}
 .tbox {
-  width: 250px;
-  height: 50px;
+  width: 140px;
+  height: 46px;
 }
 .btn {
-  width: 50px;
-  height: 30px;
-  border-color: gainsboro;
-  color: #867ae9;
-  margin: 3px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 35px;
+  height: 35px;
+  background-color: RGB(187, 187, 187);
+  border: 0px;
+  float: right;
+  font-size: 25px;
+  color: white;
 }
 .btn2 {
   width: 940px;
