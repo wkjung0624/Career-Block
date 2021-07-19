@@ -1,6 +1,7 @@
 <template>
-  <div id="base">
-    <table>
+  <div class="item">
+    <!-- 수정가능(로그인시)  -->
+    <table v-if="isEditable" id="delete_box">
       <!-- 제목 -->
       <thead>
         <th colspan="5" style="font-size: 25px; text-align: left">■ 경력</th>
@@ -12,7 +13,7 @@
             <!-- 1-1 회사명 -->
             <th>
               <div class="box_line">
-                <button @click="delItem(idx)">X</button>
+                <button @click="delItem(idx)" id="delete_click">X</button>
                 <label>회사명</label>
                 <input type="text" v-model="item.companyName" />
               </div>
@@ -59,37 +60,36 @@
               <div class="box_line">
                 <label for="position">직급/직책</label>
                 <select name="position" v-model="item.position">
-                  <option value="">주임/계장</option>
-                  <option value="">대리</option>
-                  <option value="">과장</option>
-                  <option value="">차장</option>
-                  <option value="">부장</option>
-                  <option value="">임원</option>
-                  <option value="">연구원</option>
-                  <option value="">주임연구원</option>
-                  <option value="">선임연구원</option>
-                  <option value="">책임연구원</option>
-                  <option value="">수석연구원</option>
-                  <option value="">연구소장</option>
+                  <option value="0">주임/계장</option>
+                  <option value="1">대리</option>
+                  <option value="2">과장</option>
+                  <option value="3">차장</option>
+                  <option value="4">부장</option>
+                  <option value="5">임원</option>
+                  <option value="6">연구원</option>
+                  <option value="7">주임연구원</option>
+                  <option value="8">선임연구원</option>
+                  <option value="9">책임연구원</option>
+                  <option value="10">수석연구원</option>
+                  <option value="11">연구소장</option>
                 </select>
 
                 <!-- 2-1 직책명 -->
 
                 <!-- <label for="job_title">직책</label> -->
                 <select name="job_title" v-model="item.job_title">
-                  <option value="">직책</option>
-                  <option value="">팀원</option>
-                  <option value="">팀장</option>
-                  <option value="">매니저</option>
-                  <option value="">파트장</option>
-                  <option value="">실장</option>
-                  <option value="">지점장</option>
-                  <option value="">지사장</option>
-                  <option value="">원장</option>
-                  <option value="">국장</option>
-                  <option value="">본부장</option>
-                  <option value="">공장장</option>
-                  <option value="">그룹장</option>
+                  <option value="0">팀원</option>
+                  <option value="1">팀장</option>
+                  <option value="2">매니저</option>
+                  <option value="3">파트장</option>
+                  <option value="4">실장</option>
+                  <option value="5">지점장</option>
+                  <option value="6">지사장</option>
+                  <option value="7">원장</option>
+                  <option value="8">국장</option>
+                  <option value="9">본부장</option>
+                  <option value="10">공장장</option>
+                  <option value="11">그룹장</option>
                 </select>
 
                 <input type="checkbox" />
@@ -101,21 +101,20 @@
               <div class="box_line">
                 <label for="duty">직무</label>
                 <select name="duty" v-model="item.duty">
-                  <option value="">직무</option>
-                  <option value="">경영/사무</option>
-                  <option value="">마케팅/광고/홍보</option>
-                  <option value="">IT/인터넷</option>
-                  <option value="">디자인</option>
-                  <option value="">무역/유통</option>
-                  <option value="">영업/고객상담</option>
-                  <option value="">서비스</option>
-                  <option value="">연구개발/설계</option>
-                  <option value="">생산/제조</option>
-                  <option value="">교육</option>
-                  <option value="">건설</option>
-                  <option value="">의료</option>
-                  <option value="">미디어</option>
-                  <option value="">전문/특수직</option>
+                  <option value="0">경영/사무</option>
+                  <option value="1">마케팅/광고/홍보</option>
+                  <option value="2">IT/인터넷</option>
+                  <option value="3">디자인</option>
+                  <option value="4">무역/유통</option>
+                  <option value="5">영업/고객상담</option>
+                  <option value="6">서비스</option>
+                  <option value="7">연구개발/설계</option>
+                  <option value="8">생산/제조</option>
+                  <option value="9">교육</option>
+                  <option value="10">건설</option>
+                  <option value="11">의료</option>
+                  <option value="12">미디어</option>
+                  <option value="13">전문/특수직</option>
                 </select>
               </div>
             </th>
@@ -139,7 +138,7 @@
             <th colspan="5">
               <div class="box_line" v-show="item.isDuty != true">
                 <p style="text-align: left">담당업무</p>
-                <textarea v-model="item.job_description" cols="160" rows="4">
+                <textarea v-model="item.job_description" cols="127" rows="4">
 담당하신 업무와 성과에 대해 간단명료하게 적어주세요.</textarea
                 >
               </div>
@@ -188,7 +187,11 @@
               <div>
                 <div class="box_line" v-show="item.isDescription == true">
                   <p style="text-align: left">경력기술서</p>
-                  <textarea cols="160" rows="4"></textarea>
+                  <textarea
+                    cols="127"
+                    rows="4"
+                    v-model="career_description"
+                  ></textarea>
                   <input type="checkbox" v-model="item.isDescription" />
                   <label for="" style="color: blue">경력기술서 삭제</label>
                 </div>
@@ -200,11 +203,15 @@
       <tr>
         <th colspan="5">
           <div class="box_line">
-            <button @click="addItem">+ 추가</button>
+            <button style="width: 940px; height: 60px" @click="addItem">
+              경력 추가
+            </button>
           </div>
         </th>
       </tr>
     </table>
+
+    <!-- 조회 -->
   </div>
 </template>
 <script>
@@ -229,6 +236,7 @@ export default {
       isDuty: false,
       isDescription: false,
       clicked: false,
+      isEditable: true,
     };
   },
   setup() {},
@@ -250,6 +258,7 @@ export default {
         job_title: "",
         duty: "",
         job_description: "",
+        career_description: "",
       });
     },
     delItem(idx) {
@@ -265,18 +274,25 @@ export default {
 };
 </script>
 <style scoped>
-#base {
+.item {
+  width: 940px;
+  text-align: left;
+  margin: 0 auto;
+  padding-bottom: 75px;
+  font: 12px "맑은 고딕", Malgun Gothic, "돋움", Dotum, sans-serif;
+}
+
+#delete_box {
   position: relative;
 }
 
-#delete {
+#delete_click {
   position: absolute;
   top: 0px;
-  right: 9%;
+  right: 0px;
 }
 
 table {
-  margin: 0 auto;
   padding: 20px;
   background-color: lightgrey;
 }
