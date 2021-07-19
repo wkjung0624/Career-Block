@@ -128,7 +128,7 @@ table {
 
 .txt {
     height: 50px;
-    border-color: gainsboro;
+    border: 1px solid gainsboro;
     color:rgba(90, 81, 81, 0.432);
     font-size: 18px;
     padding-left: 10px;
