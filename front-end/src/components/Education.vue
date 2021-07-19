@@ -1,5 +1,6 @@
 <template>
     <div class="base">
+        <p style="text-align:left; font-size: 22px;">학력</p>
         <button @click="changeEditable()">수정가능상태 변경</button>
         <button @click="showDataInfo()">현재 입력값들 콘솔에 출력</button>
         <div v-bind:key=index v-for="(item, index) in itemList" class="container">
@@ -121,6 +122,8 @@ export default {
         overflow: hidden;
         position: relative;
         margin-bottom: 33px;
+        width: 940px;
+        margin: auto;
         
     }
     .container{
