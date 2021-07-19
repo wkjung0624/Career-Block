@@ -1,14 +1,49 @@
 <template>
+    <router-link to="/" class="nav-title">CareerBlock</router-link>
   <div id="nav">
-    <div class="nav-title">CareerBlock</div>
-    <router-link to="/agree" class="nav-item">피드백</router-link>
-    <router-link to="/education" class="nav-item">링크생성</router-link>
-    <router-link to="/personal" class="nav-item">기본정보</router-link>
-    <router-link to="/" class="nav-item">이력서생성</router-link>
+    <router-link to="/login"> login </router-link>
+    <router-link to="/" class="nav-item user"> {{user.email}} 님 어서오세요 </router-link>
+    <router-link to="/" class="nav-item">이력서 생성</router-link>
+    <router-link to="/search" class="nav-item">이력서 조회</router-link>
   </div>
+  
+  <button @click="logbtn(true)">로그인</button>
+  <button @click="logbtn(false)">로그오프</button>
+  <Login ref="child_login" v-show="false"/>
   <router-view />
 
 </template>
+
+<script>
+
+import Login from "@/components/Login.vue";
+
+export default {
+  components: {
+    Login
+  },
+  data(){
+    return{
+      logComponent : ''
+    }
+  },
+  
+  mounted(){
+    this.logComponent = this.$refs.child_login;
+  },
+  methods:{
+     logbtn(param){  
+        param ? this.logComponent.kakaoLogin() :
+                this.logComponent.kakaoLogout();
+      }
+  },
+  computed:{
+        user(){
+            return this.$store.state.user;
+        },
+    },
+}
+</script>
 
 <style>
 #app {
@@ -27,22 +62,34 @@
 
 #nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: #5f5f5f;
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: #cecece;
 }
 
 .nav-title{
+  margin: 15px 0px 0px 15px;
   font-size:30px;
   color:RGB(255,255,255);
   float:left;
+  text-decoration: none;
+}
+.nav-title a.router-link-exact-active{
+  color:RGB(255,255,255);
 }
 
 .nav-item{
   font-size:25px;
   color:RGB(255,255,255);
   float:right;
+  margin-left: 10px;
+}
+
+.user{
+  font-size:15px;
+  color:beige;
+  text-align: center;
 }
 </style>
