@@ -49,7 +49,7 @@
 
     <label class="d4">
       <!-- 열추가 -->
-      <button class="btn2" @click="addCer">추가</button>
+      <center><button class="btn2" @click="addCer">추가</button></center>
     </label>
   </div>
 </template>
