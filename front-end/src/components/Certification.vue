@@ -1,7 +1,7 @@
 <template>
   <div class="base">
     <br />
-    <div style="font-size: 25px;">자격증</div>
+    <div style="font-size: 22px">자격증</div>
     <br /><br />
     <button @click="changeEditable()" class="d3">수정가능상태 변경</button>
     <button @click="showDataInfo()" class="d3">입력값 콘솔 출력</button>
@@ -114,8 +114,7 @@ export default {
   /* overflow: hidden; */
   /* position: relative; */
   /* padding-bottom: 50px; */
- 
-  
+
   text-align: left;
   width: 940px;
   margin: auto;
@@ -162,7 +161,7 @@ export default {
   position: relative;
 }
 .tbox {
-  width: 400px;
+  width: 250px;
   height: 50px;
 }
 .btn {
@@ -175,7 +174,5 @@ export default {
 .btn2 {
   width: 940px;
   height: 60px;
-  
-  
 }
 </style>
