@@ -10,16 +10,26 @@
       <div v-if="isEditable">
         <div class="d1">
           <div class="d2">
-            취득년월<br />
-            <input type="text" v-model="item.CerDate" class="tbox" />
-          </div>
-          <div class="d2">
             자격증명<br />
-            <input type="text" v-model="item.CerName" class="tbox" />
+            <input
+              type="text"
+              v-model="item.CerName"
+              class="tbox"
+              style="width: 450px"
+            />
           </div>
           <div class="d2">
             발급기관<br />
-            <input type="text" v-model="item.CerIns" class="tbox" />
+            <input
+              type="text"
+              v-model="item.CerIns"
+              class="tbox"
+              style="width: 250px"
+            />
+          </div>
+          <div class="d2">
+            취득년월<br />
+            <input type="text" v-model="item.CerDate" class="tbox" />
           </div>
 
           <!-- 열삭제 -->
@@ -31,17 +41,17 @@
 
       <div v-else>
         <div class="d1">
-          <div class="d5">
-            취득년월<br />
-            {{ item.CerDate }}
-          </div>
-          <div class="d5">
+          <div class="d5" style="width: 400px">
             자격증명<br />
             {{ item.CerName }}
           </div>
-          <div class="d5">
+          <div class="d5" style="width: 230px">
             발급기관<br />
             {{ item.CerIns }}
+          </div>
+          <div class="d5">
+            취득년월<br />
+            {{ item.CerDate }}
           </div>
         </div>
       </div>
@@ -168,7 +178,7 @@ export default {
 .d5 {
   left: 0;
   top: 0;
-  width: 100px;
+  width: 180px;
   font-size: 16px;
   color: rgb(43, 43, 43);
   border-right: 1px solid RGBA(190, 190, 190, 100);
@@ -176,7 +186,7 @@ export default {
   float: left;
 }
 .tbox {
-  width: 140px;
+  width: 150px;
   height: 46px;
 }
 .btn {
