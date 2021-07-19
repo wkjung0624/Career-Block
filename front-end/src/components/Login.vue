@@ -2,36 +2,36 @@
 
     <div class="box-container">
         <br>
-        <p style="color:white; font-size:70px;">{{loginInfo.email ? "로그인 되었습니다!" : "CareerBlock"}}</p>
-        <a v-show="!loginInfo.email" id="custom-login-btn" @click="kakaoLogin()"  style=" position:relative; top:120px;">
+        <p style="color:white; font-size:70px;">{{user.email ? "로그인 되었습니다!" : "CareerBlock"}}</p>
+        <a v-show="!user.email" id="custom-login-btn" @click="kakaoLogin()"  style=" position:relative; top:120px;">
         <img
         src="//k.kakaocdn.net/14/dn/btqCn0WEmI3/nijroPfbpCa4at5EIsjyf0/o.jpg"
         width="250"
       />
     </a>
 
-        <button v-show="loginInfo.email" @click="kakaoLogout">카카오2 로그아웃</button>
+        <button v-show="user.email" @click="kakaoLogout">카카오2 로그아웃</button>
     </div>
 </template>
 <script>
 export default {
     name: "",
     components: {},
-    data() {
-        return {
-            loginInfo : [],
-        };
-    },
     
     setup() {},
     created() {},
     mounted() {
-    
-        window.Kakao.init('16fe234230416b76f219eef43b4488fb');
-        // SDK 초기화 여부를 판단합니다.
-        console.log("isLogin : ",window.Kakao.isInitialized());
+        if(!window.Kakao.isInitialized()){
+            window.Kakao.init('16fe234230416b76f219eef43b4488fb');
+        }
     },
     unmounted() {},
+    computed:{
+        user(){
+            return this.$store.state.user;
+        },
+    },
+
     methods: {
         // 추가 항목 동의받기
         kakaoLogin(){
@@ -39,22 +39,19 @@ export default {
                 scope: "profile_nickname,account_email,gender",
                 success: this.getKakaoAccount,
                 fail: function(error) {
-                    
                     console.log("22:",error,"22");
                 },
             });
         },
         // 사용자 정보 가져오기
         getKakaoAccount(){
-            console.log("TEST");
             window.Kakao.API.request({
                 url: '/v2/user/me',
                 success: (res) => {
                     const kakaoAccount = res.kakao_account;
-                    console.log("##",kakaoAccount,"##");
-
-                    // this.$store.commit("user",kakaoAccount);
-                    this.loginInfo = kakaoAccount;
+                    this.$store.commit("user",kakaoAccount)
+                    
+                    console.log(this.$store.state.user);
                 },
             });
         },
@@ -64,10 +61,11 @@ export default {
                 return;
             }
             window.Kakao.Auth.logout((res) => {
-                console.log(window.Kakao.Auth.getAccessToken());
-                console.log(res);
-                // this.$store.commit("user",{});
-                this.loginInfo = {};
+                console.log("access:",window.Kakao.Auth.getAccessToken());
+                console.log("RESULT:",res);
+                this.$store.commit("user",{});
+                
+                console.log(this.$store.state.user);
             });
         },
     },

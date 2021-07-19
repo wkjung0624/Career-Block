@@ -1,19 +1,33 @@
 import { createRouter, createWebHistory } from "vue-router";
 
 import Home from "../views/Home.vue";
+import Registration from "../views/Registration.vue";
+
 import Login from "../components/Login.vue";
 import Agree from "../components/Agree.vue";
 import Learn from "../components/Learn.vue";
+import Search from "../components/Search.vue";
 import Career from "../components/Career.vue";
 import Personal from "../components/Personal.vue"
 import Education from "../components/Education.vue";
 import Certification from "../components/Certification.vue";
+
 
 const routes = [
   {
     path: "/",
     name: "Home",
     component: Home,
+  },
+  {
+    path: "/registration",
+    name: "Registration",
+    component: Registration,
+  },
+  {
+    path: "/search",
+    name: "Search",
+    component: Search,
   },
   {
     path: "/login",
@@ -62,27 +76,8 @@ const routes = [
   {
     path: "/personal",
     name: "Personal",
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../components/Personal.vue"),
-  },
-  {
-    path: "/education",
-    name: "Education",
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../components/Education.vue"),
-  },
-  {
-    path: "/certification",
-    name: "Certification",
-    component: () =>
-      import( /* webpackChunkName: "about" */ "../components/Certification.vue"),
-  },
-  {
-    path: "/learn",
-    name: "Learn",
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../components/Learn.vue"),
-  },
+    component: Personal
+  }
 ];
 
 const router = createRouter({
