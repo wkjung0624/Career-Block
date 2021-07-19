@@ -33,25 +33,21 @@
       </div>
 
       <div class="row" v-else>
-
-        
         <div class="d1">
           취득년월<br />
-          {{item.CerDate}}
-          
+          {{ item.CerDate }}
         </div>
 
         <div class="d2">
           <div>
             자격증명<br />
-            {{item.CerName}}
-            
+            {{ item.CerName }}
           </div>
           <div>
             발급기관<br />
-            {{item.CerIns}}
+            {{ item.CerIns }}
           </div>
-
+        </div>
       </div>
     </div>
 
