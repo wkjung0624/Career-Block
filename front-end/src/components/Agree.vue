@@ -1,20 +1,20 @@
 <template>
-
     <div class="box-container">
-        <h1>약관동의</h1>
+        <p style="color:white; font-size:40px; padding-top:10px; padding-left:10px; text-align:left;">약관동의</p>
         <div>
-        <label for="allagree">전체동의</label>
+        <label for="allagree" style="color:white; font-size:25px;  position: relative; right: 230px;">전체동의</label>
             <input
               id="allagree"
               class="check-box"
               type="checkbox"
               v-model="selectAll"
+              style="positon: relative; right: 220px;"
             />
           
 
           <ul class="check-list" v-for="content in check" :key="content" style="list-style: none;">
             <li>
-              <label
+              <label style="color:white; font-size:20px;"
                 ><span>{{ content.agreeTitle }}</span></label
               >
               <input
@@ -23,6 +23,7 @@
                 :value="content.id"
                 number
                 class="check-box"
+                style="positon: relative; left: 5px; top: 4px;"
               />
               <br>
               <pre class="txta" readonly>{{content.agreeText}}</pre>
@@ -149,7 +150,7 @@ NAVER 내의 개별 서비스 이용, 이벤트 응모 및 경품 신청 과정�
 .box-container {
      
       width: 600px;
-      height: 850px;
+      height: 900px;
       background: #867ae9;
       margin: auto;
     }
@@ -172,4 +173,9 @@ NAVER 내의 개별 서비스 이용, 이벤트 응모 및 경품 신청 과정�
     color:rgba(66, 57, 57, 0.432);
 }
 
+.check-box {
+    width: 20px;
+    height: 20px;
+    position: relative; top:2px;
+}
 </style>
