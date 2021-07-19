@@ -46,7 +46,7 @@
     <br />
     <br />
     <div>
-      <button class="btn">저장</button>
+      <button class="btn" @click="submitToParent">저장</button>
       <button class="btn">취소</button>
     </div>
     <br />
@@ -69,7 +69,11 @@ export default {
   created() {},
   mounted() {},
   unmounted() {},
-  methods: {},
+  methods: {
+    submitToParent(){
+      this.$emit('send-message', 2);
+    }
+  },
 };
 </script>
 
