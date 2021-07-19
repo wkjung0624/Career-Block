@@ -7,12 +7,12 @@
       <span style="font-size: 15pt; color: navy">커리어블록</span>
       에 오신것을 환영합니다.
     </div>
-    <br />
+    <!-- <br />
     <div>
       회원님의 <b>아이디</b>와 <b>비밀번호</b>를 입력하여 로그인해주세요
     </div>
     <br />
-    <div>아직 회원이 아니시라면 회원으로 <b>가입</b> 후 이용해주세요</div>
+    <div>아직 회원이 아니시라면 회원으로 <b>가입</b> 후 이용해주세요</div> -->
     <br /><br />
 
     <button @click="regsw(true)" style="font-size: 15pt">resume on</button>
