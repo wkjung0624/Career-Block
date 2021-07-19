@@ -1,11 +1,16 @@
 <template>
 
-    <div>
-        <h1>{{user.email ? "로그인 성공!" : "로그인 후 사용하세요."}}</h1>
-        <a id="custom-login-btn" @click="kakaoLogin()">
-            <img src="//k.kakaocdn.net/14/dn/btqCn0WEmI3/nijroPfbpCa4at5EIsjyf0/o.jpg" width="222"/>
-        </a>
-        <button @click="kakaoLogout">카카오 로그아웃</button>
+    <div class="box-container">
+        <br>
+        <p style="color:white; font-size:70px;">{{user.email ? "로그인 되었습니다!" : "CareerBlock"}}</p>
+        <a v-show="!user.email" id="custom-login-btn" @click="kakaoLogin()"  style=" position:relative; top:120px;">
+        <img
+        src="//k.kakaocdn.net/14/dn/btqCn0WEmI3/nijroPfbpCa4at5EIsjyf0/o.jpg"
+        width="250"
+      />
+    </a>
+
+        <button v-show="user.email" @click="kakaoLogout">카카오2 로그아웃</button>
     </div>
 </template>
 <script>
@@ -66,3 +71,21 @@ export default {
     },
 };
 </script>
+
+<style scoped>
+@import url(//fonts.googleapis.com/earlyaccess/hanna.css);
+    * {
+        box-sizing: border-box;
+      font-family: 'Hanna', sans-serif;
+      
+    }
+
+    .box-container {
+     
+      width: 560px;
+      height: 550px;
+      background: #867ae9;
+      margin: auto;
+    }
+
+</style>
