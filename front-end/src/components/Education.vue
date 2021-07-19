@@ -121,7 +121,7 @@ export default {
         
     }
     .container{
-        border:2px solid;
+        border:1px solid gainsboro;
         
         height: 120px;
         padding: 5px;

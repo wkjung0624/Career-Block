@@ -64,14 +64,14 @@ export default {
         margin-bottom: 33px;
     }
     .container{
-        border:2px solid;
+        border:1px solid gainsboro;
         
         height: 180px;
         padding-left: 170px;
 
         overflow: hidden;
         position: relative;
-        width: 1040px;
+        width: 940px;
         /* padding: 0 0 20px 40px; */
         margin-bottom: 10px;
         background-color: #fff;

@@ -122,7 +122,7 @@ export default {
 }
 
 .container {
-  border: 1px solid #867ae9;
+  border: 1px solid gainsboro;
   background-color: aliceblue;
   padding: 10px;
   /* float: left; */
