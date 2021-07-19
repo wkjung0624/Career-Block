@@ -129,23 +129,23 @@ table {
 .txt {
     height: 50px;
     border: 1px solid gainsboro;
-    color:rgba(90, 81, 81, 0.432);
-    font-size: 18px;
+    
+    font-size: 15px;
     padding-left: 10px;
 }
 
 .txt-read {
     height: 50px;
     border: none;
-    color:rgba(90, 81, 81, 0.432);
-    font-size: 18px;
+    
+    font-size: 15px;
     padding-left: 10px;
 }
 
 .txta {
     border-color:gainsboro; 
-    color:rgba(90, 81, 81, 0.432);
-    font-size: 18px;
+    
+    font-size: 15px;
     width: 900px;
     height: 100px;
     

@@ -5,6 +5,7 @@
     <div style="font-size: 50pt; color: #867ae9">CareerBlock</div>
     <br />
     <div>
+        <br>
       <span style="font-size: 15pt; color: navy">커리어블록</span>
       에 오신것을 환영합니다.
     </div>

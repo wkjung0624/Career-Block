@@ -7,20 +7,20 @@
             <!-- 7번 라인 ~ 33번 라인 : 수정이 가능한 경우(본인 로그인) 화면 구성 -->
             <div class="row" v-if="isEditable">
                 <select v-model="item.gubun" class="sel">
-                    <option value=0 class="val">고등학교</option>
+                    <option value=0>고등학교</option>
                     <option value=1>대학(2,3년)</option>
                     <option value=2>대학교(4년)</option>
                     <option value=3>대학원</option>
                 </select>
 
-                <input type="text" v-model="item.schoolName" style="height: 44px; border: 1px solid gainsboro;">
+                <input type="text" class="mini" v-model="item.schoolName" style="width:140px;">
 
-                <input type="text" v-show="item.gubun == 3" v-model="item.degree" style="height: 44px; border: 1px solid gainsboro;" >
+                <input type="text" class="mini" v-show="item.gubun == 3" v-model="item.degree" style="width: 60px;" >
 
-                <input type="text" v-show="item.gubun != 0" v-model="item.startDate" style="height: 44px; border: 1px solid gainsboro;">
-                <input type="text" v-model="item.endDate" style="height: 44px; border: 1px solid gainsboro;">
+                <input type="text" class="mini" v-show="item.gubun != 0" v-model="item.startDate" style="width: 140px;">
+                <input type="text" class="mini" v-model="item.endDate" style="width: 140px;">
 
-                <select v-model="item.graduateState" class="sel">
+                <select v-model="item.graduateState" class="sel2">
                     <option value=0>졸업</option>
                     <option value=1>졸업예정</option>
                     <option value=2>재학중</option>
@@ -29,7 +29,7 @@
                     <option value=5>휴학</option>
                 </select>
 
-                <input type="text" v-model="item.major" v-show="item.gubun > 0" style="height: 44px; border: 1px solid gainsboro;">
+                <input type="text" class="mini" v-model="item.major" v-show="item.gubun > 0" style="width: 140px;">
                 <button class="btn-delete" @click="delItem(index)">X</button>
             </div>
             
@@ -241,10 +241,26 @@ export default {
         color: white;
     }
 .sel{
-    width: 100px;
+    width: 105px;
     height: 50px;
     border: 1px solid gainsboro;
+    font-size: 15px;
+    padding-left: 5px;
 }
 
+.sel2{
+    width: 95px;
+    height: 50px;
+    border: 1px solid gainsboro;
+    font-size: 15px;
+    padding-left: 5px;
+}
+
+.mini {
+height: 46px; 
+border: 1px solid gainsboro; 
+font-size: 15px;
+padding-left: 10px;
+}
 
 </style>
