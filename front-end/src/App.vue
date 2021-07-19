@@ -3,7 +3,7 @@
   <div id="nav">
     <router-link to="/login"> login </router-link>
     <router-link to="/" class="nav-item user"> {{user.email}} 님 어서오세요 </router-link>
-    <router-link to="/" class="nav-item">이력서 생성</router-link>
+    <router-link to="/" class="nav-item">이력서 링크생성</router-link>
     <router-link to="/search" class="nav-item">이력서 조회</router-link>
   </div>
   
