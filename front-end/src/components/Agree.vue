@@ -148,20 +148,23 @@ NAVER 내의 개별 서비스 이용, 이벤트 응모 및 경품 신청 과정�
 
 .box-container {
      
-      width: 560px;
-      height: 800px;
+      width: 600px;
+      height: 850px;
       background: #867ae9;
       margin: auto;
     }
 
 .txta {
+   position: relative; left: 52px;
   width:410px; 
   height:300px;
   overflow: auto;
   background: white;
   text-align: left;
-  padding:10px
+  padding:10px;
+  color: rgba(66, 57, 57, 0.432);
 }
+
 .btn {
     width: 180px;
     height: 40px;
