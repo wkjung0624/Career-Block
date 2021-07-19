@@ -229,7 +229,17 @@
       <tr>
         <th colspan="5">
           <div class="box_line">
-            <button style="width: 940px; height: 60px" @click="addItem">
+            <button
+              style="
+                width: 920px;
+                height: 50px;
+                background-color: white;
+                font-size: 17px;
+                font-weight: 600;
+              "
+              @click="addItem"
+              class="none_border"
+            >
               경력 추가
             </button>
           </div>
