@@ -24,7 +24,6 @@
                 <td style="width:34%;"><input type="text" class="txt-read" style="width:280px;" v-model="item.host" placeholder="교육기관" readonly></td>
                 <td style="width:13.5%;"><input type="text" class="txt-read" style="width:94px;" v-model="item.start" placeholder="시작년월" readonly></td>
                 <td style="width:13.5%;"><input type="text" class="txt-read" style="width:94px;" v-model="item.end" placeholder="종료년월" readonly></td>  
-                <td style="width:5%;"><button class="btn-delete" @click="delItem(index)">X</button></td>
             </tr>
             <tr>
                 <td colspan="5"><textarea name="" id="" class="txta" v-model="item.message" placeholder="이수하신 교육 과정에 대해 적어주세요." readonly></textarea></td>
