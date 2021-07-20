@@ -3,6 +3,7 @@ import {
   createWebHistory
 } from "vue-router";
 
+import App from "../App.vue"
 import Home from "../views/Home.vue";
 import Registration from "../views/Registration.vue";
 
@@ -18,11 +19,13 @@ import Certification from "../components/Certification.vue";
 import ResumeLink from "../views/Resume-Link.vue";
 import MyResume from "../views/MyResume.vue";
 
+// import BT from "../assets/examples/boot.vue";
+
 
 const routes = [{
     path: "/",
-    name: "Home",
-    component: Home,
+    name: "App",
+    component: App,
   },
   {
     path: "/project",
