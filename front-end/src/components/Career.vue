@@ -258,11 +258,7 @@
       <div class="float6">
        
           <button
-            style="
-              background-color: white;
-              font-size: 15px;
-              
-            "
+           
             @click="addItem"
             class="btn2"
             
@@ -575,5 +571,7 @@ table {
   width: 940px;
   height: 60px;
   border: 1px solid gainsboro;
+  background-color: white;
+              font-size: 15px;
 }
 </style>
