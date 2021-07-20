@@ -51,7 +51,7 @@
     <br />
     <div>
       <button class="btn" @click="submitToParent">저장</button>&nbsp;&nbsp;
-      <button class="btn">취소</button>
+      <a href="/"><button class="btn">취소</button></a>
     </div>
     <br />
   </div>
