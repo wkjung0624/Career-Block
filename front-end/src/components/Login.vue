@@ -30,8 +30,12 @@
         width="250"
       />
     </a>
-
-    <button v-show="user.email" @click="kakaoLogout">카카오2 로그아웃</button>
+  <br><br>
+    회원가입이 안되있을경우 추가회원가입으로 유도하는 버튼 필요
+  <br><br>
+    <a href="/registration">회원등록화면으로 이동</a>
+  <br><br>
+    <button v-show="user.email" @click="kakaoLogout">카카오 로그아웃</button>
     <!-- </div> -->
   </div>
 </template>
@@ -74,12 +78,12 @@ export default {
           const kakaoAccount = res.kakao_account;
           this.$store.commit("user", kakaoAccount);
 
-          console.log(this.$store.state.user);
+          console.log("loginfo : ", this.$store.state.user);
         },
       });
 
       //만약 계정정보가 등록안됐다면 Registration.vue로 이동
-      window.location.href="/registration"
+      //window.location.href="/registration"
     },
     getRegisterInfo(){
       console.log(this.$store.state.user);
