@@ -191,7 +191,7 @@
               v-model="item.job_description"
               cols="120"
               rows="4"
-              style="border: 1px solid gainsboro"
+              style="border: 1px solid gainsboro; font-size: 15px;"
               placeholder="담당하신 업무와 성과에 대해 간단명료하게 적어주세요."
             ></textarea>
           </div>
