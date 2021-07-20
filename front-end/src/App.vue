@@ -6,7 +6,7 @@
   <div id="nav">
     <router-link to="/resumelink" class="nav-item item-style01">이력서 링크생성</router-link>
     <router-link to="/search" class="nav-item item-style01">이력서 조회</router-link>
-    <router-link to="/" class="nav-item item-style01"> 내 이력서 </router-link>
+    <router-link to="/myresume" class="nav-item item-style01"> 내 이력서 </router-link>
  
     <div>
       테스트 버튼 : 
