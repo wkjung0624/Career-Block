@@ -137,5 +137,6 @@ height: 25px;
     height: 40px;
     width: 100px;
     font-size: 15px;
+     color: #867ae9;
 }
 </style>
