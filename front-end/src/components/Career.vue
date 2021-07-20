@@ -442,7 +442,7 @@ table {
   border: 0;
   outline: 0;
   border-style: none;
-  text-align: center;
+  /* text-align: center; */
 }
 
 /* 조회 */
