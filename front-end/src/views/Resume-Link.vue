@@ -1,7 +1,7 @@
 <template>
 
     <br>[Resume-Link.vue]<br><br>
-    <div v-if="$store.state.user.isRegister" class="box">
+    <div v-if="isLogin && isRegister" class="box">
         <div>
             <label for="password_1" class="txt">암호설정 : </label>
             <input type="text" class="blk" ref="ref_pass1" v-model="password_1" />
@@ -46,6 +46,16 @@ export default {
             isTimerOn : false,
             redirectCounts : 5
         }
+    },
+    computed: {
+        isLogin() {
+            console.log("## ",this.$store.state.user.email);
+            return (typeof this.$store.state.user.email != "undefined" ? true : false);
+        },
+        isRegister() {
+            console.log("@@ ",this.$store.state.user.isRegister);
+            return this.$store.state.user.isRegister;
+        },
     },
     methods : {
         redirectToRoot(){
