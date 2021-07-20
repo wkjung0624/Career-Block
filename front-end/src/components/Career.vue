@@ -71,12 +71,13 @@
         <!-- !! 프리랜서 radio -->
         <div class="float2">
           <div class="box_line">
-            <p style="position: relative; bottom: 8px;">직급/직책</p>
+            <p style="position: relative; bottom: 8px; width: 240px;">직급/직책</p>
             <div>
               <select
                 name="position"
                 v-model="item.position"
-                class="none_border"
+                
+                style="position: relative; bottom: 50px; left: 80px; height: 30px;"
               >
                 <option value="0">주임/계장</option>
                 <option value="1">대리</option>
@@ -98,7 +99,7 @@
               <select
                 name="job_title"
                 v-model="item.job_title"
-                class="none_border"
+                 style="position: relative; bottom: 50px; left: 85px; height: 30px;"
               >
                 <option value="0">팀원</option>
                 <option value="1">팀장</option>
@@ -121,8 +122,9 @@
           <!-- 2-2 직무명 -->
 
           <div class="box_line">
-            <p style="position: relative; bottom: 8px;">직무</p>
-            <select name="duty" v-model="item.duty" class="none_border">
+            <p style="position: relative; bottom: 8px; width: 170px;">직무</p>
+            <select name="duty" style="width: 120px; height: 30px; position: relative; left: 45px; bottom: 48px; boder: 1px solid
+            " v-model="item.duty">
               <option value="0">경영/사무</option>
               <option value="1">마케팅/광고/홍보</option>
               <option value="2">IT/인터넷</option>
@@ -160,6 +162,7 @@
               v-model="item.job_description"
               cols="120"
               rows="4"
+              style="border: 1px solid gainsboro;"
               placeholder="담당하신 업무와 성과에 대해 간단명료하게 적어주세요."
             ></textarea>
           </div>
@@ -206,6 +209,7 @@
               <textarea
                 cols="120"
                 rows="4"
+                style="border: 1px solid gainsboro;"
                 v-model="career_description"
               ></textarea><br>
               <input type="checkbox" v-model="item.isDescription" />
