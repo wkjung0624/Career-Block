@@ -1,30 +1,30 @@
 <template>
 
     <br>[Resume-Link.vue]<br><br>
-    <div v-if="$store.state.user.isRegister">
+    <div v-if="$store.state.user.isRegister" class="box">
         <div>
-            <label for="password_1">문서암호 : </label>
-            <input type="text" ref="ref_pass1" v-model="password_1" />
+            <label for="password_1" class="txt">암호설정 : </label>
+            <input type="text" class="blk" ref="ref_pass1" v-model="password_1" />
         </div>
 
         <div>
-            <label for="password_2">암호확인 : </label>
-            <input type="text" ref="ref_pass2" v-model="password_2" />
+            <label for="password_2" class="txt">암호확인 : </label>
+            <input type="text" class="blk" ref="ref_pass2" v-model="password_2" />
         </div>
-
+<br>
         <div>
-            <label for="hrmanager">담당자 이메일 : </label>
-            <input type="text" v-model="email" />  @ 
-            <input type="text" v-model="domain" :readonly="!isTyped" />
-            <select v-model="domainLists" @change="setDomain()">
+            <label for="hrmanager" class="txt">담당자 이메일 : </label>
+            <input type="text" class="blk" v-model="email" />  @ 
+            <input type="text" class="blk" v-model="domain" :readonly="!isTyped" />
+            <select v-model="domainLists" class="blk" @change="setDomain()">
                 <option value=0>직접입력</option>
                 <option value=1>hanmail.net</option>
                 <option value=2>naver.com</option>
                 <option value=3>gmail.com</option>
             </select>
         </div>
-
-        <button @click="createResumeLink"> 링크를 생성합니다. </button>
+<br>
+        <button @click="createResumeLink" class="btn"> 링크 생성 </button>
     </div>
     <div style="background:RGB(200,200,200)" v-else @click="redirectToRoot">
         (여기 클릭시 이벤트발동)로그인 또는 추가 회원정보를 확인할 수 없습니다.<br>
@@ -110,6 +110,32 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
+@import url(//fonts.googleapis.com/earlyaccess/hanna.css);
+* {
+  box-sizing: border-box;
+  font-family: "Hanna", sans-serif;
+}
+
+.box {
+    background-color: aliceblue;
+    height: 650px;
+
+}
+
+.txt {
+    font-size: 30px;
+    
+}
+
+.blk {
+height: 25px;
+}
+
+.btn {
+    height: 40px;
+    width: 100px;
+    font-size: 15px;
+}
 </style>
