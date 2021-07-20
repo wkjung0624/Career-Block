@@ -33,7 +33,7 @@
   <br><br>
     회원가입이 안되있을경우 추가회원가입으로 유도하는 버튼 필요
   <br><br>
-    <a href="/registration">회원등록화면으로 이동</a>
+    <button @click="$store.commit('setPageIndex',4)">회원등록화면으로 이동 </button>
   <br><br>
     <button v-show="user.email" @click="kakaoLogout">카카오 로그아웃</button>
     <!-- </div> -->
@@ -83,7 +83,9 @@ export default {
       });
 
       //만약 계정정보가 등록안됐다면 Registration.vue로 이동
-      //window.location.href="/registration"
+      
+      // var res = SELECT IF(email = '`${this.$store.state.user}`', '1', '0') FROM USER_TB;
+      // res == 0, redirect Regist
     },
     getRegisterInfo(){
       console.log(this.$store.state.user);
@@ -118,7 +120,6 @@ export default {
   /* padding: 50px; */
   width: 100%;
   height: 500px;
-  background-color: aliceblue;
 }
 
 .box-container {
