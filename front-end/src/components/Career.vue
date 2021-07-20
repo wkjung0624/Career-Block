@@ -71,7 +71,7 @@
         <!-- !! 프리랜서 radio -->
         <div class="float2">
           <div class="box_line">
-            <p>직급/직책</p>
+            <p style="position: relative; bottom: 8px;">직급/직책</p>
             <div>
               <select
                 name="position"
@@ -121,7 +121,7 @@
           <!-- 2-2 직무명 -->
 
           <div class="box_line">
-            <p>직무</p>
+            <p style="position: relative; bottom: 8px;">직무</p>
             <select name="duty" v-model="item.duty" class="none_border">
               <option value="0">경영/사무</option>
               <option value="1">마케팅/광고/홍보</option>
@@ -143,7 +143,7 @@
           <!-- 2-3 연봉-->
 
           <div class="box_line" v-show="item.isIncome != true">
-            <p>연봉</p>
+            <p style="position: relative; bottom: 8px;">연봉</p>
             <input type="number" class="none_border" v-model="annual_Income" />
           </div>
         </div>
@@ -154,11 +154,11 @@
         <!-- 3줄 -->
         <!-- 3-1~5 담당업무 기술 -->
         <div class="float3">
-          <div class="box_line" v-show="item.isDuty != true">
+          <div class="box_line" style="width: 900px;" v-show="item.isDuty != true">
             <p style="text-align: left">담당업무</p>
             <textarea
               v-model="item.job_description"
-              cols="125"
+              cols="120"
               rows="4"
               placeholder="담당하신 업무와 성과에 대해 간단명료하게 적어주세요."
             ></textarea>
@@ -399,6 +399,7 @@ export default {
   padding-bottom: 75px;
   font: 15px "맑은 고딕", Malgun Godivic, "돋움", Dotum, sans-serif;
   border: 1px solid purple;
+  padding-left: 15px;
 }
 
 .rows {
