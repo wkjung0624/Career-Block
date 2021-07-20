@@ -86,7 +86,7 @@ export default {
 
     .base {
         width: 940px;
-        border: 1px solid red;
+        
         margin: auto;
         
     }
