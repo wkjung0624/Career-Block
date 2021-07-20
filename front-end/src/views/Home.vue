@@ -2,12 +2,15 @@
   <div class="container">
     <br /><br />
     [Home.vue]
-    <!-- <div style="font-size: 50pt; color: #867ae9">CareerBlock</div>
+    <div style="font-size: 50pt; color: #867ae9">CareerBlock</div>
     <br />
     <div>
       <span style="font-size: 15pt; color: navy">커리어블록</span>
-      에 오신것을 환영합니다.
-    </div> -->
+      에 오신것을 환영합니다.<br><br>
+
+      저희 서비스를 이용하기 위해 로그인을 해주세요.
+      <a href="/login">로그인하기</a>
+    </div>
     <!-- <br />
     <div>
       회원님의 <b>아이디</b>와 <b>비밀번호</b>를 입력하여 로그인해주세요
