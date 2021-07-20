@@ -2,7 +2,7 @@
   <div class="box-container">
     <br />
     <br />
-    <div style="font-size: 80px; color: white">CareerBlock</div>
+    <div style="font-size: 80px; color: white">Registration</div>
     <br />
     <br />
 
@@ -88,13 +88,10 @@ export default {
   font-family: "Hanna", sans-serif;
 }
 .box-container {
-  background: #867ae9;
   padding-bottom: 50px;
   position: relative;
-  height: 750px;
 }
 .container {
-  border: 1px solid #867ae9;
   background-color: aliceblue;
   padding: 20px;
   margin: auto;
@@ -110,7 +107,6 @@ export default {
 table,
 tr,
 td {
-  color: #867ae9;
   border-collapse: collapse;
   border: 0.1px solid gainsboro;
 }
@@ -118,6 +114,5 @@ td {
   width: 120px;
   height: 50px;
   border-color: gainsboro;
-  color: #867ae9;
 }
 </style>
