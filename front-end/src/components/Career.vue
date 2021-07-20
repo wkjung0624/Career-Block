@@ -1,11 +1,11 @@
 <template>
   <div class="base">
     <!-- 수정가능(로그인시)  -->
-    <div v-if="isEditable" id="delete_box">
-      <!-- 제목 -->
-      <div class="header">
+    <div class="header">
         <div>경력</div>
       </div>
+    <div v-if="isEditable" id="delete_box">
+      <!-- 제목 -->
       <div class="rows" v-bind:key="idx" v-for="(item, idx) in itemList">
         <!-- 1줄 -->
         <!-- 1-1 회사명 -->
@@ -465,12 +465,13 @@ export default {
 /* 삭제 */
 #delete_box {
   position: relative;
+  border: 1px solid gainsboro;
 }
 
 #delete_click {
   position: relative;
   left: 892px;
-  bottom: 14px;
+  bottom: 12px;
 }
 
 table {
