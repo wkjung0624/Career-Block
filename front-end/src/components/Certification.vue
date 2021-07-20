@@ -125,7 +125,7 @@ export default {
   width: 940px;
   /* padding: 0 0 20px 40px; */
   margin-bottom: 10px;
-  background-color: #fff;
+  background-color: red;
   box-sizing: border-box;
 
   margin: 0 auto;
