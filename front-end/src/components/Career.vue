@@ -11,12 +11,13 @@
         <!-- 1-1 회사명 -->
         <div class="float1">
           <div class="box_line">
-            <button @click="delItem(idx)" id="delete_click">X</button>
+            <button @click="delItem(idx)" class="dltbtn" id="delete_click">X</button>
             <input
               type="text"
               v-model="item.companyName"
               class="none_border"
               placeholder="회사명"
+              style="position: relative; bottom: 31px;"
             />
           </div>
 
@@ -28,6 +29,7 @@
               v-model="item.departmentName"
               class="none_border"
               placeholder="부서명"
+              style="position: relative; top: 4px;"
             />
           </div>
 
@@ -40,6 +42,7 @@
               pattern="[0-9]{4}.[0-9]{2}"
               class="none_border"
               placeholder="시작일"
+              style="position: relative; top: 4px;"
             />
           </div>
 
@@ -52,13 +55,14 @@
               pattern="[0-9]{4}.[0-9]{2}"
               class="none_border"
               placeholder="종료일"
+              style="position: relative; top: 4px;"
             />
           </div>
 
           <!-- 1-5 재직중(check 박스) -->
-          <div>
+          <div class="float3" style="position: relative; top: 15px; left: 5px;">
             <input type="checkbox" name="working" v-model="item.isWorking" />
-            <label for="working">재직중</label>
+            <label for="working" style="width: 50px; font-size: 15px;">재직중</label>
           </div>
         </div>
 
@@ -393,7 +397,8 @@ export default {
   text-align: left;
   margin: 0 auto;
   padding-bottom: 75px;
-  font: 12px "맑은 고딕", Malgun Godivic, "돋움", Dotum, sans-serif;
+  font: 15px "맑은 고딕", Malgun Godivic, "돋움", Dotum, sans-serif;
+  border: 1px solid purple;
 }
 
 .rows {
@@ -429,14 +434,7 @@ export default {
 }
 
 #delete_click {
-  position: absolute;
-  right: 30px;
-  /* position: absolute;
-  top: 0px;
-  right: 0px; */
-  position: relative;
-  left: 948px;
-  bottom: 10px;
+  position: relative; left: 895px; bottom: 14px;
 }
 
 table {
@@ -445,15 +443,18 @@ table {
 }
 
 .box_line {
-  border: 2px solid lightgray;
+  border: 1px solid red;
+  font-size: 15px;
   padding: 10px;
   background-color: white;
 }
 
 .none_border {
-  border: 0;
+  border: 1px solid blue;
+  font-size: 15px;
+  /* border: 0;
   outline: 0;
-  border-style: none;
+  border-style: none; */
   /* text-align: center; */
 }
 
@@ -512,4 +513,16 @@ table {
   color: #666;
   margin-left: 5px;
 }
+.dltbtn {
+  
+        width: 35px;
+        height: 35px;
+        background-color: RGB(187,187,187);
+        border: 0px;
+       
+        font-size: 25px;
+        color: white;
+       
+}
+
 </style>
