@@ -43,7 +43,7 @@
               v-model="item.startDate"
               pattern="[0-9]{4}.[0-9]{2}"
               class="none_border"
-              placeholder="시작일"
+              placeholder="입사년월"
               style="position: relative; top: 4px"
             />
           </div>
@@ -56,7 +56,7 @@
               v-model="item.endDate"
               pattern="[0-9]{4}.[0-9]{2}"
               class="none_border"
-              placeholder="종료일"
+              placeholder="퇴사년월"
               style="position: relative; top: 4px"
             />
           </div>
@@ -170,8 +170,14 @@
           <!-- 2-3 연봉-->
 
           <div class="box_line" v-show="item.isIncome != true">
-            <p style="position: relative; bottom: 8px">연봉</p>
-            <input type="number" class="none_border" v-model="annual_Income" />
+            <!--<p style="position: relative; bottom: 8px">연봉</p>-->
+            <input
+              type="text"
+              class="none_border"
+              v-model="annual_Income"
+              style="position: relative; top: 4px"
+              placeholder="연봉"
+            />
           </div>
         </div>
         <!-- f2 -->
@@ -191,7 +197,7 @@
               v-model="item.job_description"
               cols="110"
               rows="4"
-              style="border: 1px solid gainsboro; font-size: 15px"
+              style="border: 1px solid gainsboro; font-size: 15px; resize: none"
               placeholder="담당하신 업무와 성과에 대해 간단명료하게 적어주세요."
             ></textarea>
           </div>
@@ -225,7 +231,11 @@
         <!-- 6줄 -->
 
         <div class="float5">
-          <div class="box_line" v-show="item.isDescription != true">
+          <div
+            class="box_line"
+            v-show="item.isDescription != true"
+            style="width: 916px"
+          >
             <span style="margin-right: 20px"><strong>경력 기술서</strong></span>
             <span style="color: grey">자유롭게 경력을 작성할 수 있습니다.</span>
             <label for="" style="color: blue">작성하기</label>
