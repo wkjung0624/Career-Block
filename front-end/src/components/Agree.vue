@@ -33,7 +33,7 @@
   <div>
       <center>
             <a href="/"><button class="btn">취소</button></a> &nbsp;&nbsp;
-            <button class="btn" style="background:rgb(223, 165, 248);" @click="submitToParent">확인</button>
+            <button class="btn" style="background:rgb(223, 165, 248);"  @click="$store.commit('setPageIndex',5)">확인</button>
             </center>
         </div>
 
@@ -130,12 +130,6 @@ CareerBlock 내의 개별 서비스 이용, 이벤트 응모 및 경품 신청 �
       },
     },
   },
-
-   methods: {
-        submitToParent(){
-            this.$emit('send-message', 1);
-        }
-    }
 }
 </script>
 
@@ -151,8 +145,6 @@ CareerBlock 내의 개별 서비스 이용, 이벤트 응모 및 경품 신청 �
 .box-container {
      
       width: 600px;
-      height: 950px;
-      background: #867ae9;
       margin: auto;
     }
 
