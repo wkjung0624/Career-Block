@@ -217,7 +217,7 @@ export default {
   width: 940px;
   text-align: left;
   margin: 0 auto;
-  padding-bottom: 75px;
+  /* padding-bottom: 75px; */
   font: 15px "맑은 고딕", Malgun Godivic, "돋움", Dotum, sans-serif;
   border: none;
   
