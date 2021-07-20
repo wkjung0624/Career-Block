@@ -201,13 +201,13 @@
           </div>
           <!-- 경력기술서(hidden) -->
           <div>
-            <div class="box_line" v-show="item.isDescription == true">
+            <div class="box_line" style="width:900px;" v-show="item.isDescription == true">
               <p style="text-align: left">경력기술서</p>
               <textarea
-                cols="127"
+                cols="120"
                 rows="4"
                 v-model="career_description"
-              ></textarea>
+              ></textarea><br>
               <input type="checkbox" v-model="item.isDescription" />
               <label for="" style="color: blue">경력기술서 삭제</label>
             </div>
