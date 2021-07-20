@@ -130,6 +130,7 @@ export default {
   margin-bottom: 33px;
   width: 940px;
   margin: auto;
+  border: 1px solid red;
 }
 
 .container {

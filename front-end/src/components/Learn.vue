@@ -1,7 +1,6 @@
 <template>
-<div>
-   
-    <p style="text-align: left; font-size: 22px; padding-left: 282px;">교육</p>
+<div class="base">
+   <p style="text-align: left; font-size: 22px;">교육</p>
 <div class="box-container" v-for="item in itemList" v-if="isEditable">
         <table>
             <tr style="height:80px;">
@@ -83,6 +82,13 @@ export default {
     .box-container {
     width: 940px;
     margin: auto;
+    }
+
+    .base {
+        width: 940px;
+        border: 1px solid red;
+        margin: auto;
+        
     }
 
     table,

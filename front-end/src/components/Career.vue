@@ -183,13 +183,13 @@
         <div class="float3">
           <div
             class="box_line"
-            style="width: 900px"
+            style="width: 940px"
             v-show="item.isDuty != true"
           >
             <p style="text-align: left">담당업무</p>
             <textarea
               v-model="item.job_description"
-              cols="120"
+              cols="110"
               rows="4"
               style="border: 1px solid gainsboro; font-size: 15px;"
               placeholder="담당하신 업무와 성과에 대해 간단명료하게 적어주세요."
@@ -431,7 +431,7 @@ export default {
   margin: 0 auto;
   padding-bottom: 75px;
   font: 15px "맑은 고딕", Malgun Godivic, "돋움", Dotum, sans-serif;
-  border: none;
+  border: 1px solid red;
   
 }
 
@@ -516,6 +516,8 @@ table {
   margin-bottom: 13px;
   font-size: 22px;
   color: #000;
+  padding-top: 20px;
+  padding-bottom: 10px;
 }
 
 /* 각 항목별 기본틀(box)(예시: 학력, 경력, 교육 등의 틀을 담는 box) */
