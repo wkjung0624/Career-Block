@@ -11,15 +11,33 @@
         <div class="d1">
           <div class="d2">
             <br />
-            <input type="text" style="width: 450px;" v-model="item.CerName" class="tbox" placeholder="자격증 명" />
+            <input
+              type="text"
+              style="width: 450px"
+              v-model="item.CerName"
+              class="tbox"
+              placeholder="자격증 명"
+            />
           </div>
           <div class="d2">
             <br />
-            <input type="text" style="width: 250px;" v-model="item.CerIns" class="tbox" placeholder="발행처"/>
+            <input
+              type="text"
+              style="width: 250px"
+              v-model="item.CerIns"
+              class="tbox"
+              placeholder="발행처"
+            />
           </div>
           <div class="d2">
             <br />
-            <input type="text" style="width: 150px;" v-model="item.CerDate" class="tbox" placeholder="취득년월" />
+            <input
+              type="text"
+              style="width: 150px"
+              v-model="item.CerDate"
+              class="tbox"
+              placeholder="취득년월"
+            />
           </div>
 
           <!-- 열삭제 -->
@@ -145,7 +163,8 @@ export default {
   display: inline-block;
   height: 70px;
   padding-left: 5px;
-  position: relative; bottom: 15px;
+  position: relative;
+  bottom: 15px;
   font-size: 15px;
   /* padding-left: 10px; */
 
@@ -177,11 +196,9 @@ export default {
   float: left;
 }
 .tbox {
-  
   height: 50px;
   border: 1px solid gainsboro;
   padding-left: 10px;
-
 }
 .btn {
   position: absolute;
