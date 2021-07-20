@@ -1,15 +1,15 @@
 <template>
   <div class="base">
+    <div class="header">
+        <div>프로젝트 경력</div>
+      </div>
     <!-- 수정가능(로그인시)  -->
     <div v-if="isEditable" id="delete_box">
       <!-- 제목 -->
-      <div class="header">
-        <div>프로젝트 경력</div>
-      </div>
       <div class="rows" v-bind:key="idx" v-for="(item, idx) in itemList">
         <!-- 1줄 -->
         <!-- 1-1 프로젝트명 -->
-        <div class="float1">
+        <div class="float1" style="width: 940px;">
           <div class="box_line">
             <button @click="delItem(idx)" class="dltbtn" id="delete_click">
               X
@@ -17,18 +17,17 @@
             <input
               type="text"
               v-model="item.projectName"
-              class="none_border"
               id="projectName"
               placeholder="프로젝트명"
-              style="position: relative; bottom: 31px"
+             
             />
           </div>
         </div>
 
         <!-- 2줄 -->
-        <div class="float2">
+        <div class="float2" style="width:940px;">
           <!-- 2-1 고객사 -->
-          <div class="box_line">
+          <div class="box_line" style="width:235px;">
             <input
               type="text"
               v-model="item.customer"
@@ -39,7 +38,7 @@
           </div>
 
           <!-- 2-2 역할 -->
-          <div class="box_line">
+          <div class="box_line" style="width:235px;">
             <input
               type="text"
               v-model="item.part"
@@ -50,7 +49,7 @@
           </div>
 
           <!-- 2-3 시작일 -->
-          <div class="box_line">
+          <div class="box_line" style="width:235px;">
             <input
               type="tel"
               v-model="item.startDate"
@@ -62,7 +61,7 @@
           </div>
 
           <!-- 2-4 종료일 -->
-          <div class="box_line" v-show="item.isWorking != true">
+          <div class="box_line" v-show="item.isWorking != true" style="width:235px;">
             <input
               type="tel"
               v-model="item.endDate"
@@ -80,15 +79,15 @@
         <div class="float3">
           <div
             class="box_line"
-            style="width: 900px"
+            style="width: 940px"
             v-show="item.isDuty != true"
           >
-            <p style="text-align: left">수행내역</p>
+            <p style="text-align: left;">수행내역</p>
             <textarea
               v-model="item.job_description"
-              cols="120"
+              cols="110"
               rows="4"
-              style="border: 1px solid gainsboro; resize: none;"
+              style="border: 1px solid gainsboro; resize: none; font-size: 15px;"
               placeholder="담당하신 업무와 성과에 대해 간단명료하게 적어주세요."
             ></textarea>
           </div>
@@ -100,15 +99,15 @@
         <div class="box_line">
           <button
             style="
-              width: 920px;
-              height: 50px;
+              width: 919px;
+              height: 40px;
               background-color: white;
-              font-size: 17px;
-              font-weight: 600;
+              font-size: 15px;
+              border: none;
             "
             @click="addItem"
-            class="none_border"
-            id="btn2"
+            
+            
           >
             프로젝트 경력 추가
           </button>
@@ -120,7 +119,7 @@
 
     <!-- 조회 -->
 
-    <div id="delete_box" class="resume">
+    <div v-else id="delete_box" class="resume">
       <!-- 제목 -->
       <div class="header">프로젝트 경력</div>
       <!-- <div colspan="5" style="font-size: 25px; text-align: left">■ 경력</div> -->
@@ -225,7 +224,7 @@ export default {
 }
 
 .rows {
-  margin-bottom: 70px;
+  margin-bottom: 0px;
 }
 
 /* float 설정 */
@@ -254,12 +253,14 @@ export default {
 /* 삭제 */
 #delete_box {
   position: relative;
+  width: 940px;
+  
 }
 
 #delete_click {
   position: relative;
-  left: 895px;
-  bottom: 14px;
+  left: 894px;
+  bottom: 12px;
 }
 
 .box_line {
@@ -272,6 +273,8 @@ export default {
 .none_border {
   border: none;
   font-size: 15px;
+  
+  height: 30px;
   /* border: 0;
   outline: 0;
   border-style: none; */
@@ -280,7 +283,11 @@ export default {
 
 /* 프로젝트 */
 #projectName {
-  width: 895px;
+  width: 880px;
+  height: 30px;
+  position: relative; bottom: 40px;
+  font-size: 15px;
+  border: none;
 }
 
 /* 조회 */
@@ -298,6 +305,8 @@ export default {
   margin-bottom: 13px;
   font-size: 22px;
   color: #000;
+  padding-top: 20px;
+  padding-bottom: 5px;
 }
 
 /* 각 항목별 기본틀(box)(예시: 학력, 경력, 교육 등의 틀을 담는 box) */
@@ -353,4 +362,5 @@ export default {
   width: 940px;
   height: 60px;
 }
+
 </style>
