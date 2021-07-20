@@ -85,7 +85,7 @@ export default {
 .container {
   /* padding: 50px; */
   margin: auto;
-  width: 1200px;
+  width: 1500px;
   height: 2000px;
   background-color: aliceblue;
 }

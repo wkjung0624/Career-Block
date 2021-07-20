@@ -65,7 +65,7 @@ export default {
 <style>
 .box {
   margin: auto;
-  width: 1200px;
+  width: 1500px;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

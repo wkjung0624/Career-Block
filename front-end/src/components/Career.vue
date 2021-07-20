@@ -420,6 +420,7 @@ export default {
 .float5,
 .float6 {
   display: flex;
+  font: 12px "맑은 고딕", Malgun Gothic, "돋움", Dotum, sans-serif;
 }
 
 /* 삭제 */
@@ -430,6 +431,12 @@ export default {
 #delete_click {
   position: absolute;
   right: 30px;
+  /* position: absolute;
+  top: 0px;
+  right: 0px; */
+  position: relative;
+  left: 948px;
+  bottom: 10px;
 }
 
 table {

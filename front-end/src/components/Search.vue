@@ -62,7 +62,7 @@ export default {
 }
 .d1 {
   /* padding: 10px; */
-  font-size: 15pt;
+  font-size: 20pt;
   margin: auto;
   /* display: inline; */
   /* float: left; */
@@ -71,14 +71,15 @@ export default {
 
 .tbox {
   width: 400px;
-  height: 50px;
+  height: 40px;
 }
 .btn {
   width: 50px;
-  height: 30px;
+  height: 40px;
   border-color: gainsboro;
   color: #867ae9;
   margin: 3px;
+  position: relative; bottom: 6px;
 }
 .btn2 {
   width: 100px;
