@@ -415,6 +415,7 @@ export default {
   margin: 0 auto;
   padding-bottom: 75px;
   font: 12px "맑은 고딕", Malgun Gothic, "돋움", Dotum, sans-serif;
+  
 }
 
 #delete_box {
@@ -422,14 +423,16 @@ export default {
 }
 
 #delete_click {
-  position: absolute;
+  /* position: absolute;
   top: 0px;
-  right: 0px;
+  right: 0px; */
+  position: relative; left: 948px; bottom: 10px;
 }
 
 table {
   padding: 20px;
   background-color: lightgrey;
+  
 }
 
 .box_line {
