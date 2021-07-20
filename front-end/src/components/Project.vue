@@ -33,7 +33,7 @@
               v-model="item.customer"
               class="none_border"
               placeholder="고객사"
-              style="position: relative; top: 4px"
+              style="position: relative; bottom: 1p"
             />
           </div>
 
@@ -44,7 +44,7 @@
               v-model="item.part"
               class="none_border"
               placeholder="역할"
-              style="position: relative; top: 4px"
+              style="position: relative; bottom: 1px"
             />
           </div>
 
@@ -56,7 +56,7 @@
               pattern="[0-9]{4}.[0-9]{2}"
               class="none_border"
               placeholder="시작일"
-              style="position: relative; top: 4px"
+              style="position: relative; bottom: 1p"
             />
           </div>
 
@@ -68,7 +68,7 @@
               pattern="[0-9]{4}.[0-9]{2}"
               class="none_border"
               placeholder="종료일"
-              style="position: relative; top: 4px"
+              style="position: relative; bottom: 1p"
             />
           </div>
         </div>
@@ -285,7 +285,7 @@ export default {
 #projectName {
   width: 880px;
   height: 30px;
-  position: relative; bottom: 40px;
+  position: relative; bottom: 35px;
   font-size: 15px;
   border: none;
 }
@@ -363,4 +363,7 @@ export default {
   height: 60px;
 }
 
+.txt {
+  position: relative; bottom: 10px;
+}
 </style>
