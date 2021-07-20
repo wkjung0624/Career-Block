@@ -521,7 +521,7 @@ table {
   font-size: 22px;
   color: #000;
   padding-top: 20px;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
 }
 
 /* 각 항목별 기본틀(box)(예시: 학력, 경력, 교육 등의 틀을 담는 box) */
