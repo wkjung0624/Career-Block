@@ -235,12 +235,12 @@
           <div>
             <div
               class="box_line"
-              style="width: 900px"
+              style="width: 916px"
               v-show="item.isDescription == true"
             >
               <p style="text-align: left">경력기술서</p>
               <textarea
-                cols="120"
+                cols="122"
                 rows="4"
                 style="border: 1px solid gainsboro"
                 v-model="career_description"
@@ -251,8 +251,9 @@
             </div>
           </div>
         </div>
-        
+         
         <!-- f5 -->
+        
       </div>
       <!-- rows -->
 
@@ -426,6 +427,7 @@ export default {
 </script>
 <style scoped>
 /* 수정가능(로그인) */
+
 .base {
   width: 940px;
   text-align: left;
@@ -437,7 +439,7 @@ export default {
 }
 
 .rows {
-  margin-bottom: 70px;
+  margin-bottom: 0px;
 }
 
 /* float 설정 */
