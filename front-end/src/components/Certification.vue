@@ -11,7 +11,7 @@
         <div class="d1">
           <div class="d2">
             <br />
-            <input type="text" style="width: 400px;" v-model="item.CerName" class="tbox" placeholder="자격증 명" />
+            <input type="text" style="width: 450px;" v-model="item.CerName" class="tbox" placeholder="자격증 명" />
           </div>
           <div class="d2">
             <br />
@@ -180,6 +180,7 @@ export default {
   
   height: 50px;
   border: 1px solid gainsboro;
+  padding-left: 10px;
 
 }
 .btn {
