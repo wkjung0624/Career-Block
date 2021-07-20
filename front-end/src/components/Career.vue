@@ -262,7 +262,7 @@
 
     <!-- 조회 -->
 
-    <div id="delete_box" class="resume">
+    <div v-else id="delete_box" class="resume">
       <!-- 제목 -->
       <div class="header">경력</div>
       <!-- <th colspan="5" style="font-size: 25px; text-align: left">■ 경력</th> -->
