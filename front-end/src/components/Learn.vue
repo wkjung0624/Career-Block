@@ -1,6 +1,6 @@
 <template>
 <div class="base">
-   <p style="text-align: left; font-size: 22px;">교육</p>
+   <p style="text-align: left; font-size: 22px; position: relative; bottom: 2px;">교육</p>
 <div class="box-container" v-for="item in itemList" v-if="isEditable">
         <table>
             <tr style="height:80px;">
