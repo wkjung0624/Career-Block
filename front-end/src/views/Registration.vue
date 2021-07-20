@@ -1,13 +1,15 @@
 <template>
 
   <button @click="createAccount">test</button>
-
+  <div v-if="!isLogin">
+      <Login />
+  </div>
   <div class="container">
     <br /><br />
 
     <div style="font-size: 50pt; color: #867ae9">CareerBlock</div>
     <br /><br />
-
+    
     <div v-if="true" style="font-size: 15pt">
       <Agree @send-message="sendMessage" v-if="checkSteps() == 0" />
       <Personal @send-message="sendMessage" v-if="checkSteps() == 1" />
@@ -22,8 +24,8 @@
         </div>
 
         <br /><br />
-
-        <a href="/">이용하러가기</a>
+        이제 나를 표현하러 가볼까요?<br>
+        <a href="/myresume">이용하러가기</a>
       </div>
     </div>
     <div v-else style="font-size: 15pt">먼저 로그인 해주세요.</div>
