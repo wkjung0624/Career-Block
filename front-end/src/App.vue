@@ -3,34 +3,34 @@
       <!-- Navigation-->
       <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
           <div class="container px-4 px-lg-5">
-              <a class="navbar-brand fs-2" href="#page-top">Career Block</a>
+              <a class="navbar-brand fs-2" href="#page-top" @click="changePage(0)">Career Block</a>
               <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
               <div class="collapse navbar-collapse" id="navbarResponsive">
                   <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                      <li class="nav-item"><a class="nav-link fs-5" href="#about">About</a></li>
-                      <li class="nav-item"><a class="nav-link fs-5" href="#services">Services</a></li>
-                      <li class="nav-item"><a class="nav-link fs-5" href="#myresume">Resume</a></li>
-                      <li class="nav-item"><a class="nav-link fs-5" href="#resumelink">Links</a></li>
+                      <li class="nav-item"><a class="nav-link fs-5" href="#about" @click="changePage(0)">About</a></li>
+                      <li class="nav-item"><a class="nav-link fs-5" href="#services" @click="changePage(0)">Services</a></li>
+                      <li class="nav-item"><a class="nav-link fs-5" href="#myresume" @click="changePage(1)">Resume</a></li>
+                      <li class="nav-item"><a class="nav-link fs-5" href="#resumelink" @click="changePage(2)">Links</a></li>
                       <li class="nav-item">
                         <div class="input-group input-group-sm">
-                          <input type="text" class="form-control" aria-label="Search Resume with Keys" placeholder="Search Resume with Keys" aria-describedby="inputGroup-sizing-sm">
+                          <input type="text" class="form-control" v-model="searchQuery" aria-label="Search Resume with Keys" placeholder="Search Resume with Keys" aria-describedby="inputGroup-sizing-sm" @keydown.enter="searchResume()">
                           <span class="input-group-text" id="inputGroup-sizing-sm">
-                            <img src="./assets/img/search_black_24dp.svg" style="height:20px" onclick="alert('sda')">
+                            <img src="./assets/img/search_black_24dp.svg" style="height:20px" @click="searchResume()">
                           </span>
                         </div>
                       </li>
                       <li class="nav-item">
                         <div class="btn-group" role="group" aria-label="Basic example">
-                            <a class="btn btn-success btn-xm" href="/">Sign in</a>
-                            <a class="btn btn-light btn-xm" href="/">Sign up</a>
+                            <a class="btn btn-success btn-xm" @click="changePage(3)">Sign in</a>
+                            <a class="btn btn-light btn-xm" @click="changePage(3)">Sign up</a>
                       </div>
                       </li>
                   </ul>
               </div>
           </div>
       </nav>
-
-      <div v-show="pageIndex==0">
+      
+      <div v-if="pageIndex==0">
       <!-- Masthead-->
       <header class="masthead">
           <div class="container px-4 px-lg-5 h-100">
@@ -224,40 +224,70 @@
       </footer>
       </div>
 
-      <div v-show="pageIndex==1">
-        <Login ref="child_login" v-show="false"/>
-      </div>
+      <header class="masthead bg-attach" v-else>
+        <MyResume v-if="pageIndex==1"/>
+        <!-- 이력서 링크 생성 pageIndex==2 -->
+        <Login ref="child_login" v-if="pageIndex==3"/>
+        <Agree v-if="pageIndex==4"/>
+        <Personal v-if="pageIndex==5"/>
+      </header>
+
   </body>
 
-<div class="box">
-
-    <div>
-      테스트 버튼 : 
-      <button @click="logbtn(true)">로그인</button>
-      <button @click="logbtn(false)">로그오프</button>
-      <button @click="regsw(true)">추가정보 O</button>
-      <button @click="regsw(false)">추가정보 X</button>
+  <div v-show="false">
+    개발자 버튼 : 
+    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+      <div class="btn-group-sm me-2" role="group" aria-label="First group">
+        <button type="button" class="btn btn-success" @click="logbtn(true)">로그인</button>
+        <button type="button" class="btn btn-success-outline border-success" @click="logbtn(false)">로그오프</button>
+      </div>
+      <div class="btn-group-sm me-2" role="group" aria-label="Second group">
+        <button type="button" class="btn btn-primary" @click="regsw(true)">추가정보 O</button>
+        <button type="button" class="btn btn-primary-outline border-primary" @click="regsw(false)">추가정보 X</button>
+      </div> 
     </div>
-</div>
+  </div>
 </template>
 
 <script>
 
+
+import Agree from "@/components/Agree.vue";
 import Login from "@/components/Login.vue";
+import Personal from "@/components/Personal.vue";
+import Profile from "@/components/Profile.vue";
+import Search from "@/components/Search.vue";
+
+
+import Registration from "@/views/Registration.vue";
+import ResumeLink from "@/views/Resume-Link.vue";
+import MyResume from "@/views/MyResume.vue"
 
 export default {
   components: {
-    Login
+    Agree, Login, Personal, Profile, Search,
+    Registration, ResumeLink, MyResume
   },
   data(){
     return{
-      logComponent : '',
-      pageIndex : 0,
+      load_components : [],
+      searchQuery : "",
     }
   },
   
   mounted(){
-    this.logComponent = this.$refs.child_login;
+    this.load_components.push(this.$refs.child_login);
+    //this.load_components.push(this.$refs.child_login);
+    
+  },
+  computed:{
+    user(){
+        return this.$store.state.user;
+    },
+    pageIndex(){
+      console.log(this.$store.state.currentPage);
+      return this.$store.state.currentPage;
+    }
   },
   methods:{
       regsw(param) {
@@ -270,18 +300,16 @@ export default {
         console.log(this.$store.state.user);
       },
       logbtn(param){  
-        param ? this.logComponent.kakaoLogin() :
-                this.logComponent.kakaoLogout();
+        param ? this.load_components[0].kakaoLogin() :
+                this.load_components[0].kakaoLogout();
       },
-      search(){
-        
+      searchResume(){
+        alert(this.searchQuery);
+      },
+      changePage(newPage){
+        this.$store.commit("setPageIndex", newPage);
       }
   },
-  computed:{
-        user(){
-            return this.$store.state.user;
-        },
-    },
 }
 </script>
 
@@ -7803,6 +7831,10 @@ textarea.form-control-lg {
   background-color: transparent !important;
 }
 
+.bg-attach{
+  background-attachment: fixed;
+}
+
 .bg-gradient {
   background-image: var(--bs-gradient) !important;
 }
@@ -11311,7 +11343,7 @@ header.masthead {
   background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("./assets/img/bg-masthead.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: scroll;
+  background-attachment: fixed;
   background-size: cover;
 }
 header.masthead h1, header.masthead .h1 {
