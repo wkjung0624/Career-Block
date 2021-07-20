@@ -77,13 +77,7 @@ export default {
   components: {},
   data() {
     return {
-      CerList: [
-        {
-          CerName: "",
-          CerIns: "",
-          CerDate: "",
-        },
-      ],
+      CerList: [],
       isEditable: true,
     };
   },
