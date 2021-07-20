@@ -398,7 +398,7 @@ export default {
   margin: 0 auto;
   padding-bottom: 75px;
   font: 15px "맑은 고딕", Malgun Godivic, "돋움", Dotum, sans-serif;
-  border: 1px solid purple;
+  border: none;
   padding-left: 15px;
 }
 
@@ -444,14 +444,14 @@ table {
 }
 
 .box_line {
-  border: 1px solid red;
+  border: 1px solid gainsboro;
   font-size: 15px;
   padding: 10px;
   background-color: white;
 }
 
 .none_border {
-  border: 1px solid blue;
+  border: none;
   font-size: 15px;
   /* border: 0;
   outline: 0;
