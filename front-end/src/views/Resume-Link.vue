@@ -125,7 +125,7 @@ export default {
 }
 
 .txt {
-    font-size: 30px;
+    font-size: 25px;
     
 }
 
