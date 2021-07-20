@@ -2,8 +2,8 @@
   <div class="base">
     <!-- 수정가능(로그인시)  -->
     <div class="header">
-        <div>경력</div>
-      </div>
+      <div>경력</div>
+    </div>
     <div v-if="isEditable" id="delete_box">
       <!-- 제목 -->
       <div class="rows" v-bind:key="idx" v-for="(item, idx) in itemList">
@@ -191,7 +191,7 @@
               v-model="item.job_description"
               cols="110"
               rows="4"
-              style="border: 1px solid gainsboro; font-size: 15px;"
+              style="border: 1px solid gainsboro; font-size: 15px"
               placeholder="담당하신 업무와 성과에 대해 간단명료하게 적어주세요."
             ></textarea>
           </div>
@@ -251,23 +251,13 @@
             </div>
           </div>
         </div>
-         
+
         <!-- f5 -->
-        
       </div>
       <!-- rows -->
 
       <div class="float6">
-       
-          <button
-           
-            @click="addItem"
-            class="btn2"
-            
-          >
-            경력 추가
-          </button>
-        
+        <button @click="addItem" class="btn2">경력 추가</button>
       </div>
       <!-- f6 -->
     </div>
@@ -434,8 +424,6 @@ export default {
   margin: 0 auto;
   /* padding-bottom: 75px; */
   font: 15px "맑은 고딕", Malgun Godivic, "돋움", Dotum, sans-serif;
- 
-  
 }
 
 .rows {
@@ -578,6 +566,6 @@ table {
   height: 60px;
   border: 1px solid gainsboro;
   background-color: white;
-              font-size: 15px;
+  font-size: 15px;
 }
 </style>
