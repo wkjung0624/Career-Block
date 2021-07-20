@@ -78,7 +78,8 @@ export default {
         },
       });
 
-      
+      //만약 계정정보가 등록안됐다면 Registration.vue로 이동
+      window.location.href="/registration"
     },
     getRegisterInfo(){
       console.log(this.$store.state.user);
