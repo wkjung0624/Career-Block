@@ -1,7 +1,7 @@
 <template>
 <div>
 <div class="box-container" v-for="item in itemList" v-if="isEditable">
- <p style="text-align:left; font-size: 22px; padding-left: 5px;">교육</p>
+ <p style="text-align:left; font-size: 22px; padding-left: 6px;">교육</p>
         <table>
             <tr style="height:80px;">
                 <td style="width:34%;"><input type="text" class="txt" style="width:280px;" v-model="item.title" placeholder="교육명"></td>
