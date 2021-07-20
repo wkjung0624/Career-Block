@@ -6,12 +6,7 @@
       <Login />
   </div>
 
-  <div class="container">
-    <br /><br />
-
-    <div style="font-size: 50pt; color: #867ae9">CareerBlock</div>
-    <br /><br />
-    
+  <div>
     <div v-if="true" style="font-size: 15pt">
       <Agree @send-message="sendMessage" v-if="checkSteps() == 0" />
       <Personal @send-message="sendMessage" v-if="checkSteps() == 1" />
@@ -37,10 +32,12 @@
 <script>
 import Personal from "@/components/Personal.vue";
 import Agree from "@/components/Agree.vue";
+import Login from "@/components/Agree.vue";
 
 export default {
   components: {
     Agree,
+    Login,
     Personal,
   },
   computed: {
@@ -101,8 +98,6 @@ export default {
 }
 .container {
   /* padding: 50px; */
-  width: 1500px;
-  height: 2000px;
-  background-color: aliceblue;
+  
 }
 </style>
