@@ -1,7 +1,7 @@
 <template>
   <div class="base">
     <br />
-    <div style="font-size: 22px; text-align: left">자격증</div>
+    <div style="font-size: 22px; text-align: left; padding-left: 5px;">자격증</div>
     <br /><br />
     <button @click="changeEditable()" class="d3">수정가능상태 변경</button>
     <button @click="showDataInfo()" class="d3">입력값 콘솔 출력</button>
