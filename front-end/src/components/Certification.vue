@@ -10,16 +10,16 @@
       <div v-if="isEditable">
         <div class="d1">
           <div class="d2">
-            취득년월<br />
-            <input type="text" v-model="item.CerDate" class="tbox" />
+            <br />
+            <input type="text" style="width: 450px;" v-model="item.CerName" class="tbox" placeholder="자격증 명" />
           </div>
           <div class="d2">
-            자격증명<br />
-            <input type="text" v-model="item.CerName" class="tbox" />
+            <br />
+            <input type="text" style="width: 250px;" v-model="item.CerIns" class="tbox" placeholder="발행처"/>
           </div>
           <div class="d2">
-            발급기관<br />
-            <input type="text" v-model="item.CerIns" class="tbox" />
+            <br />
+            <input type="text" style="width: 150px;" v-model="item.CerDate" class="tbox" placeholder="취득년월" />
           </div>
 
           <!-- 열삭제 -->
@@ -103,7 +103,7 @@ export default {
 * {
   box-sizing: border-box;
   /* font-family: "Hanna", sans-serif; */
-  font: 12px "맑은 고딕", Malgun Gothic, "돋움", Dotum, sans-serif;
+  font: 15px "맑은 고딕", Malgun Gothic, "돋움", Dotum, sans-serif;
 }
 
 .base {
@@ -144,7 +144,8 @@ export default {
   margin: auto;
   display: inline-block;
   height: 70px;
-  border: 1px solid gainsboro;
+  padding-left: 5px;
+  position: relative; bottom: 15px;
   font-size: 15px;
   /* padding-left: 10px; */
 
@@ -176,8 +177,11 @@ export default {
   float: left;
 }
 .tbox {
-  width: 140px;
-  height: 46px;
+  
+  height: 50px;
+  border: 1px solid gainsboro;
+  padding-left: 10px;
+
 }
 .btn {
   position: absolute;
