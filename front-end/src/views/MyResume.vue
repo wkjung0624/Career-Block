@@ -2,17 +2,18 @@
     <div>
         banner : Hello
     </div>
-    <div v-show="isLogin">
+    <div v-if="!isLogin">
         저희 서비스를 이용하기 위해 로그인을 해주세요.
         <a href="/login">로그인하기</a>
     </div>
-    <div v-show="isRegister">
+    <div v-else-if="!isRegister">
         저희 서비스를 이용하기 위해 회원가입을 해주세요.
         <a href="/registration">회원가입하기</a>
     </div>
     
     <!-- <div v-if="isLogin && isRegister"> -->
-    <div v-if="true">
+    <button @click="showstat">test</button>
+    <div v-if="isLogin && isRegister">
         <Profile />
         <Education />
         <Career />
@@ -42,19 +43,22 @@ export default {
         Project
     },
     computed: {
-        user(){
-            console.log(this.$store.state.user);
-            return this.$store.state.user;
-        },
         isLogin() {
-            console.log("## ",this.$store.state.email);
-            return this.$store.state.user.email;
+            console.log("## ",this.$store.state.user.email);
+            return (typeof this.$store.state.user.email != "undefined" ? true : false);
         },
         isRegister() {
-            console.log("@@ ",this.$store.state.isRegister);
+            console.log("@@ ",this.$store.state.user.isRegister);
             return this.$store.state.user.isRegister;
         },
     },
+    methods:{
+        showstat(){
+            console.log("!!! ",this.$store.state.user);
+            console.log("!!! ",this.$store.state.user.email);
+            console.log("!!! ",this.$store.state.user.isRegister);
+        }
+    }
 }
 </script>
 
