@@ -215,5 +215,7 @@ export default {
 .btn2 {
   width: 940px;
   height: 60px;
+  background-color: white;
+  border: 1px solid gainsboro;
 }
 </style>

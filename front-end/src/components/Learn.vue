@@ -31,9 +31,9 @@
             </tr>
         </table>
     </div>
-    <button style="width: 940px; height:60px; font-size: 15px;" @click="addItem">교육 추가</button>
+    <button class="addb" @click="addItem">교육 추가</button>
     <br>
-    <button style="width: 940px; height:60px; top:5px; font-size: 15px;" @click="changeEditable()">조회/수정</button>
+    <button class="editb" @click="changeEditable()">조회/수정</button>
     </div>
 </template>
 
@@ -102,6 +102,7 @@ table {
     width:20px;
     height: 20px;
     position: relative; top:3px;
+    
 }
 
 .add {
@@ -112,6 +113,21 @@ table {
     font-size: 20px;
 }
 
+.addb {
+    width: 940px; 
+    height:60px; font-size: 15px; 
+    background-color: white;
+    border: 1px solid gainsboro;
+}
+
+.editb {
+width: 940px; 
+height:60px; 
+top:5px; 
+font-size: 15px;
+ background-color: white;
+ border: 1px solid gainsboro;
+}
     .btn-delete {
         position: absolute;
         right: 0px;

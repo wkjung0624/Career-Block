@@ -60,7 +60,7 @@
             </div>
         </div>
         
-        <button style="width: 940px; height:60px;" @click="addItem">학력 추가</button>
+        <button class="addb" @click="addItem">학력 추가</button>
     </div>
 
 </template>
@@ -261,6 +261,13 @@ height: 46px;
 border: 1px solid gainsboro; 
 font-size: 15px;
 padding-left: 10px;
+}
+
+.addb {
+    width: 940px; 
+    height:60px;
+    background-color: white;
+    border: 1px solid gainsboro;
 }
 
 </style>
