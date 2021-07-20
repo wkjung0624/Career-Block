@@ -32,7 +32,7 @@
           </div>
   <div>
       <center>
-            <button class="btn">취소</button>&nbsp;&nbsp;
+            <a href="/"><button class="btn">취소</button></a> &nbsp;&nbsp;
             <button class="btn" style="background:rgb(223, 165, 248);" @click="submitToParent">확인</button>
             </center>
         </div>
