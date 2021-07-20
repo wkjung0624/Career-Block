@@ -1,23 +1,23 @@
 <template>
 <div class="base">
-   <p style="text-align: left; font-size: 22px; position: relative; bottom: 2px;">교육</p>
-<div class="box-container" v-for="item in itemList" v-if="isEditable">
-        <table>
-            <tr style="height:80px;">
-                <td style="width:34%;"><input type="text" class="txt" style="width:280px;" v-model="item.title" placeholder="교육명"></td>
-                <td style="width:34%;"><input type="text" class="txt" style="width:280px;" v-model="item.host" placeholder="교육기관"></td>
-                <td style="width:13.5%;"><input type="text" class="txt" style="width:94px;" v-model="item.start" placeholder="시작년월"></td>
-                <td style="width:13.5%;"><input type="text" class="txt" style="width:94px;" v-model="item.end" placeholder="종료년월"></td>  
-                <td style="width:5%;"><button class="btn-delete" @click="delItem(index)">X</button></td>
-            </tr>
-            <tr>
-                <td colspan="5"><textarea name="" id="" class="txta" v-model="item.message" placeholder="이수하신 교육 과정에 대해 적어주세요."></textarea></td>
-            </tr>
-        </table>
-</div>
+    <p style="text-align: left; font-size: 22px; position: relative; bottom: 2px;">교육</p>
+    
+    <div class="box-container" v-for="item in itemList" v-if="isEditable">
+            <table>
+                <tr style="height:80px;">
+                    <td style="width:34%;"><input type="text" class="txt" style="width:280px;" v-model="item.title" placeholder="교육명"></td>
+                    <td style="width:34%;"><input type="text" class="txt" style="width:280px;" v-model="item.host" placeholder="교육기관"></td>
+                    <td style="width:13.5%;"><input type="text" class="txt" style="width:94px;" v-model="item.start" placeholder="시작년월"></td>
+                    <td style="width:13.5%;"><input type="text" class="txt" style="width:94px;" v-model="item.end" placeholder="종료년월"></td>  
+                    <td style="width:5%;"><button class="btn-delete" @click="delItem(index)">X</button></td>
+                </tr>
+                <tr>
+                    <td colspan="5"><textarea name="" id="" class="txta" v-model="item.message" placeholder="이수하신 교육 과정에 대해 적어주세요."></textarea></td>
+                </tr>
+            </table>
+    </div>
 
     <div class="box-container" v-for="item in itemList" v-else>
-        <p style="text-align:left; font-size: 22px; padding-left: 6px;">교육</p>
         <table>
             <tr style="height:80px;">
                 <td style="width:34%;"><input type="text" class="txt-read" style="width:280px;" v-model="item.title" placeholder="교육명" readonly></td>

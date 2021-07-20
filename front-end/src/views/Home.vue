@@ -8,8 +8,7 @@
       <span style="font-size: 15pt; color: navy">커리어블록</span>
       에 오신것을 환영합니다.<br><br>
 
-      저희 서비스를 이용하기 위해 로그인을 해주세요.
-      <a href="/login">로그인하기</a>
+      <a href="/myresume">서비스 이용하러 가기</a>
     </div>
     <!-- <br />
     <div>
@@ -21,60 +20,30 @@
 
     <br /><br /><br /><br />
 
-    <div v-if="!isLogin">
-      <Login />
-    </div>
-    <div v-if="isLogin && isRegister">
-      <Profile />
-      <Education />
-      <Career />
-      <Certification />
-      <Learn />
-    </div>
-    <div v-if="isLogin && !isRegister" style="font-size: 15pt">
-      우리 사이트가 처음이세요 ?
-      <a href="/registration"> 가입하러가기 </a>
-      <!-- <Registration /> -->
-    </div>
+    
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Login from "@/components/Login.vue";
 import Profile from "@/components/Profile.vue";
 import Education from "@/components/Education.vue";
 import Learn from "@/components/Learn.vue";
 import Certification from "@/components/Certification.vue";
 import Career from "@/components/Career.vue";
-import Registration from "@/views/Registration.vue";
 
 export default {
   name: "components",
   components: {
-    Profile,
     Education,
     Learn,
     Certification,
     Career,
-    Login,
-    Registration,
   },
   data() {
     return {
       testing: 0,
     };
-  },
-  computed: {
-    isLogin() {
-      return this.$store.state.user.email;
-    },
-    isRegister() {
-      return this.$store.state.user.isRegister;
-    },
-  },
-  methods: {
-   
   },
 };
 </script>
@@ -91,5 +60,6 @@ export default {
   width: 1500px;
   height: 3000px;
   background-color: aliceblue;
+  border: 10px solid;
 }
 </style>
