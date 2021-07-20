@@ -4,7 +4,7 @@
     <table v-if="isEditable" id="delete_box">
       <!-- 제목 -->
       <thead>
-        <th colspan="5" style="font-size: 25px; text-align: left">■ 경력</th>
+        <th colspan="5" style="font-size: 25px; text-align: left">경력</th>
       </thead>
       <div v-bind:key="idx" v-for="(item, idx) in itemList">
         <thead>

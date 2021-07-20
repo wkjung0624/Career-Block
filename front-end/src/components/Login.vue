@@ -4,18 +4,18 @@
     <br /><br />
     <div style="font-size: 50pt; color: #867ae9">CareerBlock</div>
     <br />
-    <div>
-        <br>
-      <span style="font-size: 15pt; color: navy">커리어블록</span>
+    <div style="font-size: 15px;">
+        <br><br>
+      <span style="font-size: 20px; color: navy">커리어블록</span>
       에 오신것을 환영합니다.
     </div>
     <br />
-    <div>
+    <div style="font-size: 15px;">
       회원님의 <b>아이디</b>와 <b>비밀번호</b>를 입력하여 로그인해주세요
     </div>
     <br />
-    <div>아직 회원이 아니시라면 회원으로 <b>가입</b> 후 이용해주세요</div>
-    <br /><br />
+    <div style="font-size: 15px;">아직 회원이 아니시라면 회원으로 <b>가입</b> 후 이용해주세요</div>
+    <br />
     <!-- <br>
         <p style="color:white; font-size:70px;">{{user.email ? "로그인 되었습니다!" : "CareerBlock"}}</p> -->
     <a
@@ -97,12 +97,12 @@ export default {
 @import url(//fonts.googleapis.com/earlyaccess/hanna.css);
 * {
   box-sizing: border-box;
-  font: 12px "맑은 고딕", Malgun Gothic, "돋움", Dotum, sans-serif;
+  font-family: "Hanna", sans-serif;
 }
 .container {
   /* padding: 50px; */
   width: 100%;
-  height: 2000px;
+  height: 500px;
   background-color: aliceblue;
 }
 
