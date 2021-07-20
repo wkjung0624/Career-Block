@@ -150,7 +150,7 @@ CareerBlock 내의 개별 서비스 이용, 이벤트 응모 및 경품 신청 �
 .box-container {
      
       width: 600px;
-      height: 900px;
+      height: 950px;
       background: #867ae9;
       margin: auto;
     }

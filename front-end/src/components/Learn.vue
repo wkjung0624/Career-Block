@@ -17,7 +17,7 @@
 </div>
 
     <div class="box-container" v-for="item in itemList" v-else>
-        <p style="text-align:left; font-size: 25px;">교육</p>
+        
         <table>
             <tr style="height:80px;">
                 <td style="width:34%;"><input type="text" class="txt-read" style="width:280px;" v-model="item.title" placeholder="교육명" readonly></td>
