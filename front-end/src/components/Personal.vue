@@ -91,7 +91,7 @@ export default {
   background: #867ae9;
   padding-bottom: 50px;
   position: relative;
-  height: 700px;
+  height: 750px;
 }
 .container {
   border: 1px solid #867ae9;
