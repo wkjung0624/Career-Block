@@ -256,22 +256,20 @@
       <!-- rows -->
 
       <div class="float6">
-        <div class="box_line">
+       
           <button
             style="
-              widdiv: 920px;
-              height: 50px;
               background-color: white;
-              font-size: 17px;
-              font-weight: 600;
+              font-size: 15px;
+              
             "
             @click="addItem"
-            class="none_border"
-            id="btn2"
+            class="btn2"
+            
           >
             경력 추가
           </button>
-        </div>
+        
       </div>
       <!-- f6 -->
     </div>
@@ -491,6 +489,13 @@ table {
   background-color: white;
 }
 
+.box_line2 {
+  border: 1px solid gainsboro;
+  font-size: 15px;
+  padding: 10px;
+  background-color: none;
+}
+
 .none_border {
   border: none;
   font-size: 15px;
@@ -566,8 +571,9 @@ table {
 }
 
 /* 추가 버튼 */
-#btn2 {
+.btn2 {
   width: 940px;
   height: 60px;
+  border: 1px solid gainsboro;
 }
 </style>

@@ -268,6 +268,7 @@ padding-left: 10px;
     height:60px;
     background-color: white;
     border: 1px solid gainsboro;
+    font-size: 15px;
 }
 
 </style>

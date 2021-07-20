@@ -86,7 +86,7 @@ export default {
   /* padding: 50px; */
   margin: auto;
   width: 1500px;
-  height: 2000px;
+  height: 3000px;
   background-color: aliceblue;
 }
 </style>
