@@ -43,10 +43,6 @@ export default {
         Project
     },
     computed: {
-        user(){
-            console.log(this.$store.state.user);
-            return this.$store.state.user;
-        },
         isLogin() {
             console.log("## ",this.$store.state.user.email);
             return (typeof this.$store.state.user.email != "undefined" ? true : false);
