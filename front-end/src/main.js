@@ -4,6 +4,6 @@ import {
 import App from "./App.vue";
 import store from "./assets/store"
 import router from "./router";
-// import Login from "./components/Login.vue";
+import mixin from "./mixin";
 
-createApp(App).use(router).use(store).mount("#app");
+createApp(App).use(router).use(store).mixin(mixin).mount("#app");

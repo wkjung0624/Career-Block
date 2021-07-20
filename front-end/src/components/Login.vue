@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <!-- <div class="box-container"> -->
+    [Login.vue]
     <br /><br />
     <div style="font-size: 50pt; color: #867ae9">CareerBlock</div>
     <br />
@@ -55,6 +56,7 @@ export default {
 
   methods: {
     // 추가 항목 동의받기
+
     kakaoLogin() {
       window.Kakao.Auth.login({
         scope: "profile_nickname,account_email,gender",
@@ -75,6 +77,13 @@ export default {
           console.log(this.$store.state.user);
         },
       });
+
+      
+    },
+    getRegisterInfo(){
+      console.log(this.$store.state.user);
+      // const response = await this.$api("post", "/api/createAccount")
+      // console.log(response);
     },
     kakaoLogout() {
       if (!window.Kakao.Auth.getAccessToken()) {
@@ -89,6 +98,7 @@ export default {
         console.log(this.$store.state.user);
       });
     },
+
   },
 };
 </script>

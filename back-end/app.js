@@ -4,7 +4,9 @@ const fs = require("fs");
 const dotenv = require("dotenv");
 const path = require("path");
 
-dotenv.config({ path: path.join(__dirname, ".env.local") });
+dotenv.config({
+  path: path.join(__dirname, ".env.local")
+});
 
 var multer = require("multer");
 var storage = multer.diskStorage({
@@ -16,7 +18,9 @@ var storage = multer.diskStorage({
     cb(null, new Date().valueOf() + path.extname(file.originalname));
   },
 });
-var upload = multer({ storage: storage });
+var upload = multer({
+  storage: storage
+});
 
 //cors
 const cors = require("cors");
@@ -44,10 +48,11 @@ const server = app.listen(3300, () => {
 app.use("/static", express.static(__dirname + "/uploads"));
 
 const dbPool = require("mysql").createPool({
-  database: "second", //dev
-  host: "127.0.0.1", //ip주소
-  user: "team2",
-  password: "awesome2",
+  database: "dev2", //dev
+  host: "198.13.53.191", //ip주소
+  user: "dev2",
+  password: "dev2",
+  port: 3306
 });
 
 app.post("/api/uploadFile", upload.single("attachment"), async (req, res) => {
@@ -55,10 +60,6 @@ app.post("/api/uploadFile", upload.single("attachment"), async (req, res) => {
   return res.status(200).json(req.file);
 });
 
-app.get("/api/getUserList", async (req, res) => {
-  const userList = { data: [{ name: "Seungwon Go", gender: "Male" }] };
-  res.send(userList);
-});
 
 app.get("/api/getList", async (req, res) => {
   try {
@@ -68,6 +69,16 @@ app.get("/api/getList", async (req, res) => {
       error: err,
     });
   }
+});
+
+app.get("/api/test", async (req, res) => {
+  const userList = {
+    data: [{
+      name: "Seungwon Go",
+      gender: "Male"
+    }]
+  };
+  res.send(userList);
 });
 
 //서버쪽에 목서버를만들어서, 프론트엔드가 진행할수있도록 만들어주는용도
@@ -83,6 +94,7 @@ fs.watchFile(__dirname + "/sql.js", (curr, prev) => {
 });
 
 app.post("/api/:alias", async (req, res) => {
+  console.log("error 발생 : ", req.params.alias, req.body.param);
   try {
     res.send(await sys.db(req.params.alias, req.body.param, req.body.where));
   } catch (err) {
@@ -106,15 +118,21 @@ app.delete("/api/deleteFile", async (req, res) => {
         });
     }
 
-    res.status(200).json({ type: "S", msg: "성공적으로 삭제되었습니다." });
+    res.status(200).json({
+      type: "S",
+      msg: "성공적으로 삭제되었습니다."
+    });
   });
 });
 
 const sys = {
   async db(alias, param = [], where = "") {
+    console.log(`db func in -${alias} ## ${param}`);
     return new Promise((resolve, reject) =>
       dbPool.query(sql[alias].query + where, param, (error, rows) => {
+        console.log("db in");
         if (error) {
+          console.log("db err");
           if (error.code != "ER_DUP_ENTRY") console.log(error);
           resolve({
             error,
@@ -124,94 +142,3 @@ const sys = {
     );
   },
 };
-
-// const express = require("express");
-// const app = express();
-
-// //cors
-// const cors = require("cors");
-// const fs = require("fs");
-
-// const corsOption = {
-//   origin: "http://localhost:8080",
-//   credentials: true,
-// };
-
-// app.use(cors(corsOption));
-
-// app.use(
-//   express.json({
-//     limit: "50mb",
-//   })
-// );
-
-// const server = app.listen(3000, () => {
-//   console.log("Server stared. port 3000.");
-// });
-
-// const dbPool = require("mysql").createPool({
-//   database: "dev", //dev
-//   host: "192.168.6.47", //ip주소
-//   user: "root",
-//   password: "1234",
-// });
-
-// app.get("/api/getUserList", async (req, res) => {
-//   const userList = { data: [{ name: "Seungwon Go", gender: "Male" }] };
-//   res.send(userList);
-// });
-
-// app.get("/api/getList", async (req, res) => {
-//   try {
-//     res.send(await sys.db("list"));
-//   } catch (err) {
-//     res.status(500).send({
-//       error: err,
-//     });
-//   }
-// });
-
-// app.get("/api/Person", async (req, res) => {
-//   try {
-//     res.send(await sys.db("list"));
-//   } catch (err) {
-//     res.status(500).send({
-//       error: err,
-//     });
-//   }
-// });
-
-// const sql = require("./sql.js");
-
-// fs.watchFile(__dirname + "/sql.js", (curr, prev) => {
-//   console.log("sql 변경시 재시작 없이 반영되도록 함.");
-//   delete require.cache[require.resolve("./sql.js")];
-//   sql = require("./sql.js");
-// });
-
-// app.post("/api/:alias", async (req, res) => {
-//   // alias 변수에 자동으로 createPerson함수가 들어옴.
-//   // alias = createPerson
-//   try {
-//     res.send(await sys.db(req.params.alias, req.body.param, req.body.where));
-//   } catch (err) {
-//     res.status(500).send({
-//       error: err,
-//     });
-//   }
-// });
-
-// const sys = {
-//   async db(alias, param = [], where = "") {
-//     return new Promise((resolve, reject) =>
-//       dbPool.query(sql[alias].query + where, param, (error, rows) => {
-//         if (error) {
-//           if (error.code != "ER_DUP_ENTRY") console.log(error);
-//           resolve({
-//             error,
-//           });
-//         } else resolve(rows);
-//       })
-//     );
-//   },
-// };
