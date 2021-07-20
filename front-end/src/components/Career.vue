@@ -438,7 +438,7 @@ export default {
   padding-bottom: 75px;
   font: 15px "맑은 고딕", Malgun Godivic, "돋움", Dotum, sans-serif;
   border: none;
-  padding-left: 15px;
+  
 }
 
 .rows {
