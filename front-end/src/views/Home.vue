@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <br /><br />
+    [Home.vue]
     <!-- <div style="font-size: 50pt; color: #867ae9">CareerBlock</div>
     <br />
     <div>
@@ -15,8 +16,6 @@
     <div>아직 회원이 아니시라면 회원으로 <b>가입</b> 후 이용해주세요</div> -->
     <br /><br />
 
-    <button @click="regsw(true)" style="font-size: 15pt">resume on</button>
-    <button @click="regsw(false)" style="font-size: 15pt">resume off</button>
     <br /><br /><br /><br />
 
     <div v-if="!isLogin">
@@ -72,15 +71,7 @@ export default {
     },
   },
   methods: {
-    regsw(param) {
-      var test = this.$store.state.user.email == "";
-      console.log(test, this.$store.state.user.email);
-
-      this.$store.state.user.isRegister = param;
-
-      console.log("isReg:", this.$store.state.user.isRegister);
-      console.log(this.$store.state.user);
-    },
+   
   },
 };
 </script>
@@ -89,7 +80,7 @@ export default {
 @import url(//fonts.googleapis.com/earlyaccess/hanna.css);
 * {
   box-sizing: border-box;
-  font-family: "Hanna", sans-serif;
+  font: 12px "맑은 고딕", Malgun Gothic, "돋움", Dotum, sans-serif;
 }
 .container {
   /* padding: 50px; */
