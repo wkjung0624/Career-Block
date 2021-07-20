@@ -11,7 +11,7 @@ import Agree from "../components/Agree.vue";
 import Learn from "../components/Learn.vue";
 import Search from "../components/Search.vue";
 import Career from "../components/Career.vue";
-// import Project from "../components/Project.vue";
+import Project from "../components/Project.vue";
 import Personal from "../components/Personal.vue";
 import Education from "../components/Education.vue";
 import Certification from "../components/Certification.vue";
@@ -24,11 +24,11 @@ const routes = [{
     name: "Home",
     component: Home,
   },
-  // {
-  //   path: "/project",
-  //   name: "Project",
-  //   component: Project,
-  // },
+  {
+    path: "/project",
+    name: "Project",
+    component: Project,
+  },
   {
     path: "/myresume",
     name: "MyResume",
