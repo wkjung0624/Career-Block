@@ -1,4 +1,7 @@
 <template>
+
+  <button @click="createAccount">test</button>
+
   <div class="container">
     <br /><br />
 
@@ -61,6 +64,26 @@ export default {
     sendMessage(data) {
       console.log("호출", data);
       this.steps = data;
+    },
+
+
+    async createAccount() {
+      console.log(this.$store.state.user);
+      const response = await this.$api("post", "/api/createAccount", {
+        param: 
+          [
+            {
+              email: this.$store.state.user.email,
+              name : this.$store.state.user.profile.nickname,
+              gender : this.$store.state.user.gender,
+              phone : this.$store.state.user.phone,
+              address : this.$store.state.user.address,
+              profile : ""
+              //프로필사진
+            },
+          ],
+        }).data;
+      console.log(response);
     },
   },
 };
