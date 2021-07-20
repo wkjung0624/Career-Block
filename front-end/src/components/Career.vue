@@ -11,13 +11,15 @@
         <!-- 1-1 회사명 -->
         <div class="float1">
           <div class="box_line">
-            <button @click="delItem(idx)" class="dltbtn" id="delete_click">X</button>
+            <button @click="delItem(idx)" class="dltbtn" id="delete_click">
+              X
+            </button>
             <input
               type="text"
               v-model="item.companyName"
               class="none_border"
               placeholder="회사명"
-              style="position: relative; bottom: 31px;"
+              style="position: relative; bottom: 31px"
             />
           </div>
 
@@ -29,7 +31,7 @@
               v-model="item.departmentName"
               class="none_border"
               placeholder="부서명"
-              style="position: relative; top: 4px;"
+              style="position: relative; top: 4px"
             />
           </div>
 
@@ -42,7 +44,7 @@
               pattern="[0-9]{4}.[0-9]{2}"
               class="none_border"
               placeholder="시작일"
-              style="position: relative; top: 4px;"
+              style="position: relative; top: 4px"
             />
           </div>
 
@@ -55,14 +57,16 @@
               pattern="[0-9]{4}.[0-9]{2}"
               class="none_border"
               placeholder="종료일"
-              style="position: relative; top: 4px;"
+              style="position: relative; top: 4px"
             />
           </div>
 
           <!-- 1-5 재직중(check 박스) -->
-          <div class="float3" style="position: relative; top: 15px; left: 5px;">
+          <div class="float3" style="position: relative; top: 15px; left: 5px">
             <input type="checkbox" name="working" v-model="item.isWorking" />
-            <label for="working" style="width: 50px; font-size: 15px;">재직중</label>
+            <label for="working" style="width: 50px; font-size: 15px"
+              >재직중</label
+            >
           </div>
         </div>
 
@@ -71,13 +75,19 @@
         <!-- !! 프리랜서 radio -->
         <div class="float2">
           <div class="box_line">
-            <p style="position: relative; bottom: 8px; width: 240px;">직급/직책</p>
+            <p style="position: relative; bottom: 8px; width: 240px">
+              직급/직책
+            </p>
             <div>
               <select
                 name="position"
                 v-model="item.position"
-                
-                style="position: relative; bottom: 50px; left: 80px; height: 30px;"
+                style="
+                  position: relative;
+                  bottom: 50px;
+                  left: 80px;
+                  height: 30px;
+                "
               >
                 <option value="0">주임/계장</option>
                 <option value="1">대리</option>
@@ -99,7 +109,12 @@
               <select
                 name="job_title"
                 v-model="item.job_title"
-                 style="position: relative; bottom: 50px; left: 85px; height: 30px;"
+                style="
+                  position: relative;
+                  bottom: 50px;
+                  left: 85px;
+                  height: 30px;
+                "
               >
                 <option value="0">팀원</option>
                 <option value="1">팀장</option>
@@ -122,9 +137,19 @@
           <!-- 2-2 직무명 -->
 
           <div class="box_line">
-            <p style="position: relative; bottom: 8px; width: 170px;">직무</p>
-            <select name="duty" style="width: 120px; height: 30px; position: relative; left: 45px; bottom: 48px; boder: 1px solid
-            " v-model="item.duty">
+            <p style="position: relative; bottom: 8px; width: 170px">직무</p>
+            <select
+              name="duty"
+              style="
+                width: 120px;
+                height: 30px;
+                position: relative;
+                left: 45px;
+                bottom: 48px;
+                boder: 1px solid;
+              "
+              v-model="item.duty"
+            >
               <option value="0">경영/사무</option>
               <option value="1">마케팅/광고/홍보</option>
               <option value="2">IT/인터넷</option>
@@ -145,7 +170,7 @@
           <!-- 2-3 연봉-->
 
           <div class="box_line" v-show="item.isIncome != true">
-            <p style="position: relative; bottom: 8px;">연봉</p>
+            <p style="position: relative; bottom: 8px">연봉</p>
             <input type="number" class="none_border" v-model="annual_Income" />
           </div>
         </div>
@@ -156,13 +181,17 @@
         <!-- 3줄 -->
         <!-- 3-1~5 담당업무 기술 -->
         <div class="float3">
-          <div class="box_line" style="width: 900px;" v-show="item.isDuty != true">
+          <div
+            class="box_line"
+            style="width: 900px"
+            v-show="item.isDuty != true"
+          >
             <p style="text-align: left">담당업무</p>
             <textarea
               v-model="item.job_description"
               cols="120"
               rows="4"
-              style="border: 1px solid gainsboro;"
+              style="border: 1px solid gainsboro"
               placeholder="담당하신 업무와 성과에 대해 간단명료하게 적어주세요."
             ></textarea>
           </div>
@@ -204,14 +233,19 @@
           </div>
           <!-- 경력기술서(hidden) -->
           <div>
-            <div class="box_line" style="width:900px;" v-show="item.isDescription == true">
+            <div
+              class="box_line"
+              style="width: 900px"
+              v-show="item.isDescription == true"
+            >
               <p style="text-align: left">경력기술서</p>
               <textarea
                 cols="120"
                 rows="4"
-                style="border: 1px solid gainsboro;"
+                style="border: 1px solid gainsboro"
                 v-model="career_description"
-              ></textarea><br>
+              ></textarea
+              ><br />
               <input type="checkbox" v-model="item.isDescription" />
               <label for="" style="color: blue">경력기술서 삭제</label>
             </div>
@@ -233,6 +267,7 @@
             "
             @click="addItem"
             class="none_border"
+            id="btn2"
           >
             경력 추가
           </button>
@@ -439,7 +474,9 @@ export default {
 }
 
 #delete_click {
-  position: relative; left: 895px; bottom: 14px;
+  position: relative;
+  left: 895px;
+  bottom: 14px;
 }
 
 table {
@@ -519,15 +556,18 @@ table {
   margin-left: 5px;
 }
 .dltbtn {
-  
-        width: 35px;
-        height: 35px;
-        background-color: RGB(187,187,187);
-        border: 0px;
-       
-        font-size: 25px;
-        color: white;
-       
+  width: 35px;
+  height: 35px;
+  background-color: RGB(187, 187, 187);
+  border: 0px;
+
+  font-size: 25px;
+  color: white;
 }
 
+/* 추가 버튼 */
+#btn2 {
+  width: 940px;
+  height: 60px;
+}
 </style>
