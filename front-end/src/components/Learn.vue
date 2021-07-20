@@ -31,7 +31,6 @@
         </table>
     </div>
     <button class="addb" @click="addItem">교육 추가</button>
-    <br>
     <button class="editb" @click="changeEditable()">조회/수정</button>
     </div>
 </template>
@@ -124,15 +123,17 @@ table {
     height:60px; font-size: 15px; 
     background-color: white;
     border: 1px solid gainsboro;
+    position: relative; bottom: 10px;
 }
 
 .editb {
 width: 940px; 
 height:60px; 
-top:5px; 
 font-size: 15px;
  background-color: white;
  border: 1px solid gainsboro;
+ position: relative; bottom: 10px;
+ 
 }
     .btn-delete {
         position: absolute;
