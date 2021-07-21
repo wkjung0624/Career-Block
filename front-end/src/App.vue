@@ -138,7 +138,7 @@
                   </div>
                   <h3 class="h4 mb-2">Trust</h3>
                   <p class="text-muted mb-0">
-                    Our themes are updated regularly to keep them bug free!
+                    안정된 Block Chain 기반 서비스로 신뢰성을 가집니다.
                   </p>
                 </div>
               </div>
@@ -147,9 +147,9 @@
                   <div class="mb-2">
                     <i class="bi-command fs-1 text-primary"></i>
                   </div>
-                  <h3 class="h4 mb-2">Clarity</h3>
+                  <h3 class="h4 mb-2">Network</h3>
                   <p class="text-muted mb-0">
-                    All dependencies are kept current to keep things fresh.
+                    당신의 정보는 Block Chain Network에서 효율적으로 관리됩니다.
                   </p>
                 </div>
               </div>
@@ -160,7 +160,7 @@
                   </div>
                   <h3 class="h4 mb-2">Fact</h3>
                   <p class="text-muted mb-0">
-                    You can use this design as is, or you can make changes!
+                    당신의 경력은 검증되어 불변 사실로 인정됩니다.
                   </p>
                 </div>
               </div>
@@ -171,7 +171,7 @@
                   </div>
                   <h3 class="h4 mb-2">Connect</h3>
                   <p class="text-muted mb-0">
-                    Is it really open source if it's not made with love?
+                    신뢰할 수 있는 많은 동료들과 함께 할 수 있습니다.
                   </p>
                 </div>
               </div>
@@ -328,10 +328,17 @@
           <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
               <div class="col-lg-8 text-center">
-                  <h2 class="text-white mt-0">We've got what you need!</h2>
-                  <hr class="divider divider-light" />
-                  <p class="text-white-75 mb-4">Start Bootstrap has everything you need to get your new website up and running in no time! Choose one of our open source, free to download, and easy to use themes! No strings attached!</p>
-                  <a class="btn btn-light btn-xl fs-6" @click="changePage(3)">Get Started!</a>
+                <h2 class="text-white mt-0">We've got what you need!</h2>
+                <hr class="divider divider-light" />
+                <p class="text-white-75 mb-4">
+                  Start Bootstrap has everything you need to get your new
+                  website up and running in no time! Choose one of our open
+                  source, free to download, and easy to use themes! No strings
+                  attached!
+                </p>
+                <a class="btn btn-light btn-xl fs-6" @click="changePage(3)"
+                  >Get Started!</a
+                >
               </div>
             </div>
           </div>
