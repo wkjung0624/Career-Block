@@ -1,4 +1,5 @@
 <template>
+  <div>
   <body id="page-top">
       <!-- Navigation-->
       <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
@@ -22,7 +23,7 @@
                       <li class="nav-item">
                         <div class="input-group btn-group-sm" role="group" aria-label="Basic example">
                             <a class="btn btn-success btn-sm" @click="changePage(3)">Sign in</a>
-                            <a class="btn btn-light btn-sm" @click="changePage(3)">Sign up</a>
+                            <a class="btn btn-light btn-sm border-success" @click="changePage(3)">Sign up</a>
                       </div>
                       </li>
                   </ul>
@@ -243,9 +244,10 @@
       </div>
       <div class="btn-group-sm me-2" role="group" aria-label="Second group">
         <button type="button" class="btn btn-primary" @click="regsw(true)">추가정보 O</button>
-        <button type="button" class="btn btn-primary-outline border-primary" @click="regsw(false)">추가정보 X</button>
+        <button type="button" class="btn btn-primary-outline bordser-primary" @click="regsw(false)">추가정보 X</button>
       </div> 
     </div>
+  </div>
   </div>
 </template>
 
