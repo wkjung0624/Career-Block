@@ -1,9 +1,6 @@
-import {
-  createRouter,
-  createWebHistory
-} from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 
-import App from "../App.vue"
+import App from "../App.vue";
 import Home from "../views/Home.vue";
 import Registration from "../views/Registration.vue";
 
@@ -21,8 +18,8 @@ import MyResume from "../views/MyResume.vue";
 
 // import BT from "../assets/examples/boot.vue";
 
-
-const routes = [{
+const routes = [
+  {
     path: "/",
     name: "App",
     component: App,
@@ -38,9 +35,9 @@ const routes = [{
     component: MyResume,
   },
   {
-    path: "/resumelink",
+    path: "/resume-link",
     name: "ResumeLink",
-    component: ResumeLink
+    component: ResumeLink,
   },
   {
     path: "/registration",
@@ -88,19 +85,19 @@ const routes = [{
     path: "/about",
     name: "About",
     component: () =>
-      import( /* webpackChunkName: "about" */ "../views/About.vue"),
+      import(/* webpackChunkName: "about" */ "../views/About.vue"),
   },
   {
     path: "/profile",
     name: "Profile",
     component: () =>
-      import( /* webpackChunkName: "about" */ "../components/Profile.vue"),
+      import(/* webpackChunkName: "about" */ "../components/Profile.vue"),
   },
   {
     path: "/personal",
     name: "Personal",
-    component: Personal
-  }
+    component: Personal,
+  },
 ];
 
 const router = createRouter({

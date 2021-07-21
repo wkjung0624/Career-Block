@@ -360,6 +360,7 @@
       <header class="masthead bg-attach" v-else>
         <MyResume v-if="pageIndex == 1" />
         <!-- 이력서 링크 생성 pageIndex==2 -->
+        <ResumeLink v-if="pageIndex == 2" />
         <Login ref="child_login" v-if="pageIndex == 3" />
         <Agree v-if="pageIndex == 4" />
         <Personal v-if="pageIndex == 5" />
