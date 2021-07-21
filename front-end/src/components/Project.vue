@@ -1,8 +1,8 @@
 <template>
-  <div class="base">
-    <div class="header">
-        <div>프로젝트 경력</div>
-      </div>
+  <div class="base1">
+    <div class="header1">
+        프로젝트 경력
+        </div>
     <!-- 수정가능(로그인시)  -->
     <div v-if="isEditable" id="delete_box">
       <!-- 제목 -->
@@ -99,7 +99,7 @@
         <div class="box_line">
           <button
             style="
-              width: 919px;
+              width: 916px;
               height: 40px;
               background-color: white;
               font-size: 15px;
@@ -219,7 +219,7 @@ export default {
   margin: 0 auto;
   /* padding-bottom: 75px; */
   font: 15px "맑은 고딕", Malgun Godivic, "돋움", Dotum, sans-serif;
-  border: none;
+  
   
 }
 

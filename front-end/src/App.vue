@@ -11978,4 +11978,23 @@ header.masthead .h1 {
 #portfolio .container-xxl .portfolio-box:hover .portfolio-box-caption {
   opacity: 1;
 }
+
+.bdline {
+  border: 1px solid red;
+}
+
+.base1 {
+  width: 940px;
+  margin: auto;
+  padding-bottom: 20px;
+  
+}
+
+.header1 {
+  width: 940px;
+  font-size: 22px;
+  text-align: left;
+  padding-bottom: 20px;
+  
+}
 </style>

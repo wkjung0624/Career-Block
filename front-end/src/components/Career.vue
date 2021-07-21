@@ -1,9 +1,9 @@
 <template>
-  <div class="base">
+  <div class="base1">
     <!-- 수정가능(로그인시)  -->
-    <div class="header">
-      <div>경력</div>
-    </div>
+    <div class="header1">
+        경력
+        </div>
     <div v-if="isEditable" id="delete_box" class="box">
       <!-- 제목 -->
       <div class="rows" v-bind:key="idx" v-for="(item, idx) in itemList">

@@ -1,11 +1,8 @@
 <template>
-  <div class="base">
-    <br />
-    <div style="text-align: left; position: relative; top: 2px;">
-      <p style="padding-bottom: 5px; font-size: 22px;">
-      자격증
-      </p>
-      </div>
+  <div class="base1">
+     <div class="header1">
+        자격증
+        </div>
     
     <!-- <button @click="changeEditable()" class="d3">수정가능상태 변경</button>
     <button @click="showDataInfo()" class="d3">입력값 콘솔 출력</button> -->
@@ -212,7 +209,7 @@ export default {
   color: white;
 }
 .btn2 {
-  width: 940px;
+  width: 938px;
   height: 60px;
   background-color: white;
   border: 1px solid gainsboro;
