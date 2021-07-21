@@ -6,19 +6,19 @@
         <h2 class="mt-0">약관동의</h2>
         <br>
         <div>
-        <label for="allagree" style="font-size:25px;  position: relative; right: 500px;">전체동의</label>
+        <label for="allagree" style="font-size:25px;  position: relative; right: 473px;">전체동의</label>
             <input
               id="allagree"
               class="check-box"
               type="checkbox"
               v-model="selectAll"
-              style="positon: relative; right: 496px;"
+              style="positon: relative; right: 468px;"
             />
           
 <br><br><br>
           <ul class="check-list" v-for="content in check" :key="content" style="list-style: none; text-align: left;">
             <li>
-              <label style="font-size:20px; padding-bottom: 20px;"
+              <label style="font-size:20px; padding-bottom: 20px; position: relative; left: 50px; padding-top:5px;"
                 ><span>{{ content.agreeTitle }}</span></label
               >
               <input
@@ -27,7 +27,7 @@
                 :value="content.id"
                 number
                 class="check-box"
-                style="positon: relative; left: 5px; top: 4px;"
+                style="positon: relative; left: 55px; top: 4px;"
               />
               <br>
               <pre class="txta" readonly>{{content.agreeText}}</pre>
