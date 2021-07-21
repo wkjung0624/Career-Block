@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-5 container px-4 px-lg-5 pt-5 rounded-3 bg-white">
+  <div class="mt-5 mb-5 container px-4 px-lg-5 pt-5 rounded-3 bg-white">
     <Profile />
     <Education />
     <Career />
@@ -51,6 +51,5 @@ export default {
 /* border 확인용 */
 .borderline {
   border: 1px solid red;
-  
 }
 </style>
