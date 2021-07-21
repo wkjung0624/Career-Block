@@ -1,11 +1,15 @@
 <template>
   <div class="base">
     <br />
-    <div style="font-size: 22px; text-align: left; position: relative; top: 2px;">자격증</div>
-    <br /><br />
-    <button @click="changeEditable()" class="d3">수정가능상태 변경</button>
-    <button @click="showDataInfo()" class="d3">입력값 콘솔 출력</button>
-    <br /><br />
+    <div style="text-align: left; position: relative; top: 2px;">
+      <p style="padding-bottom: 5px; font-size: 22px;">
+      자격증
+      </p>
+      </div>
+    
+    <!-- <button @click="changeEditable()" class="d3">수정가능상태 변경</button>
+    <button @click="showDataInfo()" class="d3">입력값 콘솔 출력</button> -->
+    
     <div v-bind:key="index" v-for="(item, index) in CerList" class="container">
       <div v-if="isEditable">
         <div class="d1">

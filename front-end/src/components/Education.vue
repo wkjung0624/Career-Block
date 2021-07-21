@@ -1,8 +1,8 @@
 <template>
     <div class="base">
         <p style="text-align:left; font-size: 22px;">학력</p>
-        <button @click="changeEditable()">수정가능상태 변경</button>
-        <button @click="showDataInfo()">현재 입력값들 콘솔에 출력</button>
+        <!-- <button @click="changeEditable()">수정가능상태 변경</button>
+        <button @click="showDataInfo()">현재 입력값들 콘솔에 출력</button> -->
         <div v-bind:key=index v-for="(item, index) in itemList" class="container">
             <!-- 7번 라인 ~ 33번 라인 : 수정이 가능한 경우(본인 로그인) 화면 구성 -->
             <div class="row" v-if="isEditable">

@@ -1,7 +1,7 @@
 <template>
   <div class="base">
     <p
-      style="text-align: left; font-size: 22px; position: relative; bottom: 2px; padding-top: 30px;"
+      style="text-align: left; font-size: 22px; position: relative; bottom: 2px; padding-top: 30px; padding-bottom: 5px;"
     >
       교육
     </p>
