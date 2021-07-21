@@ -1,7 +1,7 @@
 <template>
   <div class="base">
     <p
-      style="text-align: left; font-size: 22px; position: relative; bottom: 2px"
+      style="text-align: left; font-size: 22px; position: relative; bottom: 2px; padding-top: 30px;"
     >
       교육
     </p>
@@ -124,6 +124,7 @@
     </div>
     <button class="addb" @click="addItem">교육 추가</button>
     <button class="editb" @click="changeEditable()">조회/수정</button>
+    
   </div>
 </template>
 

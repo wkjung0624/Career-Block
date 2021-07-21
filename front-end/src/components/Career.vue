@@ -518,7 +518,7 @@ table {
   margin-bottom: 13px;
   font-size: 22px;
   color: #000;
-  padding-top: 20px;
+  padding-top: 30px;
   padding-bottom: 5px;
 }
 
