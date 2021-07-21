@@ -1,8 +1,8 @@
 <template>
 <!-- 전체 div -->
-<div class="mt-5 container px-4 px-lg-5 pt-5 rounded-3 bdline">
+<div class="mt-5 container px-4 px-lg-5 py-5 rounded-3 bg-light bg-gradiente">
   <!-- 상단 이메일 -->
-<div>
+<div class="container">
 <form class="row gy-2 gx-3 align-items-center">
   <div class="col-auto" style="padding-left: 10px;">
   <p style="padding-top: 15px;">담당자 E-mail</p>
@@ -28,7 +28,7 @@
   </div>
   
   <div class="col-auto">
-    <button type="submit" class="btn btn-success">생성</button>
+    <button type="submit" class="btn btn-success">추가</button>
   </div>
 </form>
 </div>
@@ -38,8 +38,8 @@
         <table class="table table-hover">
   <thead>
     <tr>
-      <th scope="col"></th>
-      <th scope="col">담당자 E-mail</th>
+      <th scope="col">순번</th>
+      <th scope="col">담당자</th>
       <th scope="col">열람기간</th>
       <th scope="col">차단하기</th>
     </tr>
@@ -47,22 +47,30 @@
   <tbody>
     <tr>
       <th scope="row">1</th>
-      <td>butt</td>
-      <td>Otto</td>
-      <td><button class="btn btn-primary">차단</button></td>
+      <td>wkjung@naver.com</td>
+      <td>21.07.20 - 21.09.30</td>
+      <td><button class="btn btn-primary">삭제</button></td>
     </tr>
     <tr>
       <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td><button class="btn btn-primary">차단</button></td>
+      <td>hykim@google.com</td>
+      <td>21.07.28 - 21.10.21</td>
+      <td><button class="btn btn-primary">삭제</button></td>
     </tr>
     <tr>
       <th scope="row">3</th>
-      <td>Larry the Bird</td>
-      <td>Thornton</td>
-      <td><button class="btn btn-primary">차단</button></td>
+      <td>kmjung@baemin.com</td>
+      <td>21.08.02 - 21.09.30</td>
+      <td><button class="btn btn-primary">삭제</button></td>
     </tr>
+    <tr>
+      <th scope="row">4</th>
+      <td>jyseo@socar.com</td>
+      <td>21.08.02 - 21.09.30</td>
+      <td><button class="btn btn-primary">삭제</button></td>
+    </tr>
+    
+    
   </tbody>
 </table>
     </div>
