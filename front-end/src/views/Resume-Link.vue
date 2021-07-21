@@ -28,7 +28,7 @@
   </div>
   
   <div class="col-auto">
-    <button type="submit" class="btn btn-primary">생성</button>
+    <button type="submit" class="btn btn-success">생성</button>
   </div>
 </form>
 </div>
@@ -49,19 +49,19 @@
       <th scope="row">1</th>
       <td>butt</td>
       <td>Otto</td>
-      <td><button>차단</button></td>
+      <td><button class="btn btn-primary">차단</button></td>
     </tr>
     <tr>
       <th scope="row">2</th>
       <td>Jacob</td>
       <td>Thornton</td>
-      <td><button>차단</button></td>
+      <td><button class="btn btn-primary">차단</button></td>
     </tr>
     <tr>
       <th scope="row">3</th>
       <td>Larry the Bird</td>
       <td>Thornton</td>
-      <td><button>차단</button></td>
+      <td><button class="btn btn-primary">차단</button></td>
     </tr>
   </tbody>
 </table>
