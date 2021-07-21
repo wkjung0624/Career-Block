@@ -15,14 +15,14 @@
                         <div class="input-group input-group-sm">
                           <input type="text" class="form-control" v-model="searchQuery" aria-label="Search Resume with Keys" placeholder="Search Resume with Keys" aria-describedby="inputGroup-sizing-sm" @keydown.enter="searchResume()">
                           <span class="input-group-text" id="inputGroup-sizing-sm">
-                            <img src="./assets/img/search_black_24dp.svg" style="height:20px" @click="searchResume()">
+                            <img src="./assets/img/search_black_24dp.svg" style="height:22px" @click="searchResume()">
                           </span>
                         </div>
                       </li>
                       <li class="nav-item">
-                        <div class="btn-group" role="group" aria-label="Basic example">
-                            <a class="btn btn-success btn-xm" @click="changePage(3)">Sign in</a>
-                            <a class="btn btn-light btn-xm" @click="changePage(3)">Sign up</a>
+                        <div class="input-group btn-group-sm" role="group" aria-label="Basic example">
+                            <a class="btn btn-success btn-sm" @click="changePage(3)">Sign in</a>
+                            <a class="btn btn-light btn-sm" @click="changePage(3)">Sign up</a>
                       </div>
                       </li>
                   </ul>
