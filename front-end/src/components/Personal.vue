@@ -20,7 +20,7 @@
           <!-- To make this form functional, sign up at-->
           <!-- https://startbootstrap.com/solution/contact-forms-->
           <!-- to get an API token!-->
-          <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+          
             <!-- Name input-->
             <div class="form-floating mb-3">
               <input
@@ -154,16 +154,11 @@
               aria-label="submit group"
             >
               <div class="d-grid">
-                <button
-                  class="btn btn-primary btn-xl"
-                  id="submitButton"
-                  type="submit"
-                >
-                  Submit
+                <button class="btn btn-primary btn-xl" @click="createUser">
+                  Submit2
                 </button>
               </div>
             </div>
-          </form>
         </div>
       </div>
       <div class="row gx-4 gx-lg-5 justify-content-center">
@@ -174,49 +169,6 @@
       </div>
     </div>
   </section>
-  <!-- 
-    <div class="container">
-      <div
-        style="
-          color: #867ae9;
-          font-size: 30pt;
-          border-bottom: 2px solid #867ae9;
-          margin-bottom: 20px;
-        "
-      >
-        정보를 등록해주세요 :)
-      </div>
-      <table class="tb">
-        <tr>
-          <td>이름</td>
-          <td><input type="text" v-model="name" style="width:150px; height:35px; font-size:30px; text-align:center; color:#867ae9;"/></td>
-        </tr>
-        <tr>
-          <td>성별</td>
-          <td>
-            <input type="radio" :value="gender" />남
-            <input type="radio" :value="gender" />여
-          </td>
-        </tr>
-        <tr>
-          <td>생년월일</td>
-          <td><input type="text" v-model="age" style="width:180px; height:35px; font-size:25px; text-align:center; color:#867ae9;" /></td>
-        </tr>
-        <tr>
-          <td>전화번호</td>
-          <td><input type="tel" v-model="phone" style="width:250px; height:35px; font-size:25px; text-align:center; color:#867ae9;"/></td>
-        </tr>
-        <tr>
-          <td>주소</td>
-          <td><input type="text" v-model="address" style="width:300px; height:35px; font-size:20px; text-align:center; color:#867ae9;" /></td>
-        </tr>
-        <tr>
-          <td>상세주소</td>
-          <td><input type="text" v-model="address2" style="width:300px; height:35px; font-size:20px; text-align:center; color:#867ae9;" /></td>
-        </tr>
-      </table>
-    </div>
-     -->
 </template>
 <script>
 export default {
@@ -252,8 +204,12 @@ export default {
   mounted() {},
   unmounted() {},
   methods: {
-    test() {
-      alert("변수 테스트-", this.yearLists, this.monthLists, this.dayLists);
+    // searchUser(){
+    //   this.$api('searchAccount').then((res) => {return res});
+    // },
+    async createUser(){      
+      var list = await this.$api('searchUser');
+      console.log(list);
     },
   },
 };

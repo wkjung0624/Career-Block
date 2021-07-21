@@ -34,11 +34,9 @@
             </li>
           </ul>
           </div>
-  <div>
-      <center>
+        <div>
             <a href="/"><button class="btn">취소</button></a> &nbsp;&nbsp;
             <button class="btn" @click="$store.commit('setPageIndex',5)">확인</button>
-            </center>
         </div>
 
 
@@ -51,7 +49,6 @@ export default {
     name: "",
     components: {},
     data() {
-       
         return {
             check: [
         { id: "1", agreeTitle: "서비스 이용약관 동의(필수)", Item: "필수", 
@@ -76,9 +73,7 @@ export default {
 제 12 조 (서비스 이용의 제한)
 본 사이트 이용 및 행위가 다음 각 항에 해당하는 경우 회사는 해당 이용자의 이용을 제한할 수 있다.
 `,
-    
         },
-
         {
           id: "2",
           agreeTitle: "개인정보 수집 및 이용 동의(필수)",
@@ -105,36 +100,37 @@ CareerBlock 내의 개별 서비스 이용, 이벤트 응모 및 경품 신청 �
 - 회원 가입 의사의 확인, 연령 확인 및 법정대리인 동의 진행, 이용자 및 법정대리인의 본인 확인, 이용자 식별, 회원탈퇴 의사의 확인 등 회원관리를 위하여 개인정보를 이용합니다.
 - 콘텐츠 등 기존 서비스 제공(광고 포함)에 더하여, 인구통계학적 분석, 서비스 방문 및 이용기록의 분석, 개인정보 및 관심에 기반한 이용자간 관계의 형성, 지인 및 관심사 등에 기반한 맞춤형 서비스 제공 등 신규 서비스 요소의 발굴 및 기존 서비스 개선 등을 위하여 개인정보를 이용합니다.`,
         },
-
       ],
       selected: [],
-
-
-
-        };
+      };
     },
     setup() {},
     created() {},
     mounted() {},
     unmounted() {},
-    computed: {
-    selectAll: {
-      get: function () {
-        return this.check ? this.selected.length == this.check.length : false;
-      },
-      set: function (value) {
-        const selected = [];
-
-        if (value) {
-          this.check.forEach(function (content) {
-            selected.push(content.id);
-          });
-        }
-
-        this.selected = selected;
+    methods : {
+      submit(){
+        this.$store.commit("setPageIndex",5);
       },
     },
-  },
+    computed: {
+      selectAll: {
+        get: function () {
+          return this.check ? this.selected.length == this.check.length : false;
+        },
+        set: function (value) {
+          const selected = [];
+
+          if (value) {
+            this.check.forEach(function (content) {
+              selected.push(content.id);
+            });
+          }
+
+          this.selected = selected;
+        },
+      },
+    },
 }
 </script>
 
