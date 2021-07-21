@@ -25,12 +25,35 @@
                               <label for="name">Full name</label>
                               <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
                           </div>
-                          <!-- Email address input-->
+                          
                           <div class="form-floating mb-3">
-                              <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
-                              <label for="email">Email address</label>
-                              <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                              <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                            <select class="form-select pt-2" aria-label="Default select example">
+                              <option selected>Gender</option>
+                              <option value="1">Male</option>
+                              <option value="2">Female</option>
+                              <option value="3">None</option>
+                            </select>
+                          </div>
+                          <!-- Birthday input-->
+                          
+                          <label class="text-start">Birthday</label>
+                          <div class="form-floating mb-3">
+                            <div class="input-group">
+                                <select class="form-select pt-2" aria-label="Default select example">
+                                  <option selected>Year</option>
+                                  <option v-bind:key="idx" value="year" v-for="(year, idx) in yearLists">{{year}}</option>
+                                </select>
+                          
+                                <select class="form-select pt-2" aria-label="Default select example">
+                                  <option selected>Month</option>
+                                  <option v-bind:key="idx" value="month" v-for="(month, idx) in monthLists">{{month}}</option>
+                                </select>
+                                
+                                <select class="form-select pt-2" aria-label="Default select example">
+                                  <option selected>Day</option>
+                                  <option v-bind:key="idx" value="day" v-for="(day, idx) in dayLists">{{day}}</option>
+                                </select>
+                            </div>
                           </div>
                           <!-- Phone number input-->
                           <div class="form-floating mb-3">
@@ -38,11 +61,11 @@
                               <label for="phone">Phone number</label>
                               <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
                           </div>
-                          <!-- Message input-->
+                          <!-- Address input-->
                           <div class="form-floating mb-3">
-                              <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
-                              <label for="message">Message</label>
-                              <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                              <textarea class="form-control" id="address" type="text" placeholder="Enter your address here..." style="height:80px" data-sb-validations="required"></textarea>
+                              <label for="address">Address</label>
+                              <div class="invalid-feedback" data-sb-feedback="address:required">A address is required.</div>
                           </div>
                           <!-- Submit success message-->
                           
@@ -63,9 +86,8 @@
                           <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
                           <!-- Submit Button-->
                           <div class="btn-group-sm me-2" role="group" aria-label="submit group">
-                            <div class="d-grid float-start"><button class="btn btn-primary btn-xl" id="submitButton" type="submit">cancel</button></div>
-                            <div class="d-grid float-end"><button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Submit</button></div>
-                          </div> 
+                            <div class="d-grid"><button class="btn btn-primary btn-xl" id="submitButton" type="submit">Submit</button></div>
+                          </div>
                       </form>
                   </div>
               </div>
@@ -127,6 +149,25 @@ export default {
   components: {},
   data() {
     return {
+      // yearLists : () => {
+      //   let years = []
+      //   const start = 1900;
+      //   const end = 2021;
+      //   for(var cur = start; cur <= end; cur++){
+      //     years.push(start);
+      //   }
+      //   return years;
+      // },
+      yearLists : [2000,2001,2002,2003,2004],
+      // monthLists:["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+      monthLists:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      dayLists:[
+        1, 2, 3, 4, 5, 6, 7,
+        8, 9, 10, 11, 12, 13, 14,
+        15, 16, 17, 18, 19, 20, 21,
+        22, 23, 24, 25, 26, 27, 28,
+        29, 30, 31
+      ],
       name: "",
       gender: "",
       age: "",
@@ -139,6 +180,9 @@ export default {
   mounted() {},
   unmounted() {},
   methods: {
+    test(){
+        alert("변수 테스트-", this.yearLists, this.monthLists, this.dayLists);
+      }
   },
 };
 </script>
