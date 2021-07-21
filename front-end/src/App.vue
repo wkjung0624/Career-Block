@@ -199,7 +199,7 @@
                   />
                   <div class="portfolio-box-caption">
                     <div class="project-category text-white-50">Category</div>
-                    <div class="project-name">Create Resume</div>
+                    <div class="project-name">Create My Resume</div>
                   </div>
                 </a>
               </div>
@@ -216,7 +216,7 @@
                   />
                   <div class="portfolio-box-caption">
                     <div class="project-category text-white-50">Category</div>
-                    <div class="project-name">My Resume</div>
+                    <div class="project-name">View My Resume</div>
                   </div>
                 </a>
               </div>
@@ -233,7 +233,7 @@
                   />
                   <div class="portfolio-box-caption">
                     <div class="project-category text-white-50">Category</div>
-                    <div class="project-name">Resume Share Link</div>
+                    <div class="project-name">Control My Resume Link</div>
                   </div>
                 </a>
               </div>
@@ -336,8 +336,8 @@
                 <hr class="divider divider-light" />
                 <p class="text-white-75 mb-4">
                   CareerBlock은 그동안 당신이 경력관리에 필요하다고 느꼈던 모든
-                  서비스를 제공합니다. 당신의 정보를 등록하세요. 우리와 함께
-                  합시다. 어서 시작해보세요!
+                  서비스를 제공합니다. <br />당신의 정보를 등록하세요. 우리와
+                  함께 합시다. 어서 시작해보세요!
                 </p>
                 <a class="btn btn-light btn-xl fs-6" @click="changePage(3)"
                   >Get Started!</a
