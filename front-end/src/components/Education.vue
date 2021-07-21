@@ -242,7 +242,7 @@ export default {
     }
 .sel{
     width: 105px;
-    height: 50px;
+    height: 46px;
     border: 1px solid gainsboro;
     font-size: 15px;
     padding-left: 5px;
@@ -250,7 +250,7 @@ export default {
 
 .sel2{
     width: 95px;
-    height: 50px;
+    height: 46px;
     border: 1px solid gainsboro;
     font-size: 15px;
     padding-left: 5px;
