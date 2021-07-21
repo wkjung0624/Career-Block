@@ -1,8 +1,7 @@
 <template>
 <!-- 전체 div -->
-<div class="container bdline">
+<div class="mt-5 container px-4 px-lg-5 pt-5 rounded-3 bdline">
   <!-- 상단 이메일 -->
-  <br><br><br>
 <div>
 <form class="row gy-2 gx-3 align-items-center">
   <div class="col-auto" style="padding-left: 10px;">
