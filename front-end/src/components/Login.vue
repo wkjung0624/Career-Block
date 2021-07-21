@@ -42,9 +42,9 @@
     </a>
   
   
-    <button v-show="user.email" @click="$store.commit('setPageIndex',4)">회원등록</button>
+    <button v-show="user.email" @click="$store.commit('setPageIndex',4)" class="dr">회원등록</button>
   <br><br>
-    <button v-show="user.email" @click="kakaoLogout">카카오 로그아웃</button>
+    <button v-show="user.email" @click="kakaoLogout" class="logout">카카오 로그아웃</button>
                 
               </div>
             </div>
@@ -57,7 +57,10 @@
    
 
 </template>
+
+
 <script>
+  
 export default {
   name: "",
   components: {},
@@ -129,7 +132,7 @@ export default {
 </script>
 
 <style scoped>
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 * {
   box-sizing: border-box;
  
@@ -220,5 +223,24 @@ export default {
 
 button:hover {
   background-color: rgb(203, 219, 233);
+}
+.dr {
+font-family: 'Jua', sans-serif;
+background-color: gainsboro;
+  width: 250px;
+  height: 45px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+  border-radius: 5px;
+  border: none;
+}
+.logout {
+  background-color: #FEE500;
+  width: 250px;
+  height: 45px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+  border-radius: 5px;
+  border: none;
 }
 </style>
