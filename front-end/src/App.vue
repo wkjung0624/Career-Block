@@ -118,7 +118,9 @@
                   당신의 커리어를 기록하여 당신의 커리어 스토리를 만들어 나갈 수
                   있습니다.
                 </p>
-                <a class="btn btn-primary btn-xl fs-6" href="#services">Find Out More</a>
+                <a class="btn btn-primary btn-xl fs-6" href="#services"
+                  >Find Out More</a
+                >
               </div>
             </div>
           </div>
@@ -136,7 +138,7 @@
                   </div>
                   <h3 class="h4 mb-2">Trust</h3>
                   <p class="text-muted mb-0">
-                    안정된 Block Chain 기반 서비스로 신뢰성을 가집니다.
+                    안정된 Block Chain 기반 서비스로 <br />신뢰성을 가집니다.
                   </p>
                 </div>
               </div>
@@ -147,7 +149,8 @@
                   </div>
                   <h3 class="h4 mb-2">Network</h3>
                   <p class="text-muted mb-0">
-                    당신의 정보는 Block Chain Network에서 효율적으로 관리됩니다.
+                    당신의 정보는 Block Chain Network<br />에서 효율적으로
+                    관리됩니다.
                   </p>
                 </div>
               </div>
@@ -158,7 +161,7 @@
                   </div>
                   <h3 class="h4 mb-2">Fact</h3>
                   <p class="text-muted mb-0">
-                    당신의 경력은 검증되어 불변 사실로 인정됩니다.
+                    당신의 경력은 검증되어 <br />불변 사실로 인정됩니다.
                   </p>
                 </div>
               </div>
@@ -169,12 +172,14 @@
                   </div>
                   <h3 class="h4 mb-2">Connect</h3>
                   <p class="text-muted mb-0">
-                    신뢰할 수 있는 많은 동료들과 함께 할 수 있습니다.
+                    신뢰할 수 있는 많은 동료들과 <br />함께 할 수 있습니다.
                   </p>
                 </div>
               </div>
             </div>
-            <a class="btn btn-primary btn-xl mt-5 fs-6" href="#about">how to start</a>
+            <a class="btn btn-primary btn-xl mt-5 fs-6" href="#about"
+              >how to start</a
+            >
           </div>
         </section>
         <!-- Portfolio-->
@@ -194,7 +199,7 @@
                   />
                   <div class="portfolio-box-caption">
                     <div class="project-category text-white-50">Category</div>
-                    <div class="project-name">Create Resume</div>
+                    <div class="project-name">Create My Resume</div>
                   </div>
                 </a>
               </div>
@@ -211,7 +216,7 @@
                   />
                   <div class="portfolio-box-caption">
                     <div class="project-category text-white-50">Category</div>
-                    <div class="project-name">My Resume</div>
+                    <div class="project-name">View My Resume</div>
                   </div>
                 </a>
               </div>
@@ -228,7 +233,7 @@
                   />
                   <div class="portfolio-box-caption">
                     <div class="project-category text-white-50">Category</div>
-                    <div class="project-name">Resume Share Link</div>
+                    <div class="project-name">Control My Resume Link</div>
                   </div>
                 </a>
               </div>
@@ -331,8 +336,8 @@
                 <hr class="divider divider-light" />
                 <p class="text-white-75 mb-4">
                   CareerBlock은 그동안 당신이 경력관리에 필요하다고 느꼈던 모든
-                  서비스를 제공합니다. 당신의 정보를 등록하세요. 우리와 함께
-                  합시다. 어서 시작해보세요!
+                  서비스를 제공합니다. <br />당신의 정보를 등록하세요. 우리와
+                  함께 합시다. 어서 시작해보세요!
                 </p>
                 <a class="btn btn-light btn-xl fs-6" @click="changePage(3)"
                   >Get Started!</a
