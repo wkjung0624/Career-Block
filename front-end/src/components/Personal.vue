@@ -140,7 +140,7 @@
             </div>
             <!-- Submit error message-->
             <!---->
-            This is what your users will see when there is
+            CareerBlock에 정보가 등록됩니다.
             <!-- an error submitting the form-->
             <div class="d-none" id="submitErrorMessage">
               <div class="text-center text-danger mb-3">
