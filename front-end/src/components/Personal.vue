@@ -6,8 +6,9 @@
           <h2 class="mt-0">CareerBlock과 함께해요</h2>
           <hr class="divider" />
           <p class="text-muted mb-5">
-            커리어 블록과 함께 하시겠어요? 블록체인으로 검증된 이력서로 자신의
-            가치를 증명하세요. 당신을 찾을 수 있게 정보를 등록해주세요.
+            커리어 블록과 함께 하시겠어요?<br>
+            블록체인으로 검증된 이력서로 자신의 가치를 증명하세요.<br>
+            당신을 찾을 수 있게 정보를 등록해주세요.
           </p>
         </div>
       </div>
@@ -155,7 +156,7 @@
             >
               <div class="d-grid">
                 <button class="btn btn-primary btn-xl" @click="createUser">
-                  Submit2
+                  Submit
                 </button>
               </div>
             </div>
