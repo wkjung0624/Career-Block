@@ -1,45 +1,61 @@
 <template>
-<section class="page-section" id="contact">
-   <div class="container px-4 px-lg-5 pt-5 rounded-3 bg-white">
-    <!-- <div class="box-container"> -->
-    [Login.vue]
-    <br /><br />
-    <h2 class="mt-0">Login</h2>
-    <br />
-    <div style="font-size: 15px;">
-        <br><br>
-      <span style="font-size: 20px;">커리어블록</span>
-      에 오신것을 환영합니다.
-    </div>
-    <br />
-    <div style="font-size: 15px;">
-      회원님의 아이디와 비밀번호를 입력하여 로그인해주세요.
-    </div>
-    <br />
-    <div style="font-size: 15px;">아직 회원이 아니시라면 회원으로 가입 후 이용해주세요!</div>
-    <br />
-    <!-- <br>
-        <p style="color:white; font-size:70px;">{{user.email ? "로그인 되었습니다!" : "CareerBlock"}}</p> -->
-    <a
+
+          <div class="container px-4 px-lg-5 h-100">
+            <div
+              class="
+                row
+                gx-4 gx-lg-5
+                h-100
+                align-items-center
+                justify-content-center
+                text-center
+              "
+            >
+              <div class="col-lg-8 align-self-end">
+                <h1 class="text-white font-weight-bold">
+                  
+                  {{user.email ? "Welcome!" : "Please Login"}}
+                </h1>
+                <br />
+                <hr class="divider" />
+                <br />
+              </div>
+              <div class="col-lg-8 align-self-baseline">
+                <p class="text-white-75 mb-5 fs-5">
+                  <!-- With a career block, you can manage your career more easily and easily. We provide you with all the functions you need. Without restrictions. -->
+                  커리어블록에 오신것을 환영합니다!
+                  <br /><br>
+                  회원님의 아이디와 비밀번호를 입력하여 로그인해주세요.
+                  <br><br>
+                  아직 회원이 아니시라면 회원정보등록 후 이용해주세요.
+                </p>
+                <a
       v-show="!user.email"
       id="custom-login-btn"
       @click="kakaoLogin()"
-      style="position: relative; top: 120px"
+      style="position: relative; top: 10px"
     >
       <img
         src="//k.kakaocdn.net/14/dn/btqCn0WEmI3/nijroPfbpCa4at5EIsjyf0/o.jpg"
         width="250"
       />
     </a>
-  <br><br>
-    회원가입이 안되있을경우 추가회원가입으로 유도하는 버튼 필요
-  <br><br>
-    <button @click="$store.commit('setPageIndex',4)">회원등록화면으로 이동 </button>
+  
+  
+    <button v-show="user.email" @click="$store.commit('setPageIndex',4)">회원등록</button>
   <br><br>
     <button v-show="user.email" @click="kakaoLogout">카카오 로그아웃</button>
+                
+              </div>
+            </div>
+          </div>
+        
+    <!-- <br>
+        <p style="color:white; font-size:70px;">{{user.email ? "로그인 되었습니다!" : "CareerBlock"}}</p> -->
+   
     <!-- </div> -->
-    </div>
-</section>
+   
+
 </template>
 <script>
 export default {
@@ -116,7 +132,7 @@ export default {
 
 * {
   box-sizing: border-box;
-  font-family: "Merriweather", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+ 
     }
 
 
@@ -159,5 +175,50 @@ export default {
 
 .mt-0 {
   margin-top: 0 !important;
+}
+
+.col-lg-8 {
+    flex: 0 0 auto;
+    width: 66.66666667%;
+  }
+.align-self-end {
+  align-self: flex-end !important;
+}
+.text-white {
+  color: #fff !important;
+}
+.row {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(var(--bs-gutter-y) * -1);
+  margin-right: calc(var(--bs-gutter-x) * -0.5);
+  margin-left: calc(var(--bs-gutter-x) * -0.5);
+}
+.row > * {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
+  margin-top: var(--bs-gutter-y);
+}
+.g-4,
+.gx-4 {
+  --bs-gutter-x: 1.5rem;
+}
+
+ .g-lg-5,
+  .gx-lg-5 {
+    --bs-gutter-x: 3rem;
+  }
+
+  .h-100 {
+  height: 100% !important;
+}
+
+button:hover {
+  background-color: rgb(203, 219, 233);
 }
 </style>
