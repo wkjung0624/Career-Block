@@ -33,7 +33,7 @@
   <div>
       <center>
             <a href="/"><button class="btn">취소</button></a> &nbsp;&nbsp;
-            <button class="btn" style="background:rgb(223, 165, 248);"  @click="$store.commit('setPageIndex',5)">확인</button>
+            <button class="btn" @click="$store.commit('setPageIndex',5)">확인</button>
             </center>
         </div>
 
@@ -170,5 +170,9 @@ CareerBlock 내의 개별 서비스 이용, 이벤트 응모 및 경품 신청 �
     width: 20px;
     height: 20px;
     position: relative; top:2px;
+}
+
+button:hover {
+  background-color: aliceblue;
 }
 </style>
