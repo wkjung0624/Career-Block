@@ -27,7 +27,7 @@
                   <br /><br>
                   회원님의 아이디와 비밀번호를 입력하여 로그인해주세요.
                   <br><br>
-                  아직 회원이 아니시라면 회원정보등록 후 이용해주세요.
+                  아직 회원이 아니시라면 회원정보 등록 후 이용해주세요.
                 </p>
                 <a
       v-show="!user.email"
@@ -42,7 +42,7 @@
     </a>
   
   
-    <button v-show="user.email" @click="$store.commit('setPageIndex',4)" class="dr">회원등록</button>
+    <button v-show="user.email" @click="$store.commit('setPageIndex',4)" class="dr">회원정보 등록</button>
   <br><br>
     <button v-show="user.email" @click="kakaoLogout" class="logout">카카오 로그아웃</button>
                 
