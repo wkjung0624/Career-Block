@@ -328,13 +328,12 @@
           <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
               <div class="col-lg-8 text-center">
-                <h2 class="text-white mt-0">We've got what you need!</h2>
+                <h2 class="text-white mt-0">당신이 원하는 모든 것</h2>
                 <hr class="divider divider-light" />
                 <p class="text-white-75 mb-4">
-                  Start Bootstrap has everything you need to get your new
-                  website up and running in no time! Choose one of our open
-                  source, free to download, and easy to use themes! No strings
-                  attached!
+                  CareerBlock은 그동안 당신이 경력관리에 필요하다고 느꼈던 모든
+                  서비스를 제공합니다. 당신의 정보를 등록하세요. 우리와 함께
+                  합시다. 어서 시작해보세요!
                 </p>
                 <a class="btn btn-light btn-xl fs-6" @click="changePage(3)"
                   >Get Started!</a
