@@ -16,11 +16,8 @@
     </div>
     <br />
     <div>아직 회원이 아니시라면 회원으로 <b>가입</b> 후 이용해주세요</div> -->
-    <br /><br />
+    <br /><br /><br /><br /><br /><br />
 
-    <br /><br /><br /><br />
-
-    
   </div>
 </template>
 
@@ -33,13 +30,6 @@ import Certification from "@/components/Certification.vue";
 import Career from "@/components/Career.vue";
 
 export default {
-  name: "components",
-  components: {
-    Education,
-    Learn,
-    Certification,
-    Career,
-  },
   data() {
     return {
       testing: 0,
@@ -62,4 +52,68 @@ export default {
   background-color: aliceblue;
   border: 10px solid;
 }
+
+
+
+
+
+
+
+
+
+
+/*
+ * Globals
+ */
+
+
+/* Custom default button */
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` */
+}
+
+
+/*
+ * Base structure
+ */
+
+body {
+  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+  box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+}
+
+.cover-container {
+  max-width: 42em;
+}
+
+
+/*
+ * Header
+ */
+
+.nav-masthead .nav-link {
+  padding: .25rem 0;
+  font-weight: 700;
+  color: rgba(255, 255, 255, .5);
+  background-color: transparent;
+  border-bottom: .25rem solid transparent;
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  border-bottom-color: rgba(255, 255, 255, .25);
+}
+
+.nav-masthead .nav-link + .nav-link {
+  margin-left: 1rem;
+}
+
+.nav-masthead .active {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
 </style>
