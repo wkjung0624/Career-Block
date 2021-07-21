@@ -62,9 +62,9 @@
           </div>
 
           <!-- 1-5 재직중(check 박스) -->
-          <div class="float3" style="position: relative; top: 15px; left: 5px">
+          <div class="float3" style="position: relative; top: 20px; left: 10px">
             <input type="checkbox" name="working" v-model="item.isWorking" />
-            <label for="working" style="width: 50px; font-size: 15px"
+            <label for="working" style="width: 50px; font-size: 15px; position: relative; bottom: 5px; left: 5px"
               >재직중</label
             >
           </div>
