@@ -118,7 +118,9 @@
                   당신의 커리어를 기록하여 당신의 커리어 스토리를 만들어 나갈 수
                   있습니다.
                 </p>
-                <a class="btn btn-primary btn-xl fs-6" href="#services">Find Out More</a>
+                <a class="btn btn-primary btn-xl fs-6" href="#services"
+                  >Find Out More</a
+                >
               </div>
             </div>
           </div>
@@ -136,7 +138,7 @@
                   </div>
                   <h3 class="h4 mb-2">Trust</h3>
                   <p class="text-muted mb-0">
-                    안정된 Block Chain 기반 서비스로 신뢰성을 가집니다.
+                    안정된 Block Chain 기반 서비스로 <br />신뢰성을 가집니다.
                   </p>
                 </div>
               </div>
@@ -147,7 +149,8 @@
                   </div>
                   <h3 class="h4 mb-2">Network</h3>
                   <p class="text-muted mb-0">
-                    당신의 정보는 Block Chain Network에서 효율적으로 관리됩니다.
+                    당신의 정보는 Block Chain Network<br />에서 효율적으로
+                    관리됩니다.
                   </p>
                 </div>
               </div>
@@ -158,7 +161,7 @@
                   </div>
                   <h3 class="h4 mb-2">Fact</h3>
                   <p class="text-muted mb-0">
-                    당신의 경력은 검증되어 불변 사실로 인정됩니다.
+                    당신의 경력은 검증되어 <br />불변 사실로 인정됩니다.
                   </p>
                 </div>
               </div>
@@ -169,12 +172,14 @@
                   </div>
                   <h3 class="h4 mb-2">Connect</h3>
                   <p class="text-muted mb-0">
-                    신뢰할 수 있는 많은 동료들과 함께 할 수 있습니다.
+                    신뢰할 수 있는 많은 동료들과 <br />함께 할 수 있습니다.
                   </p>
                 </div>
               </div>
             </div>
-            <a class="btn btn-primary btn-xl mt-5 fs-6" href="#about">how to start</a>
+            <a class="btn btn-primary btn-xl mt-5 fs-6" href="#about"
+              >how to start</a
+            >
           </div>
         </section>
         <!-- Portfolio-->
