@@ -2,7 +2,8 @@
 <section class="page-section" id="contact">
   <div class="container px-4 px-lg-5 pt-5 rounded-3 bg-white">
     <!-- <div class="box-container"> -->
-        <p style="font-size:40px; padding-top:10px; padding-left:10px; text-align:left;">약관동의</p>
+        <!-- <p style="font-size:40px; padding-top:10px; padding-left:10px; text-align:left;">약관동의</p> -->
+        <h2 class="mt-0">약관동의</h2>
         <br>
         <div>
         <label for="allagree" style="font-size:25px;  position: relative; right: 500px;">전체동의</label>
@@ -207,5 +208,9 @@ button:hover {
   padding-left: var(--bs-gutter-x, 0.75rem);
   margin-right: auto;
   margin-left: auto;
+}
+
+.mt-0 {
+  margin-top: 0 !important;
 }
 </style>

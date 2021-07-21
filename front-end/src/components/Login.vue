@@ -1,21 +1,22 @@
 <template>
-  <div class="container">
+<section class="page-section" id="contact">
+   <div class="container px-4 px-lg-5 pt-5 rounded-3 bg-white">
     <!-- <div class="box-container"> -->
     [Login.vue]
     <br /><br />
-    <div style="font-size: 50pt; color: white;">CareerBlock</div>
+    <h2 class="mt-0">Login</h2>
     <br />
-    <div style="font-size: 15px; color: white;">
+    <div style="font-size: 15px;">
         <br><br>
-      <span style="font-size: 20px; color: white;">커리어블록</span>
+      <span style="font-size: 20px;">커리어블록</span>
       에 오신것을 환영합니다.
     </div>
     <br />
-    <div style="font-size: 15px; color: white;">
+    <div style="font-size: 15px;">
       회원님의 아이디와 비밀번호를 입력하여 로그인해주세요.
     </div>
     <br />
-    <div style="font-size: 15px; color: white;">아직 회원이 아니시라면 회원으로 가입 후 이용해주세요!</div>
+    <div style="font-size: 15px;">아직 회원이 아니시라면 회원으로 가입 후 이용해주세요!</div>
     <br />
     <!-- <br>
         <p style="color:white; font-size:70px;">{{user.email ? "로그인 되었습니다!" : "CareerBlock"}}</p> -->
@@ -37,7 +38,8 @@
   <br><br>
     <button v-show="user.email" @click="kakaoLogout">카카오 로그아웃</button>
     <!-- </div> -->
-  </div>
+    </div>
+</section>
 </template>
 <script>
 export default {
@@ -111,21 +113,51 @@ export default {
 </script>
 
 <style scoped>
-@import url(//fonts.googleapis.com/earlyaccess/hanna.css);
+
 * {
   box-sizing: border-box;
-  font-family: "Hanna", sans-serif;
-}
-.container {
-  /* padding: 50px; */
-  width: 100%;
-  height: 500px;
-}
+  font-family: "Merriweather", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    }
+
+
 
 .box-container {
   width: 560px;
   height: 550px;
   background: #867ae9;
   margin: auto;
+}
+
+.page-section {
+  padding: 8rem 0;
+}
+.px-4 {
+  padding-right: 1.5rem !important;
+  padding-left: 1.5rem !important;
+}
+
+.px-lg-5 {
+    padding-right: 3rem !important;
+    padding-left: 3rem !important;
+  }
+
+  .rounded-3 {
+  border-radius: 0.3rem !important;
+}
+
+.bg-white {
+  background-color: #fff !important;
+}
+
+.container {
+  width: 100%;
+  padding-right: var(--bs-gutter-x, 0.75rem);
+  padding-left: var(--bs-gutter-x, 0.75rem);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.mt-0 {
+  margin-top: 0 !important;
 }
 </style>
