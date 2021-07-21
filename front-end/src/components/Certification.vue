@@ -43,7 +43,8 @@
 
           <!-- 열삭제 -->
           <div class="d3">
-            <button class="btn" @click="delCer(index)">X</button>
+            <!-- <button class="btn-delete" @click="delItem(index)">X</button> -->
+            <button class="btn-delete" @click="delCer(index)" v-if="!$store.commit('isEditable','skyship326@naver.com')">X</button>
           </div>
         </div>
       </div>
@@ -69,6 +70,7 @@
     <label class="d4">
       <!-- 열추가 -->
       <button class="btn2" @click="addCer">자격증 추가</button>
+      
     </label>
   </div>
 </template>
@@ -213,5 +215,17 @@ export default {
   height: 60px;
   background-color: white;
   border: 1px solid gainsboro;
+}
+.btn-delete {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 35px;
+  height: 35px;
+  background-color: RGB(187, 187, 187);
+  border: 0px;
+  float: right;
+  font-size: 25px;
+  color: white;
 }
 </style>

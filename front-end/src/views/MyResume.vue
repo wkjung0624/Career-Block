@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-5 mb-5 container px-4 px-lg-5 pt-5 rounded-3 bg-white">
+  <div class="container rounded-3 mt-5 mb-5 px-4 px-4 px-lg-5px-lg-5 pt-5 bg-white" style="margin-botton:100px">
     <Profile />
     <Education />
     <Career />

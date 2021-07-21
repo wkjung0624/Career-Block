@@ -95,6 +95,7 @@ fs.watchFile(__dirname + "/sql.js", (curr, prev) => {
 
 app.post("/api/:alias", async (req, res) => {
   try {
+    console.log(req.params.alias, req.body.param, req.body.where);
     res.send(await sys.db(req.params.alias, req.body.param, req.body.where));
   } catch (err) {
     res.status(500).send({

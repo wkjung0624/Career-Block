@@ -4,6 +4,8 @@
     <!-- <div class="box-container"> -->
         <!-- <p style="font-size:40px; padding-top:10px; padding-left:10px; text-align:left;">약관동의</p> -->
         <h2 class="mt-0">약관동의</h2>
+        
+          <hr class="divider" />
         <br>
         <div>
         <label for="allagree" style="font-size:25px;  position: relative; right: 473px;">전체동의</label>
@@ -36,7 +38,7 @@
           </div>
         <div>
             <a href="/"><button class="btn">취소</button></a> &nbsp;&nbsp;
-            <button class="btn" @click="$store.commit('setPageIndex',5)">확인</button>
+            <button class="btn" @click="submit">확인</button>
         </div>
 
 
@@ -110,6 +112,8 @@ CareerBlock 내의 개별 서비스 이용, 이벤트 응모 및 경품 신청 �
     unmounted() {},
     methods : {
       submit(){
+        console.log({agree_1 : this.selected[0], agree_2 : this.selected[1]});
+        this.$store.commit("Registration",{agree_1 : this.selected[0], agree_2 : this.selected[1]});
         this.$store.commit("setPageIndex",5);
       },
     },

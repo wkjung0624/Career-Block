@@ -50,9 +50,9 @@
             </div>
             <!-- Birthday input-->
 
-            <label class="text-start">Birthday</label>
+            <!-- <label class="text-start">Birthday</label> -->
             <div class="form-floating mb-3">
-              <div class="input-group">
+              <div class="input-group mb-3">
                 <select
                   class="form-select pt-2"
                   aria-label="Default select example"
@@ -141,7 +141,7 @@
             </div>
             <!-- Submit error message-->
             <!---->
-            CareerBlock에 정보가 등록됩니다.
+            <!-- CareerBlock에 정보가 등록됩니다. -->
             <!-- an error submitting the form-->
             <div class="d-none" id="submitErrorMessage">
               <div class="text-center text-danger mb-3">
@@ -155,7 +155,7 @@
               aria-label="submit group"
             >
               <div class="d-grid">
-                <button class="btn btn-primary btn-xl" @click="createUser">
+                <button class="btn btn-primary btn-xl" @click="submit">
                   Submit
                 </button>
               </div>
@@ -195,8 +195,10 @@ export default {
       ],
       name: "",
       gender: "",
-      age: "",
       phone: "",
+      year : '',
+      month : '',
+      day : '',
       address: "",
     };
   },
@@ -208,8 +210,27 @@ export default {
     // searchUser(){
     //   this.$api('searchAccount').then((res) => {return res});
     // },
+    submit(){
+      
+      this.$store.commit("Registration",{
+        name : this.name,
+        gender : 0,
+        year : this.year,
+        month : this.month,
+        day : this.day,
+        phone : this.phone,
+        address : this.address,
+      });
+
+      console.table('test222',this.$store.state.reg);
+
+      this.$store.commit("setPageIndex", 1);
+      
+    },
     async createUser(){      
-      var list = await this.$api('searchUser');
+      //var list = await this.$api('searchUser');
+      console.log("test");
+      var list = await this.$api('searchAccount', {email:'skyship36@gmail.com'}, "post");
       console.log(list);
     },
   },

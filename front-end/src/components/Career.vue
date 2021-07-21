@@ -4,7 +4,7 @@
     <div class="header1">
         경력
         </div>
-    <div v-if="isEditable" id="delete_box" class="box">
+    <div v-if="!$store.commit('isEditable','skyship36@gmail')" id="delete_box" class="box">
       <!-- 제목 -->
       <div class="rows" v-bind:key="idx" v-for="(item, idx) in itemList">
         <!-- 1줄 -->
@@ -267,7 +267,7 @@
       <!-- rows -->
 
       <div class="float6">
-        <button @click="addItem" class="btn2">경력 추가</button>
+          <button @click="addItem" class="btn2">경력 추가</button>
       </div>
       <!-- f6 -->
     </div>

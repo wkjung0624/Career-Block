@@ -5,8 +5,8 @@ module.exports = {
   list: {
     query: "select * from t_person",
   },
-  searchPerson: {
-    query: "select * from t_person",
+  searchAccount: {
+    query: "select * from USER_TB where email=?",
   },
   createPerson: {
     query: "insert into t_person set ?", // insert into t_person set first_name='John3', last_name='Doe3', email='john3@gmail.com'

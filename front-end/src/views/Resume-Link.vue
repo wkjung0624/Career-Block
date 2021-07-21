@@ -94,19 +94,19 @@ export default {
 
             itemLists : [
               {
-                pk : "A104kf3gxF",
+                pk : "a104kf3gxf",
                 email : "wkjung@naver.com",
                 open : "21.07.20",
                 close : "21.09.30",
               },
               {
-                pk : "B0kL98ITat",
+                pk : "b0kl98itat",
                 email : "hykim@google.com", 
                 open : "21.07.28", 
                 close : "21.10.21",
               },
               {
-                pk : "CBi32zkn6xF",
+                pk : "cbi32zkn6xF",
                 email : "kmjung@baemin.com",
                 open : "21.08.02",
                 close : "21.09.30"
@@ -128,7 +128,7 @@ export default {
       addItem(){
         this.itemLists.push(
           {
-            pk: "##########",
+            pk: Math.random().toString(36).substr(2,10),
             email: `${this.email_1}@${this.email_2}`,
             open: this.startDate,
             close: this.endDate,

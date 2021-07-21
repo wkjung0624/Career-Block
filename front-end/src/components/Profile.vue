@@ -3,7 +3,7 @@
     <div class="container">
       <div class="photo">
         <img v-if="imgSrc != ''" src="imgSrc" />
-        <button v-else @click="setProfileImage" class="btnXX">
+        <button v-else @click="setProfileImage" class="btnXX" v-if="!$store.commit('isEditable','skyship36@naver.com')">
           이미지 추가
         </button>
       </div>

@@ -72,14 +72,29 @@
                   role="group"
                   aria-label="Basic example"
                 >
-                  <a class="btn btn-success btn-sm" @click="changePage(3)"
-                    >Sign in</a
-                  >
-                  <a
-                    class="btn btn-light btn-sm border-success"
-                    @click="changePage(3)"
-                    >Sign up</a
-                  >
+                  <div v-if="!$store.state.user.email">
+                      <a class="btn btn-success btn-sm" @click="changePage(3)"
+                        >Sign in</a
+                      >
+                      <a
+                        class="btn btn-light btn-sm border-success"
+                        @click="changePage(3)"
+                        >Sign up</a
+                      >
+                  </div>
+                  <div v-else>
+
+
+                      <a class="btn btn-secondary btn-sm" @click="$store.commit('user',{})">Logout</a>
+                        <a v-if="!$store.state.user.isRegister" class="btn btn-warning btn-sm fs-6" @click="$store.commit('setPageIndex',4)">
+                          Registration
+                        </a>
+                        <a v-else-if="$store.state.user.isRegister" class="btn btn-success btn-sm fs-6">
+                          Registration
+                        </a>
+
+                     
+                  </div>
                 </div>
               </li>
             </ul>
@@ -367,39 +382,7 @@
       </header>
     </body>
 
-    <div v-show="false">
-      개발자 버튼 :
-      <div
-        class="btn-toolbar"
-        role="toolbar"
-        aria-label="Toolbar with button groups"
-      >
-        <div class="btn-group-sm me-2" role="group" aria-label="First group">
-          <button type="button" class="btn btn-success" @click="logbtn(true)">
-            로그인
-          </button>
-          <button
-            type="button"
-            class="btn btn-success-outline border-success"
-            @click="logbtn(false)"
-          >
-            로그오프
-          </button>
-        </div>
-        <div class="btn-group-sm me-2" role="group" aria-label="Second group">
-          <button type="button" class="btn btn-primary" @click="regsw(true)">
-            추가정보 O
-          </button>
-          <button
-            type="button"
-            class="btn btn-primary-outline bordser-primary"
-            @click="regsw(false)"
-          >
-            추가정보 X
-          </button>
-        </div>
-      </div>
-    </div>
+    
   </div>
 </template>
 
@@ -442,6 +425,7 @@ export default {
     },
     pageIndex() {
       console.log(this.$store.state.currentPage);
+      // return 5;
       return this.$store.state.currentPage;
     },
   },
@@ -461,7 +445,9 @@ export default {
         : this.load_components[0].kakaoLogout();
     },
     searchResume() {
-      alert(this.searchQuery);
+      this.$store.state.user.
+      location.href="/#search"
+      // alert(this.searchQuery);
     },
     changePage(newPage) {
       this.$store.commit("setPageIndex", newPage);
