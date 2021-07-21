@@ -75,7 +75,7 @@
         <!-- !! 프리랜서 radio -->
         <div class="float2">
           <div class="box_line">
-            <p style="position: relative; bottom: 8px; width: 240px">
+            <p style="position: relative; top: 4px; width: 255px; font-size: 15px;">
               직급/직책
             </p>
             <div>
@@ -84,7 +84,7 @@
                 v-model="item.position"
                 style="
                   position: relative;
-                  bottom: 50px;
+                  bottom: 36px;
                   left: 80px;
                   height: 30px;
                 "
@@ -111,7 +111,7 @@
                 v-model="item.job_title"
                 style="
                   position: relative;
-                  bottom: 50px;
+                  bottom: 36px;
                   left: 85px;
                   height: 30px;
                 "
@@ -137,7 +137,7 @@
           <!-- 2-2 직무명 -->
 
           <div class="box_line">
-            <p style="position: relative; bottom: 8px; width: 170px">직무</p>
+            <p style="position: relative; top: 4px; width: 170px; font-size: 15px;">직무</p>
             <select
               name="duty"
               style="
@@ -145,7 +145,7 @@
                 height: 30px;
                 position: relative;
                 left: 45px;
-                bottom: 48px;
+                bottom: 36px;
                 boder: 1px solid;
               "
               v-model="item.duty"
@@ -175,7 +175,7 @@
               type="text"
               class="none_border"
               v-model="annual_Income"
-              style="position: relative; top: 4px"
+              style="position: relative; top: 4px; width: 200px;"
               placeholder="연봉"
             />
           </div>
@@ -192,10 +192,10 @@
             style="width: 940px"
             v-show="item.isDuty != true"
           >
-            <p style="text-align: left">담당업무</p>
+            <p style="text-align: left; font-size: 15px;">담당업무</p>
             <textarea
               v-model="item.job_description"
-              cols="110"
+              cols="122"
               rows="4"
               style="border: 1px solid gainsboro; font-size: 15px; resize: none"
               placeholder="담당하신 업무와 성과에 대해 간단명료하게 적어주세요."
@@ -206,7 +206,7 @@
         <!-- 4줄  -->
         <!-- 연봉(button) -->
         <div class="float4">
-          <div class="box_line" style="width: 80px">
+          <div class="box_line" style="width: 100px">
             연봉 X
             <input
               type="checkbox"
@@ -215,7 +215,7 @@
             />
           </div>
           <!-- 담당업무(button) -->
-          <div class="box_line" style="width: 110px">
+          <div class="box_line" style="width: 150px">
             담당업무 X
             <input type="checkbox" v-model="item.isDuty" />
           </div>
@@ -245,7 +245,7 @@
           <div>
             <div
               class="box_line"
-              style="width: 916px"
+              style="width: 939px"
               v-show="item.isDescription == true"
             >
               <p style="text-align: left">경력기술서</p>

@@ -283,9 +283,9 @@ export default {
 
 /* 프로젝트 */
 #projectName {
-  width: 880px;
+  width: 883px;
   height: 30px;
-  position: relative; bottom: 35px;
+  position: relative; bottom: 10px; right: 35px;
   font-size: 15px;
   border: none;
 }
