@@ -118,9 +118,7 @@
                   당신의 커리어를 기록하여 당신의 커리어 스토리를 만들어 나갈 수
                   있습니다.
                 </p>
-                <a class="btn btn-primary btn-xl fs-6" href="#services"
-                  >Find Out More</a
-                >
+                <a class="btn btn-primary btn-xl fs-6" href="#services">Find Out More</a>
               </div>
             </div>
           </div>
@@ -176,6 +174,7 @@
                 </div>
               </div>
             </div>
+            <a class="btn btn-primary btn-xl mt-5 fs-6" href="#about">how to start</a>
           </div>
         </section>
         <!-- Portfolio-->
