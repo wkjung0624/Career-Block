@@ -4,7 +4,7 @@
     <div class="header">
       <div>경력</div>
     </div>
-    <div v-if="isEditable" id="delete_box">
+    <div v-if="isEditable" id="delete_box" class="box">
       <!-- 제목 -->
       <div class="rows" v-bind:key="idx" v-for="(item, idx) in itemList">
         <!-- 1줄 -->
@@ -577,5 +577,9 @@ table {
   border: 1px solid gainsboro;
   background-color: white;
   font-size: 15px;
+}
+
+.box {
+  background-color: white;
 }
 </style>
