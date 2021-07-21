@@ -3,19 +3,19 @@
     <!-- <div class="box-container"> -->
     [Login.vue]
     <br /><br />
-    <div style="font-size: 50pt; color: #867ae9">CareerBlock</div>
+    <div style="font-size: 50pt; color: white;">CareerBlock</div>
     <br />
-    <div style="font-size: 15px;">
+    <div style="font-size: 15px; color: white;">
         <br><br>
-      <span style="font-size: 20px; color: navy">커리어블록</span>
+      <span style="font-size: 20px; color: white;">커리어블록</span>
       에 오신것을 환영합니다.
     </div>
     <br />
-    <div style="font-size: 15px;">
-      회원님의 <b>아이디</b>와 <b>비밀번호</b>를 입력하여 로그인해주세요
+    <div style="font-size: 15px; color: white;">
+      회원님의 아이디와 비밀번호를 입력하여 로그인해주세요.
     </div>
     <br />
-    <div style="font-size: 15px;">아직 회원이 아니시라면 회원으로 <b>가입</b> 후 이용해주세요</div>
+    <div style="font-size: 15px; color: white;">아직 회원이 아니시라면 회원으로 가입 후 이용해주세요!</div>
     <br />
     <!-- <br>
         <p style="color:white; font-size:70px;">{{user.email ? "로그인 되었습니다!" : "CareerBlock"}}</p> -->
