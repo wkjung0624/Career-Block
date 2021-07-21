@@ -1,5 +1,5 @@
 <template>
-  <div class="myResume">
+  <div class="mt-5">
     <Profile />
     <Education />
     <Career />
@@ -48,7 +48,4 @@ export default {
 </script>
 
 <style>
-.myResume {
-  margin: 150px 0px 150px 0px;
-}
 </style>
