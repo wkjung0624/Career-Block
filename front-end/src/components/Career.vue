@@ -75,7 +75,7 @@
         <!-- !! 프리랜서 radio -->
         <div class="float2">
           <div class="box_line">
-            <p style="position: relative; top: 4px; width: 255px; font-size: 15px;">
+            <p style="position: relative; top: 4px; right: 95px; width: 255px; font-size: 15px;">
               직급/직책
             </p>
             <div>
@@ -85,7 +85,7 @@
                 style="
                   position: relative;
                   bottom: 36px;
-                  left: 80px;
+                  left: 30px;
                   height: 30px;
                 "
               >
@@ -112,7 +112,7 @@
                 style="
                   position: relative;
                   bottom: 36px;
-                  left: 85px;
+                  left: 35px;
                   height: 30px;
                 "
               >
@@ -137,14 +137,14 @@
           <!-- 2-2 직무명 -->
 
           <div class="box_line">
-            <p style="position: relative; top: 4px; width: 170px; font-size: 15px;">직무</p>
+            <p style="position: relative; top: 4px; right: 70px; width: 170px; font-size: 15px;">직무</p>
             <select
               name="duty"
               style="
                 width: 120px;
                 height: 30px;
                 position: relative;
-                left: 45px;
+                left: 15px;
                 bottom: 36px;
                 boder: 1px solid;
               "
@@ -471,7 +471,7 @@ export default {
 
 #delete_click {
   position: relative;
-  left: 892px;
+  left: 824px;
   bottom: 12px;
 }
 
