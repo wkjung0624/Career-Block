@@ -48,7 +48,8 @@ export default {
   },
   methods: {
     getAge() {
-      return this.birth;
+      var birthday = this.birth;
+      return 2021 - birthday + 1;
     },
     setProfileImage() {
       alert("이미지를 추가했습니다");
