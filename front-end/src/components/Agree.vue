@@ -1,20 +1,23 @@
 <template>
-    <div class="box-container">
-        <p style="color:white; font-size:40px; padding-top:10px; padding-left:10px; text-align:left;">약관동의</p>
+<section class="page-section" id="contact">
+  <div class="container px-4 px-lg-5 pt-5 rounded-3 bg-white">
+    <!-- <div class="box-container"> -->
+        <p style="font-size:40px; padding-top:10px; padding-left:10px; text-align:left;">약관동의</p>
+        <br>
         <div>
-        <label for="allagree" style="color:white; font-size:25px;  position: relative; right: 230px;">전체동의</label>
+        <label for="allagree" style="font-size:25px;  position: relative; right: 500px;">전체동의</label>
             <input
               id="allagree"
               class="check-box"
               type="checkbox"
               v-model="selectAll"
-              style="positon: relative; right: 220px;"
+              style="positon: relative; right: 496px;"
             />
           
-
-          <ul class="check-list" v-for="content in check" :key="content" style="list-style: none;">
+<br><br><br>
+          <ul class="check-list" v-for="content in check" :key="content" style="list-style: none; text-align: left;">
             <li>
-              <label style="color:white; font-size:20px;"
+              <label style="font-size:20px; padding-bottom: 20px;"
                 ><span>{{ content.agreeTitle }}</span></label
               >
               <input
@@ -38,8 +41,9 @@
         </div>
 
 
-</div>
-
+<!-- </div> -->
+         </div>
+</section>
 </template>
 <script>
 export default {
@@ -137,9 +141,7 @@ CareerBlock 내의 개별 서비스 이용, 이벤트 응모 및 경품 신청 �
 @import url(//fonts.googleapis.com/earlyaccess/hanna.css);
     * {
         box-sizing: border-box;
-      font-family: 'Hanna', sans-serif;
-      
-      
+      font-family: "Merriweather", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     }
 
 .box-container {
@@ -150,13 +152,14 @@ CareerBlock 내의 개별 서비스 이용, 이벤트 응모 및 경품 신청 �
 
 .txta {
    position: relative; left: 52px;
-  width:410px; 
+  width:1100px; 
   height:300px;
   overflow: auto;
   background: white;
   text-align: left;
   padding:10px;
   color: rgba(66, 57, 57, 0.432);
+  border: 1px solid gainsboro;
 }
 
 .btn {
@@ -174,5 +177,35 @@ CareerBlock 내의 개별 서비스 이용, 이벤트 응모 및 경품 신청 �
 
 button:hover {
   background-color: aliceblue;
+}
+
+.page-section {
+  padding: 8rem 0;
+}
+
+.px-4 {
+  padding-right: 1.5rem !important;
+  padding-left: 1.5rem !important;
+}
+
+.px-lg-5 {
+    padding-right: 3rem !important;
+    padding-left: 3rem !important;
+  }
+
+  .rounded-3 {
+  border-radius: 0.3rem !important;
+}
+
+.bg-white {
+  background-color: #fff !important;
+}
+
+.container {
+  width: 100%;
+  padding-right: var(--bs-gutter-x, 0.75rem);
+  padding-left: var(--bs-gutter-x, 0.75rem);
+  margin-right: auto;
+  margin-left: auto;
 }
 </style>
