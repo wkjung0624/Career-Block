@@ -61,7 +61,7 @@ app.post("/api/uploadFile", upload.single("attachment"), async (req, res) => {
 });
 
 
-app.get("/api/getList", async (req, res) => {
+app.post("/api/getList", async (req, res) => {
   try {
     res.send(await sys.db("testQuery"));
   } catch (err) {
@@ -94,7 +94,6 @@ fs.watchFile(__dirname + "/sql.js", (curr, prev) => {
 });
 
 app.post("/api/:alias", async (req, res) => {
-  console.log("error 발생 : ", req.params.alias, req.body.param);
   try {
     res.send(await sys.db(req.params.alias, req.body.param, req.body.where));
   } catch (err) {
