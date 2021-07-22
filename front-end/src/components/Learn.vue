@@ -4,9 +4,9 @@
         교육
         </div>
 
-    <div class="box-container" v-for="item in itemList" v-if="isEditable">
+    <div class="box-container bdline1" v-for="item in itemList" v-if="isEditable">
       <table>
-        <tr>
+        <tr style="">
           <td style="width: 34%">
             <input
               type="text"
@@ -187,7 +187,7 @@ td {
 }
 
 table {
-  border: solid 1px gainsboro;
+  /* border: solid 1px gainsboro; */
   width: 940px;
   height: 200px;
   position: relative;
@@ -267,5 +267,9 @@ table {
 
 .add:hover {
   background-color: gainsboro;
+}
+
+.bdline1 {
+  border: 1px solid gainsboro;
 }
 </style>

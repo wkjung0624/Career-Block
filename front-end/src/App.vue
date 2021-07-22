@@ -105,7 +105,7 @@
       <div v-if="pageIndex == 0">
         <!-- Masthead-->
         <header class="masthead">
-          <div class="container px-4 px-lg-5 h-100">
+          <div class="container px-4 px-lg-5 h-100" style="background-corlor: #f4623a;">
             <div
               class="
                 row
