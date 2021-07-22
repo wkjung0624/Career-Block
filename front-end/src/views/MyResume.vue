@@ -6,6 +6,7 @@
     <Project :viewer_mode="viewer_mode" :key="$store.state.myKeys"/>
     <Learn :viewer_mode="viewer_mode" :key="$store.state.myKeys"/>
     <Certification :viewer_mode="viewer_mode" :key="$store.state.myKeys"/>
+    <button class="btn btn-success mb-5"> 저장하기 </button>
   </div>
 </template>
 
