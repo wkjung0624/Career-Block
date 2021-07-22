@@ -194,7 +194,7 @@ export default {
 .d5 {
   left: 0;
   top: 0;
-  width: 100px;
+  width: 200px;
   font-size: 16px;
   color: rgb(43, 43, 43);
   border-right: 1px solid RGBA(190, 190, 190, 100);
