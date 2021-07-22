@@ -4,7 +4,7 @@
         교육
         </div>
 
-    <div class="box-container bdline1" v-for="item in itemList" v-if="isEditable">
+    <div class="box-container bdline1" style="padding-top: 10px;" v-for="item in itemList" v-if="isEditable">
       <table>
         <tr style="">
           <td style="width: 34%">
