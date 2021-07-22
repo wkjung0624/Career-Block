@@ -176,7 +176,7 @@
                   </div>
                   <h3 class="h4 mb-2">Fact</h3>
                   <p class="text-muted mb-0">
-                    당신의 경력은 검증되어 <br />영원히 기록됩니다.
+                    당신의 경력은 검증되어 <br />불변 사실로 인정됩니다.
                   </p>
                 </div>
               </div>
@@ -350,7 +350,7 @@
                 <h2 class="text-white mt-0">당신이 원하는 모든 것</h2>
                 <hr class="divider divider-light" />
                 <p class="text-white-75 mb-4">
-                  CareerBlock은 당신이 경력관리에 필요하다고 느꼈던 모든
+                  CareerBlock은 그동안 당신이 경력관리에 필요하다고 느꼈던 모든
                   서비스를 제공합니다. <br />당신의 정보를 등록하세요. 우리와
                   함께 합시다. 어서 시작해보세요!
                 </p>
@@ -11983,5 +11983,4 @@ header.masthead .h1 {
   padding-bottom: 20px;
   
 }
-
 </style>

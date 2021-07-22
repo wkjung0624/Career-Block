@@ -582,8 +582,4 @@ table {
 .box {
   background-color: white;
 }
-
-.borderline {
-  border: 0.1px solid gainsboro;
-}
 </style>
