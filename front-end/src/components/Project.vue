@@ -260,7 +260,7 @@ export default {
 #delete_click {
   position: relative;
   left: 894px;
-  bottom: 12px;
+  bottom: 11px;
 }
 
 .box_line {
