@@ -85,7 +85,7 @@
             <p style="text-align: left;">수행내역</p>
             <textarea
               v-model="item.job_description"
-              cols="110"
+              cols="124"
               rows="4"
               style="border: 1px solid gainsboro; resize: none; font-size: 15px;"
               placeholder="담당하신 업무와 성과에 대해 간단명료하게 적어주세요."
