@@ -176,7 +176,7 @@
                   </div>
                   <h3 class="h4 mb-2">Fact</h3>
                   <p class="text-muted mb-0">
-                    당신의 경력은 검증되어 <br />불변 사실로 인정됩니다.
+                    당신의 경력은 검증되어 <br />영원히 기록됩니다.
                   </p>
                 </div>
               </div>
