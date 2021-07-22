@@ -2,8 +2,9 @@
   <div class="base">
     <div class="container">
       <div class="photo">
-        <img v-if="imgSrc != ''" src="imgSrc" />
-        <button v-else @click="setProfileImage" class="btnXX" v-if="!$store.commit('isEditable','skyship36@naver.com')">
+        <img v-if="imgSrc != ''" :src="imgSrc" style="object-fit: cover;"/>
+        
+        <button v-else-if="!viewer_mode" @click="setProfileImage" class="btnXX" >
           이미지 추가
         </button>
       </div>
@@ -35,15 +36,18 @@
 
 <script>
 export default {
+  props: ['viewer_mode'],
+  mounted(){
+  },
   data() {
     return {
-      name: "정완규",
-      gender: "남",
-      birth: "1997",
-      phone: "010-6720-4257",
-      email: "skyship36@gmail.com",
-      address: "서울특별시 관악구 신림동",
-      imgSrc: "",
+      name: this.$store.state.resume[this.$store.state.myKeys]["profile"]["name"], // "정완규",
+      gender: this.$store.state.resume[this.$store.state.myKeys]["profile"]["gender"],
+      birth:  this.$store.state.resume[this.$store.state.myKeys]["profile"]["birth"],
+      phone: this.$store.state.resume[this.$store.state.myKeys]["profile"]["phone"],
+      email: this.$store.state.resume[this.$store.state.myKeys]["profile"]["email"],
+      address: this.$store.state.resume[this.$store.state.myKeys]["profile"]["address"],
+      imgSrc: this.$store.state.resume[this.$store.state.myKeys]["profile"]["imgSrc"],
     };
   },
   methods: {

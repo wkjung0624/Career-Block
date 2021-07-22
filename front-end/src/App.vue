@@ -373,7 +373,7 @@
       </div>
 
       <header class="masthead bg-attach" v-else>
-        <MyResume v-if="pageIndex == 1" />
+        <MyResume v-if="pageIndex == 1" :viewer_mode="viewer_mode"/>
         <!-- 이력서 링크 생성 pageIndex==2 -->
         <ResumeLink v-if="pageIndex == 2" />
         <Login ref="child_login" v-if="pageIndex == 3" />
@@ -412,6 +412,7 @@ export default {
     return {
       load_components: [],
       searchQuery: "",
+      viewer_mode: false,
     };
   },
 
@@ -445,11 +446,13 @@ export default {
         : this.load_components[0].kakaoLogout();
     },
     searchResume() {
-      this.$store.state.user.
-      location.href="/#search"
-      // alert(this.searchQuery);
+      this.$store.state.myKeys = this.searchQuery;
+         
+      this.changePage(1);
+      this.viewer_mode = true;
     },
     changePage(newPage) {
+      this.viewer_mode = false;
       this.$store.commit("setPageIndex", newPage);
     },
   },

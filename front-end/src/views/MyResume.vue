@@ -1,11 +1,11 @@
 <template>
   <div class="container rounded-3 mt-5 mb-5 px-4 px-4 px-lg-5px-lg-5 pt-5 bg-white" style="margin-botton:100px">
-    <Profile />
-    <Education />
-    <Career />
-    <Project />
-    <Learn />
-    <Certification />
+    <Profile :viewer_mode="viewer_mode" :key="$store.state.myKeys"/>
+    <Education :viewer_mode="viewer_mode" :key="$store.state.myKeys"/>
+    <Career :viewer_mode="viewer_mode" :key="$store.state.myKeys"/>
+    <Project :viewer_mode="viewer_mode" :key="$store.state.myKeys"/>
+    <Learn :viewer_mode="viewer_mode" :key="$store.state.myKeys"/>
+    <Certification :viewer_mode="viewer_mode" :key="$store.state.myKeys"/>
   </div>
 </template>
 
@@ -26,6 +26,12 @@ export default {
     Certification,
     Career,
     Project,
+  },
+  props:['viewer_mode'],
+  data(){
+    return{
+      sample:"",
+    }
   },
   computed: {
     isLogin() {

@@ -129,9 +129,9 @@ export default {
         this.itemLists.push(
           {
             pk: Math.random().toString(36).substr(2,10),
-            email: `${this.email_1}@${this.email_2}`,
-            open: this.startDate,
-            close: this.endDate,
+            email: (`${this.email_1}@${this.email_2}`=='@' ? "wkjung0624@example.com" : `${this.email_1}@${this.email_2})`),
+            open: (this.startDate == '' ? '21.07.22' : this.startDate),
+            close: (this.endDate == '' ? '21.07.22' : this.endDate),
           }
         )
       },

@@ -4,7 +4,7 @@
         교육
         </div>
 
-    <div class="box-container" v-for="item in itemList" v-if="isEditable">
+    <div class="box-container" v-for="item in itemList" v-if="!viewer_mode">
       <table>
         <tr>
           <td style="width: 34%">
@@ -60,6 +60,8 @@
           </td>
         </tr>
       </table>
+      
+    <button class="addb" @click="addItem">교육 추가</button>
     </div>
 
     <div class="box-container" v-for="item in itemList" v-else>
@@ -121,7 +123,6 @@
       </table>
     </div>
     
-    <button class="addb" @click="addItem">교육 추가</button>
     <!-- <button class="editb" @click="changeEditable()">조회/수정</button> -->
     
   </div>
@@ -131,9 +132,16 @@
 export default {
   name: "",
   components: {},
+  props: ['viewer_mode'],
   data() {
     return {
-      itemList: [],
+      itemList: [{
+        title: this.$store.state.resume[this.$store.state.myKeys]["learn"]["title"],
+        host: this.$store.state.resume[this.$store.state.myKeys]["learn"]["host"],
+        start: this.$store.state.resume[this.$store.state.myKeys]["learn"]["start"],
+        end: this.$store.state.resume[this.$store.state.myKeys]["learn"]["end"],
+        message: this.$store.state.resume[this.$store.state.myKeys]["learn"]["message"],
+      }],
       isEditable: true,
     };
   },

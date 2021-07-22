@@ -8,7 +8,7 @@
     <button @click="showDataInfo()" class="d3">입력값 콘솔 출력</button> -->
     
     <div v-bind:key="index" v-for="(item, index) in CerList" class="container">
-      <div v-if="isEditable">
+      <div v-if="!viewer_mode">
         <div class="d1">
           <div class="d2">
             <br />
@@ -47,6 +47,11 @@
             <button class="btn-delete" @click="delCer(index)" v-if="!$store.commit('isEditable','skyship326@naver.com')">X</button>
           </div>
         </div>
+        <label class="d4">
+      <!-- 열추가 -->
+      <button class="btn2" @click="addCer">자격증 추가</button>
+      
+    </label>
       </div>
 
       <div v-else>
@@ -67,20 +72,23 @@
       </div>
     </div>
 
-    <label class="d4">
-      <!-- 열추가 -->
-      <button class="btn2" @click="addCer">자격증 추가</button>
-      
-    </label>
+    
   </div>
 </template>
 <script>
 export default {
   name: "",
   components: {},
+  props: ['viewer_mode'],
   data() {
     return {
-      CerList: [],
+      CerList: [
+        {
+          CerName: this.$store.state.resume[this.$store.state.myKeys]["certification"]["CerName"],
+          CerIns: this.$store.state.resume[this.$store.state.myKeys]["certification"]["CerIns"],
+          CerDate: this.$store.state.resume[this.$store.state.myKeys]["certification"]["CerDate"],
+        }
+      ],
       isEditable: true,
     };
   },

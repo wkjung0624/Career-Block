@@ -11,16 +11,18 @@
         <!-- 1-1 회사명 -->
         <div class="float1">
           <div class="box_line">
-            <button @click="delItem(idx)" class="dltbtn" id="delete_click">
+            <button @click="delItem(idx)" class="dltbtn" id="delete_click" 
+              v-if="!viewer_mode">
               X
             </button>
+            <button class="dltbtn bg-transparent" v-if="viewer_mode"></button>
             <input
               type="text"
               v-model="item.companyName"
               class="none_border"
               placeholder="회사명"
               style="position: relative; bottom: 31px"
-            />
+            :disabled="viewer_mode" />
           </div>
 
           <!-- 1-2 부서명 -->
@@ -32,7 +34,7 @@
               class="none_border"
               placeholder="부서명"
               style="position: relative; top: 4px"
-            />
+            :disabled="viewer_mode" />
           </div>
 
           <!-- 1-3 시작일 -->
@@ -45,7 +47,7 @@
               class="none_border"
               placeholder="입사년월"
               style="position: relative; top: 4px"
-            />
+            :disabled="viewer_mode"/>
           </div>
 
           <!-- 1-4 종료일 -->
@@ -58,12 +60,12 @@
               class="none_border"
               placeholder="퇴사년월"
               style="position: relative; top: 4px"
-            />
+            :disabled="viewer_mode"/>
           </div>
 
           <!-- 1-5 재직중(check 박스) -->
           <div class="float3" style="position: relative; top: 20px; left: 10px">
-            <input type="checkbox" name="working" v-model="item.isWorking" />
+            <input type="checkbox" name="working" v-model="item.isWorking" :disabled="viewer_mode" />
             <label for="working" style="width: 50px; font-size: 15px; position: relative; bottom: 5px; left: 5px"
               >재직중</label
             >
@@ -88,7 +90,7 @@
                   left: 30px;
                   height: 30px;
                 "
-              >
+              :disabled="viewer_mode" >
                 <option value="0">주임/계장</option>
                 <option value="1">대리</option>
                 <option value="2">과장</option>
@@ -115,7 +117,7 @@
                   left: 35px;
                   height: 30px;
                 "
-              >
+              :disabled="viewer_mode" >
                 <option value="0">팀원</option>
                 <option value="1">팀장</option>
                 <option value="2">매니저</option>
@@ -149,7 +151,7 @@
                 boder: 1px solid;
               "
               v-model="item.duty"
-            >
+            :disabled="viewer_mode">
               <option value="0">경영/사무</option>
               <option value="1">마케팅/광고/홍보</option>
               <option value="2">IT/인터넷</option>
@@ -177,7 +179,7 @@
               v-model="annual_Income"
               style="position: relative; top: 4px; width: 200px;"
               placeholder="연봉"
-            />
+            :disabled="viewer_mode" />
           </div>
         </div>
         <!-- f2 -->
@@ -199,25 +201,25 @@
               rows="4"
               style="border: 1px solid gainsboro; font-size: 15px; resize: none"
               placeholder="담당하신 업무와 성과에 대해 간단명료하게 적어주세요."
-            ></textarea>
+            :disabled="viewer_mode" ></textarea>
           </div>
         </div>
 
         <!-- 4줄  -->
         <!-- 연봉(button) -->
-        <div class="float4">
+        <div class="float4"  v-if="!viewer_mode">
           <div class="box_line" style="width: 100px">
-            연봉 X
+            연봉
             <input
               type="checkbox"
               v-model="item.isIncome"
               class="none_border"
-            />
+           />
           </div>
           <!-- 담당업무(button) -->
-          <div class="box_line" style="width: 150px">
-            담당업무 X
-            <input type="checkbox" v-model="item.isDuty" />
+          <div class="box_line" style="width: 150px"  v-if="!viewer_mode">
+            담당업무
+            <input type="checkbox" v-model="item.isDuty"/>
           </div>
         </div>
         <!-- <div>
@@ -230,7 +232,7 @@
 
         <!-- 6줄 -->
 
-        <div class="float5">
+        <div class="float5" v-if="!viewer_mode">
           <div
             class="box_line"
             v-show="item.isDescription != true"
@@ -257,7 +259,7 @@
               ></textarea
               ><br />
               <input type="checkbox" v-model="item.isDescription" />
-              <label for="" style="color: blue">경력기술서 삭제</label>
+              <label for="" style="color: blue" >경력기술서 삭제</label>
             </div>
           </div>
         </div>
@@ -266,7 +268,7 @@
       </div>
       <!-- rows -->
 
-      <div class="float6">
+      <div class="float6" v-if="!viewer_mode">
           <button @click="addItem" class="btn2">경력 추가</button>
       </div>
       <!-- f6 -->
@@ -364,6 +366,7 @@
 export default {
   name: "",
   components: {},
+  props: ['viewer_mode'],
   data() {
     return {
       //    시작일 : startDate         (date)
@@ -375,7 +378,16 @@ export default {
       //    직무   : duty              char(2)
       //    연봉   : anuual_Income
       //    업무내용 : job_description (longtext)
-      itemList: [],
+      itemList: [{startDate: this.$store.state.resume[this.$store.state.myKeys]["career"]["startDate"],
+        endDate: this.$store.state.resume[this.$store.state.myKeys]["career"]["endDate"],
+        companyName: this.$store.state.resume[this.$store.state.myKeys]["career"]["companyName"],
+        departmentName: this.$store.state.resume[this.$store.state.myKeys]["career"]["departmentName"],
+        position: this.$store.state.resume[this.$store.state.myKeys]["career"]["position"],
+        job_title: this.$store.state.resume[this.$store.state.myKeys]["career"]["job_title"],
+        duty: this.$store.state.resume[this.$store.state.myKeys]["career"]["duty"],
+        annual_Income: this.$store.state.resume[this.$store.state.myKeys]["career"]["annual_Income"],
+        job_description: this.$store.state.resume[this.$store.state.myKeys]["career"]["job_description"],
+        career_description: this.$store.state.resume[this.$store.state.myKeys]["career"]["career_description"],}],
 
       // 기간
       termDate: {},
@@ -401,6 +413,8 @@ export default {
     },
     addItem() {
       this.itemList.push({
+        
+
         startDate: "",
         endDate: "",
         companyName: "",

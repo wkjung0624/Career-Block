@@ -11,16 +11,19 @@
         <!-- 1-1 프로젝트명 -->
         <div class="float1" style="width: 940px;">
           <div class="box_line">
-            <button @click="delItem(idx)" class="dltbtn" id="delete_click">
+            <button @click="delItem(idx)" class="dltbtn" id="delete_click" v-if="!viewer_mode">
               X
             </button>
+            
+            <button class="dltbtn bg-transparent" v-if="viewer_mode"></button>
             <input
               type="text"
               v-model="item.projectName"
               id="projectName"
               placeholder="프로젝트명"
              
-            />
+            
+:disabled="viewer_mode" />
           </div>
         </div>
 
@@ -34,7 +37,8 @@
               class="none_border"
               placeholder="고객사"
               style="position: relative; bottom: 1p"
-            />
+            
+:disabled="viewer_mode"/>
           </div>
 
           <!-- 2-2 역할 -->
@@ -45,7 +49,8 @@
               class="none_border"
               placeholder="역할"
               style="position: relative; bottom: 1px"
-            />
+           
+:disabled="viewer_mode" />
           </div>
 
           <!-- 2-3 시작일 -->
@@ -57,7 +62,8 @@
               class="none_border"
               placeholder="시작일"
               style="position: relative; bottom: 1p"
-            />
+            
+:disabled="viewer_mode"/>
           </div>
 
           <!-- 2-4 종료일 -->
@@ -69,7 +75,8 @@
               class="none_border"
               placeholder="종료일"
               style="position: relative; bottom: 1p"
-            />
+           
+:disabled="viewer_mode" />
           </div>
         </div>
         <!-- f2 -->
@@ -89,7 +96,8 @@
               rows="4"
               style="border: 1px solid gainsboro; resize: none; font-size: 15px;"
               placeholder="담당하신 업무와 성과에 대해 간단명료하게 적어주세요."
-            ></textarea>
+           
+:disabled="viewer_mode" ></textarea>
           </div>
         </div>
       </div>
@@ -108,7 +116,8 @@
             @click="addItem"
             
             
-          >
+          
+v-if="!viewer_mode">
             프로젝트 경력 추가
           </button>
         </div>
@@ -156,6 +165,7 @@
 export default {
   name: "",
   components: {},
+  props: ['viewer_mode'],
   data() {
     return {
       //    시작일 : startDate         (date)
@@ -165,7 +175,14 @@ export default {
       //    업무내용 : job_description (longtext)
       //    역할   : part              (text)
 
-      itemList: [],
+      itemList: [
+        {startDate: this.$store.state.resume[this.$store.state.myKeys]["project"]["startDate"],
+        endDate: this.$store.state.resume[this.$store.state.myKeys]["project"]["endDate"],
+        projectName: this.$store.state.resume[this.$store.state.myKeys]["project"]["projectName"],
+        customer: this.$store.state.resume[this.$store.state.myKeys]["project"]["customer"],
+        job_description: this.$store.state.resume[this.$store.state.myKeys]["project"]["job_description"],
+        part: this.$store.state.resume[this.$store.state.myKeys]["project"]["part"],}
+      ],
 
       // 기간
       termDate: {},

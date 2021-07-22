@@ -5,24 +5,25 @@
         </div>
         <!-- <button @click="changeEditable()">수정가능상태 변경</button>
         <button @click="showDataInfo()">현재 입력값들 콘솔에 출력</button> -->
-        <div v-bind:key=index v-for="(item, index) in itemList" class="container">
+        <div v-bind:key=index v-for="(item, index) in itemList" class="container" >
             <!-- 7번 라인 ~ 33번 라인 : 수정이 가능한 경우(본인 로그인) 화면 구성 -->
-            <div class="row" v-if="isEditable">
-                <select v-model="item.gubun" class="sel">
+            <div class="row" v-if="isEditable" >
+                <select v-model="item.gubun" class="sel" :disabled="viewer_mode">
                     <option value=0>고등학교</option>
                     <option value=1>대학(2,3년)</option>
                     <option value=2>대학교(4년)</option>
                     <option value=3>대학원</option>
                 </select>
 
-                <input type="text" class="mini" v-model="item.schoolName" style="width:140px;">
+                <input type="text" class="mini" v-model="item.schoolName" style="width:140px;" :disabled="viewer_mode">
 
-                <input type="text" class="mini" v-show="item.gubun == 3" v-model="item.degree" style="width: 60px;" >
+                <input type="text" class="mini" v-show="item.gubun == 3" v-model="item.degree" style="width: 60px;" :disabled="viewer_mode">
 
-                <input type="text" class="mini" v-show="item.gubun != 0" v-model="item.startDate" style="width: 140px;">
-                <input type="text" class="mini" v-model="item.endDate" style="width: 140px;">
+                <input type="text" class="mini" v-show="item.gubun != 0" v-model="item.startDate" style="width: 140px;" :disabled="viewer_mode">
+                <input type="text" class="mini" v-model="item.endDate" style="width: 140px;" 
+:disabled="viewer_mode">
 
-                <select v-model="item.graduateState" class="sel2">
+                <select v-model="item.graduateState" class="sel2" :disabled="viewer_mode">
                     <option value=0>졸업</option>
                     <option value=1>졸업예정</option>
                     <option value=2>재학중</option>
@@ -31,8 +32,8 @@
                     <option value=5>휴학</option>
                 </select>
 
-                <input type="text" class="mini" v-model="item.major" v-show="item.gubun > 0" style="width: 140px;">
-                <button class="btn-delete" @click="delItem(index)">X</button>
+                <input type="text" class="mini" v-model="item.major" v-show="item.gubun > 0" style="width: 140px;" :disabled="viewer_mode">
+                <button class="btn-delete" @click="delItem(index)" v-if="!viewer_mode">X</button>
             </div>
             
             <!-- 36번 라인 ~ 57번 라인 : 수정이 가능한 경우(본인 로그인) 화면 구성 -->
@@ -44,12 +45,12 @@
                     <span v-if="item.gubun==3">대학원 </span>
                 </div>
 
-                <div class="label">{{item.schoolName}} </div>
+                <div class="label" :disabled="viewer_mode">{{item.schoolName}} </div>
 
-                <div class="label" v-if="item.gubun == 3">{{item.degree}} </div>
+                <div class="label" v-if="item.gubun == 3" :disabled="viewer_mode">{{item.degree}} </div>
 
-                <div class="label" v-if="item.gubun != 0">{{item.startDate}} </div>
-                <div class="label">{{item.endDate}}</div>
+                <div class="label" v-if="item.gubun != 0" :disabled="viewer_mode">{{item.startDate}} </div>
+                <div class="label" :disabled="viewer_mode">{{item.endDate}}</div>
                 
                 <div class="label" v-if="item.graduateState==0">졸업</div>
                 <div class="label" v-if="item.graduateState==1">졸업예정</div>
@@ -62,13 +63,15 @@
             </div>
         </div>
         
-        <button class="addb" @click="addItem">학력 추가</button>
+        <button class="addb" @click="addItem" v-if="!viewer_mode">학력 추가</button>
     </div>
 
 </template>
 
 <script>
 export default {
+    
+  props: ['viewer_mode'],
     data(){
         return {
             
@@ -80,12 +83,20 @@ export default {
             // 졸업상태 : graduateState char(1)
             // 학위 : degree
 
-            itemList : [],
+            itemList : [{
+                gubun : this.$store.state.resume[this.$store.state.myKeys]["education"]["gubun"],
+                schoolName : this.$store.state.resume[this.$store.state.myKeys]["education"]["schoolName"],//"한경고등학교",
+                major : this.$store.state.resume[this.$store.state.myKeys]["education"]["major"], //"프로그래밍",
+                startDate : this.$store.state.resume[this.$store.state.myKeys]["education"]["startDate"], //"(입학일) 2016.03",
+                endDate : this.$store.state.resume[this.$store.state.myKeys]["education"]["endDate"], //"(졸업일) 2021.02",
+                graduateState : this.$store.state.resume[this.$store.state.myKeys]["education"]["graduateState"],//"졸업",
+                degree : this.$store.state.resume[this.$store.state.myKeys]["education"]["degree"],//"박사",
+            }],
             isEditable : true
         }
     },
     mounted(){
-       
+       console.log("Test",this.viewer_mode)
     },
     methods:{
         addItem(){
