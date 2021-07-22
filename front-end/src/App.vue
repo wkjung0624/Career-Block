@@ -84,15 +84,15 @@
                   </div>
                   <div v-else>
 
-
+                    <div class="input-group btn-group-sm" role="group" aria-label="register group">
+                      <a v-if="!$store.state.user.isRegister" class="btn btn-warning btn-sm fs-6" @click="$store.commit('setPageIndex',4)">
+                        Not Registration
+                      </a>
+                      <a v-else-if="$store.state.user.isRegister" class="btn btn-success btn-sm fs-6">
+                        Registration
+                      </a>  
                       <a class="btn btn-secondary btn-sm" @click="$store.commit('user',{})">Logout</a>
-                        <a v-if="!$store.state.user.isRegister" class="btn btn-warning btn-sm fs-6" @click="$store.commit('setPageIndex',4)">
-                          Registration
-                        </a>
-                        <a v-else-if="$store.state.user.isRegister" class="btn btn-success btn-sm fs-6">
-                          Registration
-                        </a>
-
+                    </div>
                      
                   </div>
                 </div>
