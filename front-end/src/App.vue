@@ -105,7 +105,7 @@
       <div v-if="pageIndex == 0">
         <!-- Masthead-->
         <header class="masthead">
-          <div class="container px-4 px-lg-5 h-100" style="background-corlor: #f4623a;">
+          <div class="container px-4 px-lg-5 h-100">
             <div
               class="
                 row
@@ -350,7 +350,7 @@
                 <h2 class="text-white mt-0">당신이 원하는 모든 것</h2>
                 <hr class="divider divider-light" />
                 <p class="text-white-75 mb-4">
-                  CareerBlock은 그동안 당신이 경력관리에 필요하다고 느꼈던 모든
+                  CareerBlock은 당신이 경력관리에 필요하다고 느꼈던 모든
                   서비스를 제공합니다. <br />당신의 정보를 등록하세요. 우리와
                   함께 합시다. 어서 시작해보세요!
                 </p>
