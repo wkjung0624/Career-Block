@@ -33,7 +33,7 @@
               v-model="item.customer"
               class="none_border"
               placeholder="고객사"
-              style="position: relative; bottom: 1p"
+              style="position: relative; bottom: 1px; right: 18px;"
             />
           </div>
 
@@ -44,7 +44,7 @@
               v-model="item.part"
               class="none_border"
               placeholder="역할"
-              style="position: relative; bottom: 1px"
+              style="position: relative; bottom: 1px; right: 18px;"
             />
           </div>
 
@@ -56,7 +56,7 @@
               pattern="[0-9]{4}.[0-9]{2}"
               class="none_border"
               placeholder="시작일"
-              style="position: relative; bottom: 1p"
+              style="position: relative; bottom: 1px; right: 18px;"
             />
           </div>
 
@@ -68,7 +68,7 @@
               pattern="[0-9]{4}.[0-9]{2}"
               class="none_border"
               placeholder="종료일"
-              style="position: relative; bottom: 1p"
+              style="position: relative; bottom: 1px; right: 18px;"
             />
           </div>
         </div>
@@ -85,7 +85,7 @@
             <p style="text-align: left;">수행내역</p>
             <textarea
               v-model="item.job_description"
-              cols="110"
+              cols="124"
               rows="4"
               style="border: 1px solid gainsboro; resize: none; font-size: 15px;"
               placeholder="담당하신 업무와 성과에 대해 간단명료하게 적어주세요."
@@ -260,7 +260,7 @@ export default {
 #delete_click {
   position: relative;
   left: 894px;
-  bottom: 12px;
+  bottom: 11px;
 }
 
 .box_line {
@@ -312,7 +312,7 @@ export default {
 /* 각 항목별 기본틀(box)(예시: 학력, 경력, 교육 등의 틀을 담는 box) */
 .item {
   width: 940px;
-  border-top: 1px solid #edeef0;
+ 
 }
 
 /* item 왼쪽 div(날짜 기입)  */
